@@ -8,7 +8,7 @@ sidebar_position: 0
 Liquid restaking is a **DeFi mechanism** that allows users to stake their assets (e.g., SOL, ETH) in a blockchain protocol or validator network to earn staking rewards, while simultaneously unlocking the liquidity of those staked assets. Instead of being locked up, the value of the staked assets can be utilized elsewhere in DeFi, creating more opportunities for capital efficiency.
 
 - **Uninterrupted Staking Rewards:** Users continue to earn rewards from the underlying blockchain’s staking process.
-- **Liquidity Access:** Users can access and use their staked capital for additional activities like borrowing, swapping, or earning yield.
+- **Liquidity Access:** Users can access and use their staked capital for additional activities likes swapping, or earning yield.
 - **Flexibility:** Enhances user participation in DeFi while retaining the security benefits of staking.
 
 Think of liquid restaking as depositing money into a bank account to earn interest, and liquid restaking tokens (LRTs) as the **debit card** that allows you to spend or use the money while it is still earning interest.

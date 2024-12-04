@@ -36,12 +36,6 @@ GlowSOL allows users to convert their staked SOL assets into a liquid token.
 
 GlowSOL’s minting ratio reflects the combined value of SOL and sSOL in Glow’s vault relative to GlowSOL supply. This ensures GlowSOL accurately represents the value of staked assets in real-time.
 
-### Benefits of Depositing
-
-- Earn staking rewards (~8%), Glow Points, and Solayer Points.
-- Maintain liquidity for your staked SOL.
-- Use GlowSOL in Glow’s DeFi ecosystem for swaps, leveraging, and borrowing.
-
 ## How to Unstake & Withdraw
 
 Unstaking GlowSOL allows users to redeem their tokens and reclaim their SOL.
@@ -70,7 +64,7 @@ Glow’s multisig vault dynamically manages SOL and sSOL liquidity, ensuring smo
 
 GlowSOL isn’t just a staking token; it’s a gateway to advanced DeFi opportunities:
 - **Liquidity Without Unstaking:** Retain liquidity while earning rewards on staked SOL.
-- **DeFi Strategies:** Use GlowSOL for swaps, borrowing, leveraging, and more within Glow Protocol’s ecosystem.
+- **DeFi Strategies:** Use GlowSOL for swaps, leveraging, and more within Glow Protocol’s ecosystem.
 - **Transparent and Secure:** The platform provides real-time visibility into minting ratios, staking yields, and withdrawal statuses while maintaining robust security with smart contracts and multisig vaults.
 
 ## Example Scenarios

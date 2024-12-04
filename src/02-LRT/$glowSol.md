@@ -34,7 +34,6 @@ Users earn staking rewards, Glow Points, and Solayer Points while retaining the 
 GlowSOL is compatible with Glow Protocol’s advanced strategies:
 
 - **Swaps**: GlowSOL can be directly swapped for other assets.
-- **Borrowing**: Use GlowSOL as collateral to unlock additional liquidity.
 - **Leveraging**: GlowSOL can be leveraged to amplify yield opportunities in the ecosystem.
 
 ## Dynamic Minting and Redemption Ratios
