@@ -5,7 +5,7 @@ sidebar_label: "$glowSol"
 sidebar_position: 1
 ---
 
-GlowSOL is a **liquid restaking token (LRT)** that represents staked SOL assets via Solayer, combining liquidity and tradability with the ability to earn staking rewards. Designed as part of the Glow Finance ecosystem, GlowSOL provides users with an innovative way to access their staked assets without forfeiting rewards, unlocking additional use cases within decentralized finance (DeFi).
+GlowSOL is a **liquid restaking token (LRT)** that represents staked SOL assets via [Solayer](https://docs.solayer.org/getting-started/introduction), combining liquidity and tradability with the ability to earn staking rewards. Designed as part of the Glow Finance ecosystem, GlowSOL provides users with an innovative way to access their staked assets without forfeiting rewards, unlocking additional use cases within decentralized finance (DeFi).
 
 GlowSOL offers enhanced utility through its integration with the Glow Money Market, powering advanced DeFi strategies and making it a key component of Glow’s liquid restaking ecosystem.
 

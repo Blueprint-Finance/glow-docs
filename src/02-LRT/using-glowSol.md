@@ -5,7 +5,7 @@ sidebar_label: "Using glowSOL"
 sidebar_position: 2
 ---
 
-Users can stake SOL through Glow Finance to mint GlowSOL. This process ensures users benefit from Solayer’s staking infrastructure while receiving a liquid, tradable token.
+Users can stake SOL through Glow Finance to mint GlowSOL. This process ensures users benefit from [Solayer’s staking infrastructure](https://docs.solayer.org/getting-started/introduction) while receiving a liquid, tradable token.
 
 The redemption process converts the staked assets (sSOL) back to SOL, ensuring users can always redeem an amount equal to or greater than their initial deposit, depending on the time invested. This guarantees a monotonically increasing value, reflecting accrued staking rewards over time.
 
