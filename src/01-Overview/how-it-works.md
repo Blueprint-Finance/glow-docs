@@ -65,7 +65,7 @@ Glow’s **Leverage Swaps** utilizess the **Jupiter routing** system on Solana t
 
 **Recipes** are pre-configured, automated strategies within the leverage swaps framework. These are designed to allow users to participate in complex DeFi maneuvers without the need for manual configuration. By using recipes, Glow users—whether beginners or advanced traders—can efficiently access high-yield opportunities and advanced market strategies without requiring extensive setup.
 
-### Solayer Delta Neutral Recipe (Top Priority)
+### Solayer Delta Neutral Recipe
 
 The **Solayer Delta Neutral Recipe** is Glow's flagship recipe, designed to maximize yield while minimizing exposure to price volatility. This strategy uses the **sSOL (Solayer’s liquid restaking token)** in a delta-neutral approach, allowing users to earn staking rewards without being affected by fluctuations in the price of SOL. It is ideal for users looking to maximize staking yield while maintaining a stable position.
 
