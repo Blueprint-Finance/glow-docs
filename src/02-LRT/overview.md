@@ -5,15 +5,15 @@ sidebar_label: "Overview"
 sidebar_position: 0
 ---
 
-Restaking is an innovative concept in blockchain security that allows users to leverage their staked tokens multiple times to secure not just the underlying blockchain but also additional applications and protocols. Unlike traditional staking, where assets are locked and serve a single purpose—validating transactions and maintaining network integrity—restaking enables those same assets to provide security guarantees to other mechanisms, such as decentralized services, middleware, or alternative consensus layers.
+**Restaking** is an innovative concept in blockchain security that allows users to leverage their staked tokens multiple times to secure not just the underlying blockchain but also additional applications and protocols. Unlike traditional staking, where assets are locked and serve a single purpose—validating transactions and maintaining network integrity—restaking enables those same assets to provide security guarantees to other mechanisms, such as decentralized services, middleware, or alternative consensus layers.
 
-Liquid Restaking is a **DeFi mechanism** that allows users to stake their assets (e.g., SOL) in a blockchain protocol or validator network to earn staking rewards, while simultaneously unlocking the liquidity of those staked assets. Instead of being locked up, the value of the staked assets can be utilized elsewhere in DeFi, creating more opportunities for capital efficiency.
+**Liquid Restaking** is a DeFi mechanism that allows users to stake their assets (e.g., SOL) in a blockchain protocol or validator network to earn staking rewards, while simultaneously unlocking the liquidity of those staked assets. Instead of being locked up, the value of the staked assets can be utilized elsewhere in DeFi, creating more opportunities for capital efficiency.
 
 - **Uninterrupted Staking Rewards:** Users continue to earn rewards from the underlying blockchain’s staking process.
 - **Liquidity Access:** Users can access and use their staked capital for additional activities likes swapping, or earning yield.
 - **Flexibility:** Enhances user participation in DeFi while retaining the security benefits of staking.
 
-Think of liquid restaking as depositing money into a bank account to earn interest, and liquid restaking tokens (LRTs) as the **debit card** that allows you to spend or use the money while it is still earning interest.
+Think of **liquid restaking** as depositing money into a bank account to earn interest, and **liquid restaking tokens (LRTs)** as the debit card that allows you to spend or use the money while it is still earning interest.
 
 ## GlowSOL
 
