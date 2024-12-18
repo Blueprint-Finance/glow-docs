@@ -19,7 +19,7 @@ Think of **liquid restaking** as depositing money into a bank account to earn in
 
 Liquid restaking provides the **framework** for unlocking staked assets, while liquid restaking tokens (LRTs) are the **tools** that enable users to access liquidity, earn rewards, and participate in DeFi without sacrificing the benefits of staking.
 
-GlowSOL is Glow Finance’s native liquid restaking token, designed specifically for the Solana blockchain. By leveraging Solayer’s restaking infrastructure, GlowSOL provides a seamless and efficient way for users to restake their SOL while maintaining access to liquidity and allocating their stake to services with the highest risk-adjusted returns.
+GlowSOL is Glow Finance’s native liquid restaking token, designed specifically for the Solana blockchain. By leveraging [Solayer’s restaking infrastructure](https://docs.solayer.org/getting-started/introduction), GlowSOL provides a seamless and efficient way for users to restake their SOL while maintaining access to liquidity and allocating their stake to services with the highest risk-adjusted returns.
 
 GlowSOL is designed to revolutionize the way users interact with staked assets in decentralized finance (DeFi). By combining liquidity, tradability, and yield generation, GlowSOL empowers users to maximize the utility of their staked SOL holdings without compromising on rewards.
 
