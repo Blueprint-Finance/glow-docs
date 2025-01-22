@@ -2,7 +2,7 @@
 title: "User Journey"
 description: "From Deposit to Full Utilization of Glow’s Features"
 sidebar_label: "User Journey"
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 :::info

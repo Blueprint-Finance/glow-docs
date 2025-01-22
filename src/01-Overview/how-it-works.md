@@ -2,7 +2,7 @@
 title: "How It Works"
 description: "How It Works"
 sidebar_label: "How It Works"
-sidebar_position: 4
+sidebar_position: 3
 ---
 
 :::info
