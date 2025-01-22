@@ -5,7 +5,7 @@ sidebar_label: "Welcome"
 sidebar_position: 0
 ---
 :::info
-This section of the documentation outlines features of the upcoming **Glow Finance V1** application, currently in development and scheduled for release in Spring 2025. While we finalize this exciting update, you can already take advantage of Glow Restaking, which is live and available today.
+This section of the documentation outlines features of the upcoming **Glow Finance V1** application, currently in development. While we finalize this exciting update, you can already take advantage of Glow Restaking, which is live and available today.
 
 [Learn more about Glow Restaking](../02-LRT/overview.md).
 :::

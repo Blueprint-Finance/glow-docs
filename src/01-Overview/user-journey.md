@@ -6,7 +6,7 @@ sidebar_position: 3
 ---
 
 :::info
-This section of the documentation outlines features of the upcoming **Glow Finance V1** application, currently in development and scheduled for release in Spring 2025. While we finalize this exciting update, you can already take advantage of Glow Restaking, which is live and available today.
+This section of the documentation outlines features of the upcoming **Glow Finance V1** application, currently in development. While we finalize this exciting update, you can already take advantage of Glow Restaking, which is live and available today.
 
 [Learn more about Glow Restaking](../02-LRT/overview.md).
 :::
@@ -35,19 +35,17 @@ Once the margin account is set up, the user can deposit any supported assets, su
 
 With assets in their margin account, the user automatically begins earning interest on deposits, such as USDC, based on the pool's utilization rate. Glow provides dynamic visual cues, like projected interest rates and utilization ratios, to help users understand and monitor potential returns.
 
-Example: If a user deposits 1,000 USDC into the pool and the current utilization rate is 70%, Glow displays the current lending rate for USDC and, more importantly, the projected rate the user will earn after their deposit is factored in. Since their deposit affects the pool’s utilization and overall rates, this feature ensures users can see exactly how their earnings will change before committing. This level of transparency, often missing in other DeFi lending protocols, empowers users to make informed decisions based on their desired returns.
+Example: If a user deposits 1,000 USDC into the pool and the current utilization rate is 70%, Glow displays the current lending rate for USDC and, more importantly, the projected rate the user will earn after their deposit is factored in. As a new deposit will affect the pool utilization and thus the interest rates, this feature ensures users will see exactly how their deposit will affect the pool APY before committing. This level of transparency, often missing in other DeFi lending protocols, empowers users to make informed decisions based on their desired returns.
 
 ## 4. Executing Leverage Swaps for Strategic Gains
 
 Glow’s leverage swaps allow users to enhance their trading strategies by borrowing against their collateral. For example, a user with a margin account funded with USDC can borrow SOL using the leverage swap feature, which allows them to simultaneously borrow SOL and swap it for another asset, such as sSOL, within the same transaction. This process opens up opportunities for yield farming and other sophisticated strategies.
 
-**Example Strategy 1: Stablecoin Rate Arbitrage**
+**Example Strategy 1: Stablecoin Rate Arbitrage across Glow Stables**
 
-Glow’s **Leverage Swap** product enables users to capitalize on stablecoin rate differences seamlessly within a single transaction. For example, if the borrowing rate for PYUSD is lower than the lending rate for USDC, users can borrow PYUSD, swap it for USDC, and earn the difference between the two rates.
+Glow’s **Leverage Swap** product enables users to capitalize on stablecoin rate differences seamlessly within a single transaction. For example, if the borrowing rate for PYUSD is lower than the lending rate for USDC, users can set up a leverage swap to borrow PYUSD and swap it for USDC, thus earning the difference between the two rates.
 
 Glow simplifies this process with intuitive visual indicators that display utilization, projected returns, and health levels, ensuring users can make informed decisions and efficiently execute their strategies.
-
-Looking ahead, Glow aims to support adapters for external protocols, unlocking the potential for advanced cross-protocol arbitrage. This would allow users to borrow stablecoins from one protocol and lend them on another, with all deposits and borrowings across platforms contributing to the collateral value of their Glow margin account.
 
 **Example Strategy 2: Pair Trading**
 
@@ -59,7 +57,7 @@ By combining Glow’s Leverage Swap tools with its comprehensive risk management
 
 A “Recipe” is a preconfigured leverage swap that is designed to help users set up and automate complex strategies, making them accessible even to less sophisticated DeFi users. Similar to traditional DeFi vaults, these 'canned' leverage swap patterns allow users to execute sophisticated strategies with minimal input, without the need to manually adjust each variable. By offering these ready-made 'recipes,' Glow enables users to deploy effective strategies with ease and differentiation from the standard DeFi vaults.
 
-**Example Recipe**: A "Leveraged SOL Restaking” recipe that involves depositing SOL and swapping it for **sSOL**—a liquid restaking token that earns rewards as it appreciates over time from staked SOL. This setup creates a position that allows a user to to choose their leverage and earn multiplied SOL restaking yield and Solayer + Glow points -- All this while the position is protected from liquidation by volatile SOL price swings, thanks to the power of Glow!
+**Example Recipe**: A "Leveraged SOL Restaking” recipe that involves depositing SOL and swapping it for **sSOL**—a liquid restaking token that earns rewards as it appreciates over time from staked SOL. This setup creates a position that allows a user to to choose their leverage and earn multiplied SOL restaking yield and multipled Solayer + Glow points -- All this while the position is protected from liquidation by volatile SOL price swings, thanks to the power of Glow!
 
 **Example Recipe 2:** Another Glow Recipe could be to facilitate an easy set up for users to perform stablecoin arbitrage (as described above in section #4) when applicable with current borrowing and lending rates.
 
@@ -83,4 +81,6 @@ Users can switch between their margin accounts using a dropdown menu and easily 
 
 Beyond individual transactions, Glow Recipes automate advanced strategies, saving users time and optimizing their capital. Recipes range from simple yield farming setups to more complex arbitrage strategies that involve cross-protocol opportunities.
 
-**Example**: In a "Cross-Protocol Arbitrage" recipe, a user could borrow USDC at a low rate from Glow’s margin pools and use an integrated adapter to deposit it into another protocol with a higher APY. Glow’s interface guides the user through the steps, showing projected returns and potential fees, ensuring transparency.
+**Example**: In the future, Glow may support adapters for external protocols, unlocking the potential for advanced cross-protocol arbitrage. This would allow users to borrow stablecoins from one protocol and lend them on another to arbitrage rate differences, with all deposits and borrowings across platforms contributing to the collateral value of their Glow margin account.
+
+![](/img/user.png)
