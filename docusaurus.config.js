@@ -90,7 +90,7 @@ const config = {
         items: [
           {
               type: "doc",
-              docId: "LRT/overview",
+              docId: "Overview/welcome",
               position: "left",
               label: "Docs"
           },
