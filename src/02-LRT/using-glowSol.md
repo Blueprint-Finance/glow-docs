@@ -43,11 +43,11 @@ Unstaking glowSOL allows users to redeem their tokens and reclaim their SOL.
 1. **Step 1: Unstake**
 - glowSOL holders initiate unstaking through Glow’s interface, which burns the glowSOL tokens and starts the redemption process.
 - Behind the scenes, sSOL is converted back into SOL.
-1. **Step 2: Withdrawal Process**
+2. **Step 2: Withdrawal Process**
 - Users must wait for a **7-day withdrawal period**, during which Solayer processes the conversion of sSOL to SOL.
 - A countdown timer is displayed to track withdrawal progress.
 - Glow actively manages liquidity to ensure sufficient SOL is available for withdrawals.
-1. **Step 3: Withdraw**
+3. **Step 3: Withdraw**
 - Initiate unstaking through the interface.
 - Wait for the 7-day period.
 - Withdraw redeemed SOL to your wallet once the withdrawal period ends.
@@ -68,5 +68,5 @@ glowSOL isn’t just a staking token; it’s a gateway to advanced DeFi opportun
 
 1. **Depositing SOL to Receive glowSOL:**
 - A user deposits 10 SOL into Glow. This SOL is staked in Solayer to generate sSOL, which is then wrapped into glowSOL. The user can trade or use glowSOL while continuing to earn staking rewards and Glow Points.
-1. **Redeeming glowSOL for SOL:**
+2. **Redeeming glowSOL for SOL:**
 - The user redeems 5 glowSOL, initiating a 7-day withdrawal process. After the waiting period, the equivalent value in SOL (including rewards) is transferred to the user’s wallet.
