@@ -7,7 +7,6 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
-require('dotenv').config();
 const config = {
   title: 'Glow Docs',
   tagline: 'DeFi protocol',
@@ -153,13 +152,6 @@ const config = {
           },
         ],*/
       },
-
-      algolia: {
-      appId: process.env.ALGOLIA_APP_ID,
-      apiKey: process.env.ALGOLIA_API_KEY,
-      indexName: 'glowfinance',
-    },
-
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
