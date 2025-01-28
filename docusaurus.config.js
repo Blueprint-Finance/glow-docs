@@ -6,9 +6,8 @@
 
 import {themes as prismThemes} from 'prism-react-renderer';
 
-require('dotenv').config();
-
 /** @type {import('@docusaurus/types').Config} */
+require('dotenv').config();
 const config = {
   title: 'Glow Docs',
   tagline: 'DeFi protocol',
