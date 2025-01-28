@@ -30,4 +30,3 @@ logs
 # Other generated files and directories
 build/
 tmp/
-package-lock.json
