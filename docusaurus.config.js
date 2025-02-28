@@ -50,6 +50,8 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/Blueprint-Finance/glow-docs/tree/main',
+          remarkPlugins: [require('remark-math')],
+          rehypePlugins: [require('rehype-katex')],
         },
         blog: {
           showReadingTime: true,
@@ -72,6 +74,13 @@ const config = {
       }),
     ],
   ],
+
+  stylesheets: [
+  {
+    href: 'https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css',
+    type: 'text/css',
+  },
+],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
