@@ -100,7 +100,7 @@ Assets deposited into a margin account that secure loans or leveraged positions.
 
 - A deposited asset contributes “collateral” which a user may use to borrow based off the value of that asset.
 - Directly influences Health Level and risk of liquidation.
-- See also “undercollateralized”
+- See also [undercollateralized](/glossary#undercollateralized)
 
 ### **Collateral Values**
 
@@ -339,6 +339,8 @@ This system ensures efficient capital allocation, maintains liquidity, and allow
 
 ### **Undercollateralized**
 
-A condition where a user's borrowed assets exceed the required collateral, increasing the risk of liquidation. If an account becomes undercollateralized, its Health Level drops, and it may trigger a liquidation event. This can occur due to market volatility, interest accrual, or over-borrowing relative to available collateral.
+Unlike most DeFi protocols that require full overcollateralization, Glow Finance enables undercollateralized borrowing, allowing users to borrow more than their available collateral.
 
-Users can prevent undercollateralization by monitoring Health Level, adding more collateral, or repaying debt.
+- Assets aren’t locked up unnecessarily, enabling more productive use of funds.  
+- Users can borrow against future yield and strategic positions without excessive collateral.  
+- Facilitates leveraged staking, recursive borrowing, and restaking strategies.
