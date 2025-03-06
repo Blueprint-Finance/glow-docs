@@ -11,7 +11,7 @@ sidebar_position: 9
 
 A margin account where users deposit assets, borrow funds, engage in leverage trading, and interface with other DeFi protocols via adapters, such as swapping tokens held in the account through Jupiter.
 
-Users may open multiple isolated margin accounts under a single wallet to segment risk and separate strategies.
+Users may open multiple isolated margin accounts under a single wallet to segment risk and separate strategies. Each account is ring-fenced, meaning collateral and debt are entirely independent—a liquidation in one account does not impact others. This ensures better risk management and strategic flexibility for users.
 
 ### **Account Overview**
 
@@ -29,13 +29,21 @@ A section in Glow Finance that displays key financial metrics of a user's margin
 
 **Net Balance**
 
-- The difference between deposited and borrowed amounts for a given asset.
-- Displays the current value of holdings after accounting for borrows.
+- Represents the difference between deposited and borrowed amounts for a given asset.
+- Useful for tracking overall holdings, but not a direct risk indicator for liquidation.
+- Does not account for collateral weight or Health Level, meaning it’s not the best metric to assess borrowing risk.
 
 **Contribution to Collateral**
 
-- The portion of deposited assets currently being used as collateral to support borrow positions.
-- A negative value indicates collateral usage, while a positive value shows additional available collateral.
+- The true measure of margin health—shows how much of your deposits are securing borrow positions.
+- A negative value means collateral is in use; if it reaches zero, liquidation is imminent.
+- Unlike Net Balance, Contribution to Collateral directly impacts your Health Level and borrowing power.
+
+Key Takeaway:
+
+- **Net Balance ≠ Risk Indicator** – It only shows deposits vs. borrows.
+- **Contribution to Collateral = Risk & Liquidation Metric** – The closer it gets to zero, the **higher your liquidation risk**.
+- **Monitor Contribution to Collateral, not just Net Balance**, to stay safe and optimize your borrowing strategies.
 
 ### **Account Leverage**
 
@@ -47,7 +55,7 @@ The ratio of total assets to equity in a margin account, indicating the level of
 
 An adapter is a program that connects Glow’s margin accounts with external DeFi protocols (e.g., swap aggregators like Jupiter or AMMs like Orca) on Solana, enabling users to interact with other protocols directly from their Glow account.
 
-Adapters provide a standardized way for Glow to integrate with various DeFi services, extending functionality without requiring users to leave the platform.
+Adapters provide a standardized way for Glow to integrate and transact using margin account funds with various DeFi services, extending functionality without requiring users to leave the platform.
 
 ### **Assets**
 
@@ -204,7 +212,7 @@ A liquid restaking token (LRT) that represents staked SOL assets via Solayer, al
 
 ### **Health Level**
 
-A risk metric representing the ratio of available collateral to required collateral in a Margin Account. It provides an intuitive way to assess account risk, but users should understand that collateral values, including collateral weight, required collateral factor, and available collateral, directly impact this metric.
+A risk metric representing the ratio of available collateral to required collateral in a Margin Account. It provides an intuitive way to assess account risk, and users should understand that collateral values, including collateral weight, required collateral factor, and available collateral, directly impact this metric.
 
 **Thresholds:**
 
