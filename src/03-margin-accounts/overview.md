@@ -44,7 +44,7 @@ The health level is a percentage that helps users visualize the risk associated 
 - **Below 20.0%**: Suggests that the user may soon need to add collateral or reduce borrowings to avoid liquidation.
 - **5.0% Warning Threshold**: At this level, the UI alerts the user with a warning banner, emphasizing the need for immediate action to prevent liquidation.
 - **Maximum Leverage Buffer**: The maximum borrowing or swap leverage allowed leaves the health level at **6.0%**, granting users the optionality to access maximum leverage while retaining a small buffer before the warning alert is triggered.
-- **0.0%:** When the health level reaches 0.0% the margin account is slated for partial liquidation - Glow’s liquidator will attempt to exchange only as much value in assets from a user’s margin account as is necessary to cover enough debt to return the health level to above 0%. This protects the rest of the users of the protocol. Read the [liquidations page] (*TODO: link to that section*) to read more about liquidations on Glow.
+- **0.0%:** When the health level reaches 0.0% the margin account is slated for partial liquidation - Glow’s liquidator will attempt to exchange only as much value in assets from a user’s margin account as is necessary to cover enough debt to return the health level to above 0%. This protects the rest of the users of the protocol. Read the [liquidations page](../03-margin-accounts/liquidation.md) to read more about liquidations on Glow.
 
 :::tip
 The health level provides a normalized scale, where 100% represents no borrowing (effective collateral is significantly higher than required collateral), and 0% occurs when required collateral exceeds effective collateral, leading to liquidation.

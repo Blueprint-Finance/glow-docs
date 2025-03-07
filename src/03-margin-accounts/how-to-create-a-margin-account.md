@@ -78,6 +78,6 @@ After successfully paying the rent fee:
 
 ![](/img/create-8.png)
 
-- If the creation fails, an error banner will notify you of the failure. For any issues, please feel free to contact us via our Support Center LINK HERE.
+- If the creation fails, an error banner will notify you of the failure. For any issues, please feel free to contact us via our [Support](../support.md).
 
 ![](/img/create-9.png)
