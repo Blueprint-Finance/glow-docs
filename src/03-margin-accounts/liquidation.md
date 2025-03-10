@@ -50,12 +50,6 @@ Glow Finance provides timely alerts to users in the web application, enabling th
 
 ![](/img/liq-4.png)
 
-![](/img/liq-5.png)
-
-- **Historical Records**: Users can access liquidation records through the **Portfolio History page** for in-depth review and understanding of past liquidation events.
-
-![](/img/liq-6.png)
-
 ## Managing Risk with Health Levels
 
 Glow Finance equips users with tools to manage their portfolio risk effectively by monitoring and improving their Health Level. A higher Health Level indicates a more stable account, reducing the likelihood of liquidation. For users seeking detailed guidance on strategies to maintain a healthy account, including depositing collateral, repaying borrowed assets, or adjusting leverage. For more information, you can check the [Health Level](../03-margin-accounts/health-level.md) article.

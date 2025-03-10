@@ -104,9 +104,6 @@ The Portfolio page is tailored for advanced users, enabling them to efficiently 
     - **Deposit** more.
     - **Borrow**, **Repay**, or **Withdraw** as applicable.
 - **Filter for Active Positions**: Easily filter out zero-balance assets to focus only on active positions.
-- **View History:** Clicking this button opens a detailed history of all actions within the selected margin account.
-
-![](/img/portfolio-5.png)
 
 ## Navigating the History Tab for Transaction and Liquidation Records
 

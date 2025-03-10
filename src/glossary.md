@@ -35,6 +35,7 @@ A section in Glow Finance that displays key financial metrics of a user's margin
 
 **Contribution to Collateral**
 
+- Refers to the amount of Effective Collateral added (if the given assets is net deposited, meaning more tokens are deposited than borrowed) or detracted (if this asset are net borrows, meaning more tokens are borrowed than deposited) to the margin account due to the deposit.
 - The true measure of margin health—shows how much of your deposits are securing borrow positions.
 - A negative value means collateral is in use; if it reaches zero, liquidation is imminent.
 - Unlike Net Balance, Contribution to Collateral directly impacts your Health Level and borrowing power.
