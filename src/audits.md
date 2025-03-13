@@ -5,14 +5,14 @@ sidebar_label: "Audits"
 sidebar_position: 7
 ---
 
-Glow Finance values **security and transparency**. To protect users and ensure the reliability of our protocol, we have our smart contracts reviewed by independent security experts. Below, you can find the latest [Glow LRT Audit Report](/files/Glow-v1-report.pdf), which details our security assessment. 
+Glow Finance values **security and transparency**. To protect users and ensure the reliability of our protocol, we have our smart contracts reviewed by independent security experts. Below, you can find the latest [Glow LRT Audit Report](/files/Glow-v1-report.pdf), which details our security assessment.
 
 ## Audit Details
 
 - **Auditor:** **Certora** (Industry-leading Web3 security firm)  
-- **Date:** **December 2024**  
+- **Date:** **November 2024**  
 - **Scope:** Smart contract security, vulnerability assessments, and risk management.
-- [View Full Audit Report](/files/Glow-LRT-report.pdf)
+- [View Full Audit Report](/files/Glow-report.pdf)
 
 ## What Was Audited?
 
