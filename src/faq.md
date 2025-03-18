@@ -5,7 +5,7 @@ sidebar_label: "FAQ"
 sidebar_position: 8
 ---
 
-## General Questions
+## **General Questions**
 
 ### What is Glow Finance?
 
@@ -21,7 +21,7 @@ Glow Finance is a DeFi protocol on Solana offering margin accounts, leverage swa
 
 Yes! Your funds remain in smart contracts controlled by your margin account, not by Glow.
 
-## Portfolio Management
+## **Portfolio Management**
 
 ### Why can’t I withdraw my funds?
 
@@ -123,7 +123,7 @@ If still blocked, try lowering the withdrawal amount or reconnecting your wallet
 - Health Level constraint → The system ensures your margin account stays above 6% Health Level.
 - Liquidity constraints → Pool conditions can prevent full borrowing.
 
-## glowSOL & Restaking
+## **glowSOL & Restaking**
 
 ### What is glowSOL and how does it work?
 
@@ -150,7 +150,7 @@ Note: Users can also stake their Glow and deposit assets as part of more advance
 1. Initiate unstaking (7-day withdrawal period).
 2. Wait for your SOL to be redeemed.
 
-## Health Level & Risk Management
+## **Health Level & Risk Management**
 
 ### What is the Health Level?
 
@@ -214,7 +214,7 @@ Your margin account enters liquidation, where a portion of your collateral is so
 
 🔗 [Liquidation Guide](../src/03-margin-accounts/liquidation.md)
 
-## Transaction & Pool Liquidity & Errors
+## **Transaction & Pool Liquidity Errors**
 
 ### What are the main transaction errors users may encounter in Glow Finance?
 
@@ -293,7 +293,7 @@ Glow calculates this based on:
 
 This ensures borrowers don’t over-leverage.
 
-## Portfolio Management Errors
+## **Portfolio Management Errors**
 
 ### Why can’t I deposit or borrow?
 
@@ -393,7 +393,7 @@ Depositing this amount would exceed the deposit limit for this pool. Currently, 
 Example:
 Withdrawing this amount would exceed the amount of deposited liquidity currently available in this pool. Currently, this pool can only support withdrawing up to **remaining_token_liquidity_amount** tokens until more tokens are deposited."*
 
-## Fees & Costs
+## **Fees & Costs**
 
 ### What fees does Glow Finance charge?
 
@@ -409,7 +409,7 @@ Withdrawing this amount would exceed the amount of deposited liquidity currently
 - Trading Fees: Swap fees apply when using leverage swaps.
 - Health Level Adjustments: If borrowing occurs, your effective balance may change.
 
-## Advanced Topics
+## **Advanced Topics**
 
 ### Can I use borrow against glowSOL?
 
