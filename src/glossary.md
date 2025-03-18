@@ -2,7 +2,7 @@
 title: "Glossary"
 description: "Glossary"
 sidebar_label: "Glossary"
-sidebar_position: 9
+sidebar_position: 10
 ---
 
 ## **A**
