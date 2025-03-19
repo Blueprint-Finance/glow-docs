@@ -214,7 +214,7 @@ Your margin account enters liquidation, where a portion of your collateral is so
 
 🔗 [Liquidation Guide](../src/03-margin-accounts/liquidation.md)
 
-## **Transaction & Pool Liquidity Errors**
+## **Troubleshooting & Errors**
 
 ### What are the main transaction errors users may encounter in Glow Finance?
 
@@ -292,8 +292,6 @@ Glow calculates this based on:
 - Health Level requirements (minimum level after a transaction is 6%).
 
 This ensures borrowers don’t over-leverage.
-
-## **Portfolio Management Errors**
 
 ### Why can’t I deposit or borrow?
 
