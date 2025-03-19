@@ -5,6 +5,14 @@ sidebar_label: "FAQ"
 sidebar_position: 8
 ---
 
+- [General Questions](#general-questions)
+- [Portfolio Management](#portfolio-management)
+- [glowSOL & Restaking](#glowsol--restaking)
+- [Health Level & Risk Management](#health-level--risk-management)
+- [Troubleshooting & Errors](#troubleshooting--errors)
+- [Fees & Costs](#fees--costs)
+- [Advanced Topics](#advanced-topics)
+
 ## **General Questions**
 
 ### What is Glow Finance?
