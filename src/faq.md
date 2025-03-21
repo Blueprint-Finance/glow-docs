@@ -17,7 +17,7 @@ sidebar_position: 8
 
 ### What is Glow Finance?
 
-Glow Finance is a DeFi protocol on Solana offering margin accounts, leverage swaps, lending pools, and automated trading strategies to optimize capital efficiency.
+Glow Finance is a DeFi protocol on Solana offering margin accounts, leverage swaps, lending pools, and automated trading strategies to maximize capital efficiency.
 
 ### How does Glow Finance benefit users?
 
@@ -27,7 +27,7 @@ Glow Finance is a DeFi protocol on Solana offering margin accounts, leverage swa
 
 ### Is Glow Finance non-custodial?
 
-Yes! Your funds remain in smart contracts controlled by your margin account, not by Glow.
+Yes! Your funds remain in smart contracts controlled by your margin account connected to your wallet, not by Glow.
 
 ## **Portfolio Management**
 
@@ -48,7 +48,7 @@ Yes! Your funds remain in smart contracts controlled by your margin account, not
 
 - Deposit more collateral.
 - Repay part of your debt.
-- Use assets with a higher collateral weight.
+- Use assets with a higher [collateral weight](../src/glossary.md#collateral-values).
 
 ### How does the borrow/withdraw slider work?
 
