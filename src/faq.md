@@ -368,6 +368,18 @@ You can only withdraw or borrow up to the remaining available liquidity in the p
 
 ![](/img/faq-1.png)
 
+### What does the “Pool Utilization Too High” error mean?
+
+This error appears when a borrow/withdraw action would push the utilization of the pool above 95%, which Glow prevents to ensure enough liquidity remains available for other users.
+
+- Glow enforces a **95% utilization cap** on all pools to maintain protocol health and solvency.
+- You’ll need to **reduce your input amount**, or wait until **more liquidity is added** to the pool.
+- This error can appear on both borrow and withdraw panels when pool liquidity is nearly fully used.
+
+Clicking the **“Borrowable”** or **“Withdrawable”** value will automatically input the **maximum amount** that stays within the safe limits—ensuring the transaction won’t trigger this error.
+
+![](/img/faq-13.png)
+
 ### What errors can occur when using the Max button?
 
 There are three primary errors users might encounter when withdrawing or borrowing:

@@ -17,7 +17,11 @@ Most DeFi lending protocols use a **two-segment** interest rate model, where rat
 | --- | --- | --- |
 | **0% - 85%** | Starting interest rate: **1%** | Encourages stable borrowing and lending activity |
 | **85% - 95%** | Interest rate increases to **15%** | Balances supply and demand as liquidity tightens |
-| **95% - 100%** | Interest rate spikes to **150%**, maxing out at **200%** | Rapidly attracts deposits to prevent liquidity crunches |
+| **95% - 100%** | Interest rate spikes to **150%**, maxing out at **200%** | Strongly incentivizes new deposits and borrower repayments as the pool nears full utilization |
+
+:::note
+Due to [Glow’s 95% utilization cap](../03-margin-accounts/integration-with-margin-pools.md#key-features), users will not be able to borrow in a way that pushes a pool above 95% utilization. The steep final segment (95%–100%) still exists in the interest rate curve to ensure the system reacts appropriately as utilization approaches the cap, serving as an incentive for additional deposits and borrower repayments.
+:::
 
 **Key Parameter Values:**
 
@@ -31,7 +35,7 @@ Most DeFi lending protocols use a **two-segment** interest rate model, where rat
 **Why does this matter?**
 
 - The **first two segments** ensure a **predictable and sustainable** borrowing/lending experience.
-- The **third segment** helps **prevent liquidity shortages** by offering **extremely high rates** to incentivize new deposits.
+- The third segment helps maintain healthy pool liquidity by offering extremely high rates to incentivize new deposits and borrower repayments.
 
 ### 2. Tighter Interest Rate Spreads for Fairer Lending
 
@@ -39,13 +43,13 @@ Interest rate **spread** refers to the **difference between lending and borrowin
 
 **How Glow improves this:**
 
-- **Higher utilization thresholds** → Glow pools remain more **efficient** than competitors.
+- **Higher utilization thresholds** → Glow pools maximize capital efficiency.
 - **Tighter spreads** → Lenders **earn more**, borrowers **pay less**.
-- **Dynamic rate adjustments** → Rates adjust smoothly to market conditions, ensuring a **competitive and predictable experience**.
+- **Dynamic rate adjustments** → Rates adjust smoothly to market conditions, ensuring a competitive and predictable experience.
 
 ### 3. Addressing Liquidity Risk with Adaptive Incentives
 
-As utilization nears **100%**, **liquidity risk increases**—lenders may be unable to withdraw funds since **most assets are borrowed**. This is a common issue in **all** pooled lending models (e.g., **Aave, Compound, Solend, Port Finance**).
+As utilization nears 100%, liquidity risk increases—lenders may be temporarily unable to withdraw funds until additional liquidity is added to the pool, as most assets are actively borrowed. This is a common limitation in all pooled lending models (e.g., Aave, Compound, Save).
 
 **Glow’s solution?**
 

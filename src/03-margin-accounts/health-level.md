@@ -64,7 +64,6 @@ Repaying your debts, even partially, directly improves your Health Level. Naviga
 
 - **Partial Repayment Helps**: Even repaying a portion of your debt can improve your Health Level, making it easier to avoid liquidation risks.
 - **Future Feature**: In a later release, users will have the option to repay debts directly from their  wallet. For now, ensure you deposit the debt asset into the platform and use the “Repay” functionality to clear your liabilities.
-- **Learn More**: For a detailed guide on how to repay debts using Glow, visit our [Repayment Guide](link here).
 
 This feature ensures that you can manage your liabilities effectively, with flexibility to improve your account's health incrementally or fully at your convenience.
 
