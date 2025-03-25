@@ -72,7 +72,7 @@ Once your **wBTC is deposited**, you can **use it as collateral** to borrow **SO
     - Your **available borrowing power** depends on your **Health Level** and deposited collateral.
     - You can check your borrowing capacity on the **Borrow** tab of the asset page.
     - **Use the slider** to see the **maximum amount you can borrow** while maintaining a safe Health Level.
-    - **Max Leverage**: The highest possible leverage is reached when your **Health Level** is at 6%. See [Max Leverage](../glossary#max-leverage) for details.
+    - **Max Leverage**: The highest possible leverage is reached when your **Health Level** is at 10%. See [Max Leverage](../glossary#max-leverage) for details.
 3. **Borrow SOL**
     - Click the Borrow button next to SOL in the **Markets** list, or click on the SOL row in the assets list to open the **Asset Details** page, then navigate to the **Borrow** tab.
     - Enter the amount of **SOL** you want to borrow. Your **available borrowing power** is based on the **collateral weight** of your wBTC.

@@ -41,7 +41,7 @@ Yes! Your funds remain in smart contracts controlled by your margin account conn
 
 1. Deposit collateral into your margin account.
 2. Select an asset to borrow.
-3. Adjust the borrow amount (check the projected health level displayed in the panel since you will not be able to continue with the transaction if it would result in a health level below 6%).
+3. Adjust the borrow amount (check the projected health level displayed in the panel since you will not be able to continue with the transaction if it would result in a health level below 10%).
 4. Click the “Borrow” button and approve the transaction.
 
 ### How do I increase my borrow limit?
@@ -70,12 +70,12 @@ This can happen in quick succession if your position remains undercollateralized
 
 These three terms are displayed in the transaction panel depending on the type of action and refer to different concepts in Glow Finance:
 
-1. Withdrawable Amount → The amount you can safely withdraw without dropping your Health Level below 6%. You may click this field to input it to the panel.
-2. Borrowable Amount → The maximum amount you can borrow while keeping your Health Level above 6% and considering pool liquidity constraints. You may click this field to input it to the panel.
+1. Withdrawable Amount → The amount you can safely withdraw without dropping your Health Level below 10%. You may click this field to input it to the panel.
+2. Borrowable Amount → The maximum amount you can borrow while keeping your Health Level above 10% and considering pool liquidity constraints. You may click this field to input it to the panel.
 
 ### Why does the "Withdraw" tab show more than I can actually withdraw?
 
-Clicking the "Max" button inputs the total amount of the asset deposited in your margin account. However, your actual withdrawable amount may be limited by your borrowed assets, as withdrawing too much could lower your Health Level below 6%, which is not allowed.
+Clicking the "Max" button inputs the total amount of the asset deposited in your margin account. However, your actual withdrawable amount may be limited by your borrowed assets, as withdrawing too much could lower your Health Level below 10%, which is not allowed.
 
 **Solutions:**
 
@@ -84,9 +84,9 @@ Clicking the "Max" button inputs the total amount of the asset deposited in your
 
 ### What does the Max button do?
 
-The Max button inputs the highest amount the user can borrow or withdraw without lowering their Health Level below 6%. This ensures that users never accidentally enter liquidation risk.
+The Max button inputs the highest amount the user can borrow or withdraw without lowering their Health Level below 10%. This ensures that users never accidentally enter liquidation risk.
 
-For borrowing, clicking Max will set the input field to the largest amount that keeps the account’s Health Level at or above 6%.
+For borrowing, clicking Max will set the input field to the largest amount that keeps the account’s Health Level at or above 10%.
 
 ### What is the difference between “Max,” “Withdrawable,” and “Borrowable” amounts?
 
@@ -128,7 +128,7 @@ If still blocked, try lowering the withdrawal amount or reconnecting your wallet
 ### Why does my borrow amount show lower than expected?
 
 - Borrowing limit reached → Glow enforces borrow caps to prevent excessive leverage.
-- Health Level constraint → The system ensures your margin account stays above 6% Health Level.
+- Health Level constraint → The system ensures your margin account stays above 10% Health Level.
 - Liquidity constraints → Pool conditions can prevent full borrowing.
 
 ## **glowSOL & Restaking**
@@ -175,8 +175,8 @@ Health Level = (Effective Collateral / Required Collateral) x 100
 
 Health Level is a risk indicator that helps users monitor their collateral levels. When borrowing or withdrawing, the system prevents transactions that would immediately put the account at risk of liquidation. This ensures users maintain a buffer of collateral while still permitting high leverage, reducing the likelihood of forced liquidations right after a transaction.
 
-- Glow enforces a minimum Health Level of 6% after borrowing/withdrawing.
-- If your action would result in a Health Level below 6%, you will see an error.
+- Glow enforces a minimum Health Level of 10% after borrowing/withdrawing.
+- If your action would result in a Health Level below 10%, you will see an error.
 
 🔗 [Liquidation Guide](../src/03-margin-accounts/liquidation.md).
 
@@ -201,12 +201,12 @@ The Glow UI provides a real-time projection of your Health Level before executin
 
 ![](/img/faq-2.png)
 
-### Why does Glow Finance block transactions that lower Health Level below 6%?
+### Why does Glow Finance block transactions that lower Health Level below 10%?
 
-- Glow Finance enforces a minimum Health Level (HL) of 6% to prevent users from entering an extremely risky position that could result in liquidation.
-- If a withdrawal or borrow action would bring the HL below 6%, the button to continue submitting the transaction is disabled and an error message is displayed.
+- Glow Finance enforces a minimum Health Level (HL) of 10% to prevent users from entering an extremely risky position that could result in liquidation.
+- If a withdrawal or borrow action would bring the HL below 10%, the button to continue submitting the transaction is disabled and an error message is displayed.
 
-Example:*"This transaction would bring your Health Level below the minimum required (6%). Please adjust your withdrawal/borrow amount to keep your account safe."*
+Example:*"This transaction would bring your Health Level below the minimum required (10%). Please adjust your withdrawal/borrow amount to keep your account safe."*
 
 ### Why is my Health Level stuck at 0%?
 
@@ -237,7 +237,7 @@ There are three primary transaction errors that users may face when performing b
     - The error message will indicate the maximum amount the user can withdraw or borrow at that moment.
     - Like the pool limit error, the UI includes a clickable input value for easy adjustment.
 3. Health Level Error (Account Below Minimum Health Level)
-    - Occurs when a withdrawal or borrow transaction would reduce the Health Level (HL) below the minimum threshold (6%).
+    - Occurs when a withdrawal or borrow transaction would reduce the Health Level (HL) below the minimum threshold (10%).
     - To prevent liquidation, Glow Finance blocks any transaction that would lower HL below the required safety level.
     - Users will see an error message explaining the situation and will need to adjust their transaction amount.
 
@@ -297,7 +297,7 @@ Glow calculates this based on:
 
 - Your margin account's collateral.
 - The pool’s available liquidity.
-- Health Level requirements (minimum level after a transaction is 6%).
+- Health Level requirements (minimum level after a transaction is 10%).
 
 This ensures borrowers don’t over-leverage.
 
@@ -372,7 +372,7 @@ You can only withdraw or borrow up to the remaining available liquidity in the p
 
 This error appears when a borrow/withdraw action would push the utilization of the pool above 95%, which Glow prevents to ensure enough liquidity remains available for other users.
 
-- Glow enforces a **95% utilization cap** on all pools to maintain protocol health and solvency.
+- Glow enforces a [95% utilization cap](../src/03-margin-accounts/optimized-lending-pool-mechanics.md) on all pools to maintain protocol health and solvency.
 - You’ll need to **reduce your input amount**, or wait until **more liquidity is added** to the pool.
 - This error can appear on both borrow and withdraw panels when pool liquidity is nearly fully used.
 
@@ -385,6 +385,8 @@ Clicking the **“Borrowable”** or **“Withdrawable”** value will automatic
 
 This error appears when a token is **not enabled for borrowing** in Glow Finance. Even if you have sufficient collateral and your Health Level is high, some tokens are **deposit-only** and cannot be borrowed through the protocol.
 
+These tokens may still count towards account collateral, but cannot be borrowed.
+
 If you need exposure to this asset, consider **swapping into it** after borrowing another token that is borrowable.
 
 ![](/img/faq-14.png)
@@ -393,9 +395,9 @@ If you need exposure to this asset, consider **swapping into it** after borrowin
 
 There are three primary errors users might encounter when withdrawing or borrowing:
 
-1. Health Level Below 6%
-    - Error: The transaction is blocked if it would reduce Health Level below 6%.
-    - Fix: Adjust the amount to stay above 6%.
+1. Health Level Below 10%
+    - Error: The transaction is blocked if it would reduce Health Level below 10%.
+    - Fix: Adjust the amount to stay above 10%.
 2. Liquidity Error (Insufficient Pool Liquidity)
     - Error: The pool doesn’t have enough liquidity to fulfill the full withdrawal/borrow.
     - Fix: Click the underlined, dynamic input value in the error message to auto-adjust the amount.
