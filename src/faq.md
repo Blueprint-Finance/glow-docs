@@ -380,6 +380,15 @@ Clicking the **“Borrowable”** or **“Withdrawable”** value will automatic
 
 ![](/img/faq-13.png)
 
+
+### Why do I see “This token cannot be borrowed”?
+
+This error appears when a token is **not enabled for borrowing** in Glow Finance. Even if you have sufficient collateral and your Health Level is high, some tokens are **deposit-only** and cannot be borrowed through the protocol.
+
+If you need exposure to this asset, consider **swapping into it** after borrowing another token that is borrowable.
+
+![](/img/faq-14.png)
+
 ### What errors can occur when using the Max button?
 
 There are three primary errors users might encounter when withdrawing or borrowing:
