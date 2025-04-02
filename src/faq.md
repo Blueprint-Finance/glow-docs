@@ -149,7 +149,7 @@ glowSOL is Glow’s Liquid Restaking Token (LRT) that allows you to:
 2. glowSOL will be minted automatically.
 3. Your staked SOL continues to earn staking rewards.
 
-Note: Users can also stake their Glow and deposit assets as part of more advanced strategies. For example, you can deposit wBTC, borrow SOL, and then restake it. See our guide on [depositing wBTC and borrowing SOL for restaking](../src/02-LRT/deposit-borrow-stake.md).
+Note: Users can also stake their Glow and deposit assets as part of more advanced strategies. For example, you can deposit wBTC, borrow SOL, and then restake it.
 
 *In the future releases, users will also be able to restake directly from within a margin account.*
 
