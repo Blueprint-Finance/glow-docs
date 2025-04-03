@@ -68,7 +68,7 @@ The USD value of all tokens and positions owned in a margin account, including d
 
 ### **Borrowing**
 
-The act of taking out a loan using assets as collateral, commonly used in leverage swaps and margin trading.
+The act of taking out a loan using assets as collateral, commonly used in margin trading.
 
 Glow’s Implementation: Users can borrow assets through Margin Pools, using deposited collateral in their Margin Accounts.
 
@@ -95,7 +95,7 @@ The maximum amount of an asset a user can borrow, determined by market condition
 
 The ability to maximize asset utilization while minimizing idle liquidity.
 
-Glow’s Solution: Through Margin Accounts, Pooled Lending, and Leverage Swaps, Glow optimizes capital deployment and borrowing strategies.
+Glow’s Solution: Through Margin Accounts and Pooled Lending, Glow optimizes capital deployment and borrowing strategies.
 
 ### **Claim(s)**
 
@@ -204,7 +204,6 @@ A liquid restaking token (LRT) that represents staked SOL assets via Solayer, al
 **glowSOL Use Cases**:
 
 - Can be used as collateral for borrowing.
-- Tradable within Glow’s Leverage Swaps and Swaps.
 - Earns Solayer and Glow Points as part of Glow’s incentive programs.
 
 ---
@@ -300,7 +299,7 @@ The process of staking an already staked asset to earn additional yield and rewa
 
 A structured, automated strategy that allows users to deposit a specific token and seamlessly execute complex DeFi actions using Glow’s products and adapters. Recipes guide users step-by-step through processes such as leveraging, staking, or yield optimization, simplifying interactions with multiple protocols.
 
-You can think about it as a pre-set strategy that helps users deposit a token and automatically complete multiple DeFi steps in one go. Recipes make it easy to do things like borrowing, swapping, or staking without manual transactions—Glow handles the process for you.
+You can think about it as a pre-set strategy that helps users deposit a token and automatically complete multiple DeFi steps in one go. Recipes make it easy to do things like borrowing or staking without manual transactions—Glow handles the process for you.
 
 **Examples**:
 

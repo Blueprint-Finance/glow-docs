@@ -131,17 +131,6 @@ The **History** tab offers users a comprehensive log of all interactions with th
         - **Timestamp**: Date and time of each event.
         - **Transaction Link**: Direct access to blockchain explorer for transparency.
 
-### Liquidation Records
-
-- **Expandable Entries**: For liquidations involving multiple **sub-swaps** required to restore the margin account's Health Level to a healthy state, users can expand the log to view each sub-swap in detail.
-    - **Metrics Shown**:
-        - Assets liquidated.
-        - Liquidation amount
-        - Any liquidation fees paid.
-        - Account Holdings Affected**.**
-
-The inclusion of **sub-swap** terminology ensures clarity for users, reflecting the detailed breakdown of actions performed during complex liquidation events. This provides a comprehensive view of how their account was adjusted to maintain health.
-
 ### Immediate Alerts
 
 - **Post-Liquidation Modal**: Once a liquidation event is complete (usually within a few seconds), users receive a notification in the form of a modal. This provides them with the ability to navigate directly to the History tab to review detailed insights, including what triggered the liquidation and how the event unfolded.

@@ -15,9 +15,9 @@ Designed for sophisticated investors and large-scale users, Glow introduces a su
 
 ## Why Glow Finance Is Different?
 
-The Glow Finance isn’t just about offering traditional DeFi services in a new package; it’s about fundamentally rethinking how capital can be mobilized and utilized within the DeFi space. Whether it’s through the ability to leverage staked assets without having to withdraw and lose staking rewards or the capacity to swap borrowed assets directly for other yield-bearing assets, Glow empowers users to make their capital work harder.
+The Glow Finance isn’t just about offering traditional DeFi services in a new package; it’s about fundamentally rethinking how capital can be mobilized and utilized within the DeFi space.
 
-By harnessing the speed, scalability, and security of the Solana blockchain and its Solana Virtual Machine (SVM) architecture, Glow provides a flexible and innovative environment for users looking to optimize their strategies. Our cross-margin account capabilities allow for dynamic interaction between assets, enabling users to manage, borrow, and leverage positions within a unified framework. With on-chain margin accounts, lending pools, and leverage swaps,
+By harnessing the speed, scalability, and security of the Solana blockchain and its Solana Virtual Machine (SVM) architecture, Glow provides a flexible and innovative environment for users looking to optimize their strategies. Our cross-margin account capabilities allow for dynamic interaction between assets, enabling users to manage, borrow, and leverage positions within a unified framework. With on-chain margin accounts, and lending pools.
 
 Glow unlocks a new level of composability that has been missing from traditional DeFi models and opens up possibilities for limitless composable integrations with other SVM protocols, cementing Glow as a critical DeFi lego.
 

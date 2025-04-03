@@ -5,7 +5,7 @@ sidebar_label: "Tooltips"
 sidebar_position: 9
 ---
 
-Tooltips are small informational pop-ups that appear when users hover over an element in the UI. They provide contextual insights, helping users understand financial metrics, lending and borrowing mechanics, leverage swaps, and other core functionalities of Glow Finance.
+Tooltips are small informational pop-ups that appear when users hover over an element in the UI. They provide contextual insights, helping users understand financial metrics, lending and borrowing mechanics, and other core functionalities of Glow Finance.
 
 Each tooltip is strategically placed to assist users in making informed decisions while interacting with the Glow application.
 

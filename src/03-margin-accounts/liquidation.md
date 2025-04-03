@@ -46,7 +46,7 @@ Glow Finance provides timely alerts to users in the web application, enabling th
 
 ![](/img/liq-3.png)
 
-- **Asset Breakdown:** When a user clicks on one of the liquidated account rows in the initial modal, they are directed to a detailed view modal. This second modal provides a comprehensive breakdown of the liquidation, including each subswap involved in the process, liquidation fees, timestamps, and a link to the corresponding blockchain transaction on SolScan’s block explorer for full transparency.
+- **Asset Breakdown:** When a user clicks on one of the liquidated account rows in the initial modal, they are directed to a detailed view modal. This second modal provides a comprehensive breakdown of the liquidation, liquidation fees, timestamps, and a link to the corresponding blockchain transaction on SolScan’s block explorer for full transparency.
 
 ![](/img/liq-4.png)
 

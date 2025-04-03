@@ -61,7 +61,7 @@ Glow’s vault dynamically manages SOL and sSOL liquidity, ensuring smooth withd
 glowSOL isn’t just a staking token; it’s a gateway to advanced DeFi opportunities:
 
 - **Liquidity Without Unstaking:** Retain liquidity while earning rewards on staked SOL.
-- **DeFi Strategies:** Use glowSOL as collateral for swaps, leveraging and more within Glow Finance’s ecosystem.
+- **DeFi Strategies:** Use glowSOL as collateral within Glow Finance’s ecosystem.
 - **Transparent and Secure:** The platform provides real-time visibility into minting ratios, staking yields, and withdrawal statuses while maintaining robust security with smart contracts and vaults.
 
 ## Example Scenarios

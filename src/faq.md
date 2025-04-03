@@ -17,11 +17,11 @@ sidebar_position: 8
 
 ### What is Glow Finance?
 
-Glow Finance is a DeFi protocol on Solana offering margin accounts, leverage swaps, lending pools, and automated trading strategies to maximize capital efficiency.
+Glow Finance is a DeFi protocol on Solana offering margin accounts, lending pools, and automated trading strategies to maximize capital efficiency.
 
 ### How does Glow Finance benefit users?
 
-- One account for everything → Deposit, borrow, swap, and trade from a single margin account.
+- One account for everything → Deposit, borrow, and trade from a single margin account.
 - Capital Efficiency → Maximize your deposited capital through strategic leverage and pooled lending.
 - Automated Strategies → Glow Recipes allow users to execute multi-step DeFi operations automatically.
 
@@ -387,8 +387,6 @@ This error appears when a token is **not enabled for borrowing** in Glow Finance
 
 These tokens may still count towards account collateral, but cannot be borrowed.
 
-If you need exposure to this asset, consider **swapping into it** after borrowing another token that is borrowable.
-
 ![](/img/faq-14.png)
 
 ### What errors can occur when using the Max button?
@@ -435,7 +433,6 @@ Withdrawing this amount would exceed the amount of deposited liquidity currently
 ### Why does my balance show less than expected after a trade?
 
 - Slippage: The price moved between your order and execution.
-- Trading Fees: Swap fees apply when using leverage swaps.
 - Health Level Adjustments: If borrowing occurs, your effective balance may change.
 
 ## **Advanced Topics**

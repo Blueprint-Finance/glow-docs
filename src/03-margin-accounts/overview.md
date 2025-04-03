@@ -16,9 +16,9 @@ Margin accounts are a core component of the Glow Finance protocol, providing a s
 Margin accounts in Glow are dynamic, collateral-backed accounts where users can deposit assets like USDC, SOL or other tokens, that serve two functions:
 
 1. **Interest Generation**: Deposits in a margin account are automatically transferred to margin pools, where they immediately begin earning variable interest.
-2. **Collateral Provision**: Deposited assets also act as collateral for borrowing, leverage swaps, and other advanced trading strategies, with the collateral amount calculated based on each asset’s collateral weight.
+2. **Collateral Provision**: Deposited assets also act as collateral for borrowing and other advanced trading strategies, with the collateral amount calculated based on each asset’s collateral weight.
 
-These accounts serve as the foundation for risk-segmented strategies and allow for simultaneous positions across Glow’s margin pools, enabling strategies like delta-neutral farming or high-leverage swaps.
+These accounts serve as the foundation for risk-segmented strategies and allow for simultaneous positions across Glow’s margin pools, enabling strategies like delta-neutral farming.
 
 ## Key Components and Calculations
 
@@ -26,7 +26,7 @@ These accounts serve as the foundation for risk-segmented strategies and allow f
 
 The Glow margin account architecture centers on calculating **effective collateral** and **required collateral** to support borrowing and prevent liquidation.
 
-- **Available Collateral**: This is the collateral value that users can use for new actions, such as borrowing or additional swaps. Glow adjusts the value based on each asset’s **collateral weight**, a risk adjustment metric that scales the collateral’s value relative to its market volatility and ability to liquidate.
+- **Available Collateral**: This is the collateral value that users can use for new actions, such as borrowing. Glow adjusts the value based on each asset’s **collateral weight**, a risk adjustment metric that scales the collateral’s value relative to its market volatility and ability to liquidate.
     - Example: An asset like USDC may have a high collateral weight, close to 1.0, given its stability, whereas more volatile assets like SOL may be weighted lower, affecting the amount counted towards an account’s effective collateral.
 - **Required Collateral**: Required collateral is the minimum collateral needed to maintain the account's debt positions and prevent liquidation. It is calculated dynamically, accounting for current borrow levels, leverage ratios, and asset price fluctuations.
 
@@ -43,7 +43,7 @@ The health level is a percentage that helps users visualize the risk associated 
 - **100.0%**: Indicates a stable, well-collateralized account with no borrowing positions (required collateral = 0).
 - **Below 20.0%**: Suggests that the user may soon need to add collateral or reduce borrowings to avoid liquidation.
 - **5.0% Warning Threshold**: At this level, the UI alerts the user with a warning banner, emphasizing the need for immediate action to prevent liquidation.
-- **Maximum Leverage Buffer**: The maximum borrowing or swap leverage allowed leaves the health level at **6.0%**, granting users the optionality to access maximum leverage while retaining a small buffer before the warning alert is triggered.
+- **Maximum Leverage Buffer**: The maximum borrowing allowed leaves the health level at **6.0%**, granting users the optionality to access maximum leverage while retaining a small buffer before the warning alert is triggered.
 - **0.0%:** When the health level reaches 0.0% the margin account is slated for partial liquidation - Glow’s liquidator will attempt to exchange only as much value in assets from a user’s margin account as is necessary to cover enough debt to return the health level to above 0%. This protects the rest of the users of the protocol. Read the [liquidations page](../03-margin-accounts/liquidation.md) to read more about liquidations on Glow.
 
 :::tip
@@ -69,23 +69,17 @@ Adapters enable the margin account to:
 
 - **Integrate Cross-Protocol Collateral**: Adapters could allow users to count deposits made on external protocols as collateral within their Glow margin account. This opens opportunities for advanced strategies such as arbitraging interest rates across lending protocols, or leveraging deposits in one platform while borrowing or trading in another.
 - **Enhance Cross-Platform Operations**: For example, users can route borrowed assets to external AMMs (Automated Market Makers) for trading or to external protocols for automated yield optimization. Future integrations may also include routing to Central Limit Order Books (CLOBs) for more sophisticated trading strategies.
-- **Optimize Trade Execution**: By leveraging adapters, users can access optimized swap routes through aggregators like Jupiter on Solana, ensuring the most efficient trades across multiple DEXs.
+- **Optimize Trade Execution**: By leveraging adapters, users can access optimized routes through aggregators like Jupiter on Solana, ensuring the most efficient trades across multiple DEXs.
 
 ## Multiple Margin Accounts for Segmented Strategies
 
 Both Glow’s margin accounts and the application UI support **multi-account structures** controlled by a single wallet address. This setup enables users to isolate different trading strategies and control risk:
 
 - **Portfolio Management**: Within the Glow Portfolio page of the UI, users can view all active margin accounts, switching between them to monitor health, collateral levels, and specific positions and history for each account.
-- **Risk Segmentation**: Users can create accounts dedicated to different strategies, ensuring that liquidation or risk in one account does not impact other positions. This has many benefits, e.g. some users may use one account for delta-neutral farming, while using another for high-leverage swaps.
+- **Risk Segmentation**: Users can create accounts dedicated to different strategies, ensuring that liquidation or risk in one account does not impact other positions.
 
 ## Account History and Transparency
 
 Glow’s **Account History** feature within the Portfolio tab offers full transactional records, allowing users to track all deposits, borrows, and liquidations.
 
-The history includes collapsible entries for liquidation events, offering users a transparent view of every action taken to restore an account’s Health Level. For cases where a single liquidation required multiple steps, each **sub-swap** is displayed in detail. This feature allows users to see:
-
-- The specific assets liquidated.
-- The corresponding liquidation amounts.
-- How each sub-swap contributed to stabilizing the account’s Health Level.
-
-By breaking down the process into sub-swaps, users gain a clearer understanding of how Glow managed their account during liquidation and the overall impact on their holdings. This level of transparency ensures users can confidently evaluate past events and optimize future strategies.
+The history includes collapsible entries for liquidation events, offering users a transparent view of every action taken to restore an account’s Health Level.
