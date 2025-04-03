@@ -23,7 +23,9 @@ glowSOL allows users to access liquidity without waiting for the traditional sta
 
 Users earn staking yield, Glow Points, Solayer Points, and AVS rewards while retaining the flexibility to trade or leverage their glowSOL holdings.
 
-1. **Staking Yield**: Users earn **~8% annual yield** from Solayer staking rewards, providing consistent growth for their staked assets.
+1. **Staking Yield**: glowSOL earns top-tier staking rewards through Solayer’s validator infrastructure.  
+  → 🔗 [Check current APY on restake.glowfinance.xyz](https://restake.glowfinance.xyz)  
+  → 🔗 [Learn how Solayer generates rewards](https://docs.solayer.org/assets/mega-validator/transaction-acceleration/endoavs)
 2. **Glow Points Incentives**: glowSOL holders receive **Glow Points**. These points are part of Glow’s broader incentive program to reward active participation.
 3. **Solayer Points**: Additional rewards come in the form of **Solayer Points**, further enhancing the value of holding glowSOL.
 
