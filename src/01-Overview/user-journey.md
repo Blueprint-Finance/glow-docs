@@ -39,7 +39,7 @@ Example: If a user deposits 1,000 USDC into the pool and the current utilization
 
 ## 4. Managing Multiple Margin Accounts
 
-Glow offers the option to create multiple margin accounts within a single wallet, allowing users to isolate different strategies and segment and manage risk more effectively. For instance, a user may have one margin account dedicated to a high-leverage swap strategy while maintaining a separate account for delta-neutral farming. This segmentation ensures that a risky position in one account doesn’t impact the stability of others. If one account is liquidated, it would not affect the other margin account at all.
+Glow offers the option to create multiple margin accounts within a single wallet, allowing users to isolate different strategies and segment and manage risk more effectively. This segmentation ensures that a risky position in one account doesn’t impact the stability of others. If one account is liquidated, it would not affect the other margin account at all.
 
 **Visual Management Tools:**
 
