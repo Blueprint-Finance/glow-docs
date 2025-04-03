@@ -17,7 +17,7 @@ glowSOL stands out due to its automated processes:
 
 ## Unlock Liquidity for Restaked Assets
 
-glowSOL allows users to access liquidity without waiting for the traditional staking lock-up period, enabling immediate use of their staked assets. Users can use their glowSOL in various DeFi activities, such as swaps, lending, or collateralizing other positions within Glow Finance.
+glowSOL allows users to access liquidity without waiting for the traditional staking lock-up period, enabling immediate use of their staked assets. Users can use their glowSOL in various DeFi activities, lending, or collateralizing other positions within Glow Finance.
 
 ## Earn Rewards While Maintaining Liquidity
 
@@ -31,7 +31,6 @@ Users earn staking yield, Glow Points, Solayer Points, and AVS rewards while ret
 
 glowSOL is compatible with Glow Finance’s advanced strategies:
 
-- **Swaps**: glowSOL can be directly swapped for other assets.
 - **Leveraging**: glowSOL can be leveraged to enhance points exposure within the ecosystem, allowing users to earn additional rewards without taking on significant additional risk.
 
 ## Dynamic Minting and Redemption Ratios
@@ -42,7 +41,6 @@ The value of glowSOL is dynamically calculated based on the total assets in Glow
 
 glowSOL holders can utilize their tokens across Glow Finance’s features:
 
-- **Swaps:** Execute swaps using glowSOL as collateral.
 - **Borrowing:** Use glowSOL to access liquidity while maintaining exposure to staking rewards.
 - **Earning Strategies:** Leverage glowSOL for advanced DeFi strategies.
 
