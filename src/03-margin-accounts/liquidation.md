@@ -35,7 +35,7 @@ Glow Finance provides timely alerts to users in the web application, enabling th
 
     - **Health Alert Modal** Summarizes all at-risk accounts, helping users prioritize which accounts require immediate action.
 
-![](/img/liq-2.png)
+![](/img/h-6.png)
 
 
 ## Liquidation Notification
@@ -44,7 +44,10 @@ Glow Finance provides timely alerts to users in the web application, enabling th
 
 - **Account(s) Liquidated:** A detailed summary of the affected accounts. The modal displays the accounts liquidated since the last time the user viewed and acknowledged this information. Once the **ACK LIQUIDATIONS** button is clicked, the app considers the shown liquidations acknowledged.
 
-![](/img/liq-3.png)
+<img
+  src="/img/liq-3.png"
+  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+/>
 
 - **Asset Breakdown:** When a user clicks on one of the liquidated account rows in the initial modal, they are directed to a detailed view modal. This second modal provides a comprehensive breakdown of the liquidation, liquidation fees, timestamps, and a link to the corresponding blockchain transaction on SolScan’s block explorer for full transparency.
 

@@ -12,14 +12,20 @@ Glow Finance provides a robust set of configurable options to enhance user exper
 
 The **Settings Modal** is the central hub for managing user preferences, offering control over various aspects such as time and date formats, and most importantly, the connection to RPC nodes.
 
-![](/img/settings-1.png)
+<img
+  src="/img/settings-1.png"
+  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+/>
 
 ### **Key Features**:
 
 - **Node Selection**: Choose between default and custom RPC nodes.
 - **Time Display and Date Format**: Customize how time and date are displayed in the application.
 
-![](/img/settings-2.png)
+<img
+  src="/img/settings-2.png"
+  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+/>
 
 ## **Default vs. Custom RPC Node Setup**
 
@@ -34,7 +40,10 @@ RPC nodes facilitate the communication between the application and the blockchai
 
 Custom nodes can be configured to improve performance, enhance privacy, or access specific network features.
 
-![](/img/settings-3.png)
+<img
+  src="/img/settings-3.png"
+  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+/>
 ### **Step-by-Step Guide**:
 
 1. **Select 'Custom RPC URL'** from the Node Selection dropdown.
@@ -43,11 +52,17 @@ Custom nodes can be configured to improve performance, enhance privacy, or acces
     - Use the **Test** button to validate the connection.
     - A green success message confirms a valid setup.
 
-![](/img/settings-4.png)
+    <img
+      src="/img/settings-4.png"
+      style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+    />
 
     - If the connection fails, a red error message will appear.
 
-![](/img/settings-5.png)
+    <img
+      src="/img/settings-5.png"
+      style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+    />
 
 4. **Save Preferences** once the connection is successfully tested.
 
