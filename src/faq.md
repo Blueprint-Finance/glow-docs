@@ -262,12 +262,18 @@ Yes! The underlined value in the error message is dynamic and clickable. Clickin
 - Not enough liquidity in the lending pool.
 - If this was the case, you will see the following error message:
 
-![](/img/faq-3.png)
+<img
+  src="/img/faq-3.png"
+  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+/>
 
 - Your borrow limit is reached.
 - Your Health Level would drop below 5%, triggering a safety block. If this was the case, you will see the following error message:
 
-![](/img/faq-4.png)
+<img
+  src="/img/faq-4.png"
+  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+/>
 
 ### Why can’t I withdraw even though I have enough balance?
 
@@ -311,7 +317,10 @@ This ensures borrowers don’t over-leverage.
 
 The maximum leverage available when borrowing is equal to the amount that would leave the account's Health Level at exactly 6.0%. If a transaction would reduce the Health Level below this threshold, a "Health Level too low" error will appear at the bottom of the panel as shown below.
 
-![](/img/faq-5.png)
+<img
+  src="/img/faq-5.png"
+  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+/>
 
 ### What does the “Deposit Limit Violation” error mean?
 
@@ -323,7 +332,10 @@ The Deposit Limit Violation error appears when your deposit exceeds the maximum 
 
 This safeguard ensures liquidity balance and prevents overloading the pool. Clicking the underlined link in the error messaging will input the maximum allowable amount of tokens to deposit without violating the limit.
 
-![](/img/faq-6.png)
+<img
+  src="/img/faq-6.png"
+  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+/>
 
 The images below show the two places in the app UI where you can check the current deposit limit for an asset, and the current amount of that asset borrowed globally across the protocol:
 
@@ -345,7 +357,10 @@ This safeguard ensures that the protocol remains liquid and prevents excessive b
 
 Clicking the underlined link in the error messaging will input the maximum borrowawble amount of tokens without violating the limit, just as clicking the “borrowable” field towards the top of the panel would do.
 
-![](/img/faq-9.png)
+<img
+  src="/img/faq-9.png"
+  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+/>
 
 The images below show the two places in the app UI where you can check the current borrow limit for an asset, and the current amount borrowed of that asset globally across the protocol:
 
@@ -378,7 +393,10 @@ This error appears when a borrow/withdraw action would push the utilization of t
 
 Clicking the **“Borrowable”** or **“Withdrawable”** value will automatically input the **maximum amount** that stays within the safe limits—ensuring the transaction won’t trigger this error.
 
-![](/img/faq-13.png)
+<img
+  src="/img/faq-13.png"
+  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+/>
 
 
 ### Why do I see “This token cannot be borrowed”?
@@ -387,7 +405,10 @@ This error appears when a token is **not enabled for borrowing** in Glow Finance
 
 These tokens may still count towards account collateral, but cannot be borrowed.
 
-![](/img/faq-14.png)
+<img
+  src="/img/faq-14.png"
+  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+/>
 
 ### What errors can occur when using the Max button?
 
