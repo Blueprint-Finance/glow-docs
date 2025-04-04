@@ -33,11 +33,20 @@ Glow even supports creating multiple margin accounts under a single wallet, thus
 
 - Select your preferred wallet from the available options.
 
-![](/img/create-2.png)
+<img
+  src="/img/create-2.png"
+  style={{ maxWidth: "500px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+/>
+
 
 - Approve the connection in your wallet interface to allow Glow to view your balances and activities.
 
-![](/img/create-3.png)
+<img
+  src="/img/create-3.png"
+  alt="New Margin Account Rent Fee Modal"
+  style={{ maxWidth: "500px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+/>
+
 
 
 ## Step 2: Access Margin Account Creation
@@ -57,7 +66,11 @@ In the **New Margin Account** modal:
 - The modal explains that this rent fee is required by Solana and will be fully refundable upon account closure.
 - Click **Pay and Create Margin Account** to proceed.
 
-![](/img/create-5.png)
+<img
+  src="/img/create-5.png"
+  style={{ maxWidth: "600px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+/>
+
 
 ## Step 4: Handle Insufficient SOL Balance (If Applicable)
 
@@ -66,7 +79,11 @@ If you don’t have enough SOL in your wallet:
 - The button will be disabled, and an error message will prompt you to add more SOL to your wallet.
 - The button will be disabled, and an error message will prompt you to add more SOL to your wallet.
 
-![](/img/create-6.png)
+<img
+  src="/img/create-6.png"
+  style={{ maxWidth: "600px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+/>
+
 
 ## Step 5: Confirmation
 

@@ -33,15 +33,24 @@ The Health Level provides a benchmark for users to monitor their account risk, a
 - Additionally, the graphical indicator of the Health Level as displayed in the margin account panel appears in different colors depending on the numerical value:
     - Green when 100.0% ≤ Health Level < 60.0%:
 
-    ![](/img/h-1.png)
+    <img
+      src="/img/h-1.png"
+      style={{ maxWidth: "150px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+    />
 
     - Blue when 60.0% ≤ Health Level < 20.0%:
 
-    ![](/img/h-2.png)
+    <img
+      src="/img/h-2.png"
+      style={{ maxWidth: "150px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+    />
 
     - Red when 20.0% ≤ Health Level < 0.0%:
 
-    ![](/img/h-3.png)
+    <img
+      src="/img/h-3.png"
+      style={{ maxWidth: "150px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+    />
 
 
 ## Maintaining a Healthy Account
@@ -87,7 +96,11 @@ When the health level of *any* margin account controlled by a wallet is below 5.
 
 The app will not allow users to complete transactions that would result in a Health Level below 5.0%. This restriction ensures that users maintain a minimum buffer to avoid immediate liquidation risk. By setting this boundary, Glow prioritizes account stability and helps users manage their positions responsibly.
 
-![](/img/h-7.png)
+
+<img
+  src="/img/h-7.png"
+  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+/>
 
 ### 3. Informed Decision-Making
 
