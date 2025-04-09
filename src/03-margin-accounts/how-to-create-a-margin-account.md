@@ -17,7 +17,7 @@ Glow even supports creating multiple margin accounts under a single wallet, thus
 ## Prerequisites
 
 1. **Wallet Connection**: Ensure your wallet (Phantom, Backpack, Solflare, WalletConnect, or Coinbase Wallet) is connected to the Glow platform. Glow supports multiple wallets for seamless integration.
-2. **SOL Balance Requirement**: You must have at least **0.055 SOL** in your wallet to cover a one-time refundable rent fee for account creation. This fee is used for Solana blockchain storage. In a later release, we will allow users to close their margin accounts and receive a full refund of this rent fee. Please note that this amount does not cover the additional SOL required to process transactions on the blockchain. Transaction fees are typically minimal, averaging less than 0.001 SOL per transaction. Each additional margin account requires payment an additional rent fee. In a future release, users will have the option to close a margin account and receive the full rent fee refunded back to their wallets.
+2. **SOL Balance Requirement**: You must have at least **0.072 SOL** in your wallet to cover a one-time refundable rent fee for account creation. This fee is used for Solana blockchain storage. In a later release, we will allow users to close their margin accounts and receive a full refund of this rent fee. Please note that this amount does not cover the additional SOL required to process transactions on the blockchain. Transaction fees are typically minimal, averaging less than 0.001 SOL per transaction. Each additional margin account requires payment an additional rent fee. In a future release, users will have the option to close a margin account and receive the full rent fee refunded back to their wallets.
 
 ## Key Visual Indicators
 
@@ -47,8 +47,6 @@ Glow even supports creating multiple margin accounts under a single wallet, thus
   style={{ maxWidth: "500px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
-
-
 ## Step 2: Access Margin Account Creation
 
 Once your wallet is connected:
@@ -62,32 +60,41 @@ Once your wallet is connected:
 
 In the **New Margin Account** modal:
 
-- You’ll see a **one-time rent** of **0.055 SOL** displayed.
+- You’ll see a **one-time rent** of **0.072 SOL** displayed.
 - The modal explains that this rent fee is required by Solana and will be fully refundable upon account closure.
-- Click **Pay and Create Margin Account** to proceed.
+- Click **Create Margin Account** to proceed.
 
 <img
   src="/img/create-5.png"
   style={{ maxWidth: "600px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
+- After paying the rent fee, you’ll be prompted to complete one more step: **setting up a lookup table** for your margin account. This is required for transacting efficiently on Glow and helps reduce transaction size on Solana. You’ll need to approve a second transaction to complete this step.
+
 
 ## Step 4: Handle Insufficient SOL Balance (If Applicable)
 
-If you don’t have enough SOL in your wallet:
-
-- The button will be disabled, and an error message will prompt you to add more SOL to your wallet.
-- The button will be disabled, and an error message will prompt you to add more SOL to your wallet.
+If you don’t have enough SOL in your wallet, the button will be disabled, and an error message will prompt you to add more SOL to your wallet.
 
 <img
   src="/img/create-6.png"
   style={{ maxWidth: "600px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
+## Step 5: Set Up the Lookup Table
 
-## Step 5: Confirmation
+Once the rent payment is successful, Glow will prompt you to create a **lookup table** as a second transaction. This ensures your margin account can efficiently interact with the Glow Protocol.
 
-After successfully paying the rent fee:
+- The "Create Lookup Table" button will appear
+
+![](/img/create-10.png)
+
+- Confirm the transaction in your wallet to proceed
+- If your balance is too low, the button will remain disabled until you top up your wallet
+
+## Step 6: Confirmation
+
+After successfully paying the rent fee and creating the lockup table:
 
 - A **Margin Account Created Successfully** banner will appear. The banner shown below allows you to seamlessly switch between margin accounts within the application. If you choose to create additional margin accounts in the future, you can easily select and activate your newly created margin account directly from this banner.
 
