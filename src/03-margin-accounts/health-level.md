@@ -61,7 +61,7 @@ The Health Level provides a benchmark for users to monitor their account risk, a
 - Additionally, the **Portfolio Dashboard** offers a consolidated view of all your margin accounts, enabling you to monitor the Health Levels of multiple accounts in one place. This is particularly useful if you manage several accounts simultaneously, as it provides an at-a-glance overview of their status.
 - Use Glow’s visual indicators—green (safe), blue (signaling a moderate risk but leveraged state), and red (critical)—to understand your risk levels.
 
-![](/img/h-4.png)
+![](/img/portfolio-3.png)
 
 ### 2. Deposit Additional Collateral
 

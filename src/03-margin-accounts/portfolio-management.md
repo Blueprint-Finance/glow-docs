@@ -92,7 +92,7 @@ This enhanced functionality makes managing multiple accounts more efficient and 
 
 The Portfolio page is tailored for advanced users, enabling them to efficiently perform a series of actions across multiple margin accounts without needing to switch back and forth between the main interface. This streamlined workflow significantly enhances the user experience, especially for those managing complex portfolios or executing multiple strategies.
 
-![](/img/portfolio-4.png)
+![](/img/portfolio-3.png)
 
 **View Positions**: Clicking this button opens a detailed view of all the positions within the selected margin account.
 
