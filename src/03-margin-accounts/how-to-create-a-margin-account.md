@@ -19,8 +19,9 @@ Glow even supports creating multiple margin accounts under a single wallet, thus
 1. **Wallet Connection**: Ensure your wallet (Phantom, Backpack, Solflare, WalletConnect, or Coinbase Wallet) is connected to the Glow platform. Glow supports multiple wallets for seamless integration.
 2. **SOL Balance Requirement**: You must have at least **0.072 SOL** in your wallet to cover the rent fees for both required transactions — one for creating the margin account and another for creating the associated lookup table. This fee is used for Solana blockchain storage. In a later release, we will allow users to close their margin accounts and receive a full refund of this rent fee.
 
+3. **Multiple Accounts = Additional Rent Fees**: Each additional margin account requires payment an additional rent fee. In a future release, users will have the option to close a margin account and receive the full rent fee refunded back to their wallets.
 :::tip
-The amount of 0,072 SOL does not cover the additional SOL required to process transactions on the blockchain. Transaction fees are typically minimal, averaging less than 0.001 SOL per transaction. Each additional margin account requires payment an additional rent fee. In a future release, users will have the option to close a margin account and receive the full rent fee refunded back to their wallets.
+The amount of 0.072 SOL does not cover the additional SOL required to process transactions on the blockchain. Transaction fees are typically minimal, averaging less than 0.001 SOL per transaction.
 :::
 
 
