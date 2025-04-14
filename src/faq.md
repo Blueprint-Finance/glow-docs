@@ -196,7 +196,10 @@ Glow helps you work within this limit by surfacing usage counters, warning messa
 This message means your **deposit** would push the margin account over its **24-position limit**.
 
 Even though you're depositing a small amount, if it's a **new asset**, it still counts as **+1 position**. Glow blocks the transaction to keep you within the position cap.
-![](/img/faq-17.png)
+<img
+  src="/img/faq-17.png"
+  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+/>
 
 ### What does "Maximum Positions Violation" mean when borrowing?
 
@@ -205,7 +208,11 @@ This message appears if the **borrow action** would exceed the **24-position lim
 🔗 [Learn how positions are counted](../src/03-margin-accounts/positions.md)
 
 If you deposit a token, it uses up 1 position. If you borrow a token that is already deposited or borrowed in your margin account, it uses up another 1 position. If you're borrowing a token not currently in your account, it uses **2 positions** (one for the borrow, one for the redeposit into the pool). Glow prevents the transaction to maintain system limits.
-![](/img/faq-166.png)
+
+<img
+  src="/img/faq-166.png"
+  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+/>
 
 ## **glowSOL & Restaking**
 
