@@ -57,11 +57,9 @@ Glow displays your position usage in two key places:
 ![](/img/position-1.png)
 
 1. **Portfolio Page** – Hover over the underlined position count for a tooltip with more info.
-![](/img/position-2.png)
-
 These counters help you manage usage and avoid errors when approaching the cap.
 
-![image.png](attachment:01d6729e-9c6a-4b22-ba8d-5d4e4aacbb0b:image.png)
+![](/img/position-2.png)
 
 ## Why Is There a Limit?
 
