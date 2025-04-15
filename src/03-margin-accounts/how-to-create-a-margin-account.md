@@ -41,7 +41,7 @@ The amount of 0.072 SOL does not cover the additional SOL required to process tr
 
 <img
   src="/img/create-2.png"
-  style={{ maxWidth: "500px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
 
@@ -50,7 +50,7 @@ The amount of 0.072 SOL does not cover the additional SOL required to process tr
 <img
   src="/img/create-3.png"
   alt="New Margin Account Rent Fee Modal"
-  style={{ maxWidth: "500px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
 ## Step 2: Access Margin Account Creation
@@ -72,7 +72,7 @@ In the **New Margin Account** modal:
 
 <img
   src="/img/create-5.png"
-  style={{ maxWidth: "600px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
 - After paying the rent fee, you’ll be prompted to complete one more step: **setting up a lookup table** for your margin account. This is required for transacting efficiently on Glow and helps reduce transaction size on Solana. You’ll need to approve a second transaction to complete this step.
@@ -87,7 +87,7 @@ You’ll need approximately **0.072 SOL** to cover the rent fees for **both requ
 
 <img
   src="/img/create-6.png"
-  style={{ maxWidth: "600px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
 ## Step 5: Set Up the Lookup Table
@@ -96,7 +96,10 @@ Once the rent payment is successful, Glow will prompt you to create a **lookup t
 
 - The "Create Lookup Table" button will appear
 
-![](/img/create-10.png)
+<img
+  src="/img/create-10.png"
+  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+/>
 
 - Confirm the transaction in your wallet to proceed
 
@@ -109,8 +112,14 @@ Once both steps are complete—**rent fee payment** and **lookup table creation*
 
 You can always switch between margin accounts using the **account dropdown selector** in the top-left corner of the margin account panel. Alternatively, visit the [Portfolio page](../03-margin-accounts/portfolio-management.md) to view and manage all your accounts in one place.
 
-![](/img/create-10.png)
+<img
+  src="/img/create-10.png"
+  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+/>
 
 - If the creation fails, an error banner will notify you of the failure. For any issues, please feel free to contact us via our [Support](../support.md).
 
-![](/img/create-9.png)
+<img
+  src="/img/create-9.png"
+  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+/>
