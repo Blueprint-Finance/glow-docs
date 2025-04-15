@@ -1,11 +1,13 @@
 ---
-title: "Positions"
-description: "Positions"
-sidebar_label: "Positions"
+title: "How to Manage Positions"
+description: "How to Manage Positions"
+sidebar_label: "How to Manage Positions"
 ---
 
 
 This article explains what **margin account positions** are, how they are counted, and what users should be aware of when managing many tokens within a single margin account.
+
+![](/img/position-2.png)
 
 ## What is a “Position”?
 
@@ -48,21 +50,36 @@ Then borrow SOL (you don’t hold it yet) → **+2** (borrow + redeposit)
 | Repay a loan (asset still held in account) | -1 position |
 | Repay a loan (asset no longer held in account) | -2 positions |
 
-## Viewing Position Limits in the App
+## Viewing Position Limits
 
-Glow displays your position usage in two key places:
+Glow displays your position usage in two key places, displayed as a fraction of the currently used number of positions out of the 24 max available slots. These counters help you manage usage and avoid errors when approaching the cap:
 
-1. **Margin Account Panel** – Shows the number of positions used out of 24.
-
+1. **Margin Account Panel**:
 ![](/img/position-1.png)
 
-1. **Portfolio Page** – Hover over the underlined position count for a tooltip with more info.
-These counters help you manage usage and avoid errors when approaching the cap.
-
+2. **Portfolio Page**:
 ![](/img/position-2.png)
 
-## Why Is There a Limit?
+### Why Is There a Limit?
 
 The 24-position cap exists due to **on-chain memory constraints**.
 
 Glow helps you work within this limit by surfacing usage counters, warning messages, and optimized UI feedback.
+
+## Managing Positions
+
+To get a detailed view of which assets are using positions—and quickly take action to free up space—click the **Manage Positions** button in the margin account panel.
+
+This will open the **Manage Positions Popup**, where you can:
+
+- See how many of your 24 available positions are in use
+- Understand how each asset is using positions, e.g. `+1 pool deposit`, `+1 pool borrow`, or `+1 empty position`
+- Take direct action to free up space by withdrawing deposits or repaying loans
+- Close all empty positions in a single click using the button at the top
+:::tip
+Empty positions can occur when a position slot remains open after certain operations (like full repayment or withdrawal) but hasn’t yet been reclaimed by the system.
+:::
+
+Each row in the popup represents an asset, with a clear description of its position usage and an action button (e.g. **Withdraw Fully**, **Repay Loan Fully**) to close that position if needed.
+
+![](/img/position-3.png)

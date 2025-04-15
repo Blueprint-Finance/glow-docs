@@ -1,6 +1,6 @@
 ---
-title: "Portfolio Management: Viewing and Managing Positions, and Navigating the History Tab"
-description: "Portfolio Management"
+title: "How to Manage Your Portfolio"
+description: "Portfolio Management: Viewing and Managing Positions, and Navigating the History Tab"
 sidebar_label: "Portfolio Management"
 sidebar_position: 3
 ---
@@ -9,9 +9,7 @@ sidebar_position: 3
 
 The **Margin Account Panel** is the hub for managing your margin accounts on Glow Finance. It provides detailed insights into your active margin account and allows you to easily switch between accounts, create new ones, and perform transactions.
 
-![](/img/portfolio-1.png)
-
-![](/img/portfolio-2.png)
+![](/img/portfolio-0.png)
 
 ### Key Features
 
@@ -33,6 +31,11 @@ The **Margin Account Panel** is the hub for managing your margin accounts on Glo
     - Click the **Account dropdown menu** located in the **top-left corner of the screen** (next to the Health Level and Account Leverage indicators).
     - From this menu, you can **switch between existing margin accounts** or **create a new account** with just a few clicks.
     - Creating a margin account requires a small, refundable blockchain rent fee and enables interaction with Glow's advanced DeFi products.
+5. **Manage Positions:**
+    - Click the **Manage Positions** button to open a popup that shows a full breakdown of how your margin account positions are being used.
+    - The popup clearly lists each asset and whether it’s using space due to deposits, borrows, or empty leftover positions.
+    - You can quickly withdraw or repay from this view to free up space, or use the Close Empty Positions button to remove unused slots in bulk.
+    - This feature helps you stay under the 24-position cap and avoid transaction errors caused by maxed-out position slots.
 
 ### Detailed Terms
 
@@ -92,7 +95,7 @@ This enhanced functionality makes managing multiple accounts more efficient and 
 
 The Portfolio page is tailored for advanced users, enabling them to efficiently perform a series of actions across multiple margin accounts without needing to switch back and forth between the main interface. This streamlined workflow significantly enhances the user experience, especially for those managing complex portfolios or executing multiple strategies.
 
-![](/img/portfolio-3.png)
+![](/img/position-2.png)
 
 **View Positions**: Clicking this button opens a detailed view of all the positions within the selected margin account.
 
@@ -104,6 +107,8 @@ The Portfolio page is tailored for advanced users, enabling them to efficiently 
     - **Deposit** more.
     - **Borrow**, **Repay**, or **Withdraw** as applicable.
 - **Filter for Active Positions**: Easily filter out zero-balance assets to focus only on active positions.
+
+
 
 ## Navigating the History Tab for Transaction and Liquidation Records
 
@@ -122,16 +127,13 @@ The **History** tab offers users a comprehensive log of all interactions with th
         - Withdrawals
         - Borrowing and Repayments
         - Liquidations
-        - Special rewards, like PYUSD incentives.
-
-![](/img/portfolio-6.png)
-
+        - Special rewards
     - **Details Displayed**:
         - **Amount** and **Fees** associated with the transaction.
         - **Timestamp**: Date and time of each event.
         - **Transaction Link**: Direct access to blockchain explorer for transparency.
 
-### Immediate Alerts
+## Immediate Alerts
 
 - **Post-Liquidation Modal**: Once a liquidation event is complete (usually within a few seconds), users receive a notification in the form of a modal. This provides them with the ability to navigate directly to the History tab to review detailed insights, including what triggered the liquidation and how the event unfolded.
 - **Persistent Alerts**: If users are not online during the liquidation event, the same modal will appear the next time they connect their wallet. This ensures that users are informed about liquidation events for any of their margin accounts, even if multiple accounts are affected or a single account is liquidated multiple times.
