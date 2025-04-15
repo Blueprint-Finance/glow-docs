@@ -20,7 +20,7 @@ The **Margin Account Panel** is the hub for managing your margin accounts on Glo
 2. **Health Level Indicators:**
     - **Health Level** is a normalized measure showing how far the account's **Available Collateral** is from 0.
     - **Available Collateral** = **Effective Collateral** - **Required Collateral**.
-    - When **Available Collateral = 0**, the account is unhealthy and at risk of partial liquidation to restore its health.
+    - When **Available Collateral = 0**, the account is unhealthy and at risk of partial liquidation to restore its health. If the account remains undercollateralized, partial liquidations can occur multiple times in quick succession, especially in volatile markets. This may continue until the user either adds collateral or repays debt to improve the account’s health.
 3. **Visual Indicators:**
     - Health levels are represented using color-coded indicators:
         - **Green**: Stable account with sufficient collateral.
