@@ -123,3 +123,9 @@ You can always switch between margin accounts using the **account dropdown selec
   src="/img/create-9.png"
   style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
+
+## Step 7: Review Your Margin Account Panel
+
+After successfully creating a margin account, the Markets page will update to reflect your new account. At the top of the screen, you’ll now see the Margin Account Panel, which displays key stats for the currently active margin account.
+
+![](/img/create-11.png)
