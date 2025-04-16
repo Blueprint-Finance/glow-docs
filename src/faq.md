@@ -7,6 +7,7 @@ sidebar_position: 8
 
 - [General Questions](#general-questions)
 - [Portfolio Management](#portfolio-management)
+- [Handling Positions](#handling-positions)
 - [glowSOL & Restaking](#glowsol--restaking)
 - [Health Level & Risk Management](#health-level--risk-management)
 - [Troubleshooting & Errors](#troubleshooting--errors)
@@ -130,6 +131,88 @@ If still blocked, try lowering the withdrawal amount or reconnecting your wallet
 - Borrowing limit reached → Glow enforces borrow caps to prevent excessive leverage.
 - Health Level constraint → The system ensures your margin account stays above 10% Health Level.
 - Liquidity constraints → Pool conditions can prevent full borrowing.
+
+
+## **Handling Positions**
+
+### What is the Position Management Popup and how do I use it?
+
+The **Position Management Popup** helps you view and manage how each slot in your margin account is being used—so you can avoid hitting the 24-position limit. [Learn how positions are counted](../src/03-margin-accounts/positions.md)
+
+You can open this popup directly from the **margin account panel or the portfolio page**. It shows:
+
+- A complete list of assets in the account
+- How many positions each asset uses
+- Whether it was a **deposit**, **borrow**, or **both**
+- A **“Close Empty Positions”** button to remove any unused slots that occasionally are left from protocol actions (e.g. after liquidation or full repayment)
+
+You’ll also see your current position counter (e.g., **18/24**) displayed on the **margin account selector dropdown** so you can easily check multiple accounts.
+
+This popup makes it easy to clean up your account and free up position slots for future actions.
+
+### What counts as a margin account position?
+
+Each unique asset you deposit or borrow counts as a position. If you borrow an asset not currently in your account, it uses two positions (borrow + redeposit).
+
+### How many positions can I have in a margin account?
+
+You can use up to 24 positions. The remaining 8 are reserved for protocol-level operations like liquidation.
+
+### Where can I see my current position count?
+
+Glow shows position usage in:
+
+- Margin Account Panel — Visible at the top of the screen when viewing an individual margin account (e.g., **6/24 used**).
+- Margin Account Dropdown Selector – Lets you view usage across multiple accounts without switching.
+- Portfolio Page (can view multiple at once) — Provides an overview of all margin accounts and their current position usage.
+
+### What happens if I reach the limit?
+
+You won’t be able to deposit or borrow additional assets once your margin account hits the 24-position cap. When this happens, the transaction panel will prevent you from proceeding, and a "Maximum Positions Violation" message will appear directly in the interface.
+
+This real-time validation helps block the action before it’s submitted. The error message also provides a link to manage or reduce your open positions.
+
+### How can I free up position slots?
+
+To free up position slots in your margin account:
+
+- **Withdraw an asset fully** → This removes 1 position if no borrow exists.
+- **Repay** debt on an asset → Depending on whether the asset remains in your account after the action, this may free up 1 or 2 slots.
+- **Use the “Close Empty Positions” button** → This lets you instantly remove any **empty slots** left over from previous actions like repaying or liquidation. These are rare, but when present, this button clears them in one click.
+
+### Why does borrowing a new asset count as 2 positions?
+
+When you borrow an asset not already in your account, Glow automatically deposits it into the pool, which creates one position for the borrow and one for the deposit.
+
+### Why Is There a Limit?
+
+The 24-position cap exists due to **on-chain memory constraints**.
+
+Glow helps you work within this limit by surfacing usage counters, warning messages, and optimized UI feedback.
+
+
+### What does "Maximum Positions Violation" mean when depositing?
+
+This message means your **deposit** would push the margin account over its **24-position limit**.
+
+Even though you're depositing a small amount, if it's a **new asset**, it still counts as **+1 position**. Glow blocks the transaction to keep you within the position cap.
+<img
+  src="/img/faq-17.png"
+  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+/>
+
+### What does "Maximum Positions Violation" mean when borrowing?
+
+This message appears if the **borrow action** would exceed the **24-position limit per margin account**.
+
+🔗 [Learn how positions are counted](../src/03-margin-accounts/positions.md)
+
+If you deposit a token, it uses up 1 position. If you borrow a token that is already deposited or borrowed in your margin account, it uses up another 1 position. If you're borrowing a token not currently in your account, it uses **2 positions** (one for the borrow, one for the redeposit into the pool). Glow prevents the transaction to maintain system limits.
+
+<img
+  src="/img/faq-166.png"
+  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+/>
 
 ## **glowSOL & Restaking**
 
@@ -409,6 +492,16 @@ These tokens may still count towards account collateral, but cannot be borrowed.
   src="/img/faq-14.png"
   style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
+
+### Why did my transaction fail with “your account is being liquidated”?
+
+This error means that your **margin account is currently undergoing liquidation** due to the health level for that account reaching 0.0%.
+
+During liquidation, all actions—like deposits, borrows, and withdrawals—are temporarily blocked until the process completes.
+
+Since the liquidation process typically completes within a few seconds, it’s rare to encounter this message unless your account is critically unhealthy and you are online during a volatile market swing.
+
+Glow’s protocol uses **partial liquidations** to preserve as much of your position as possible. However, in exceptional cases where prices move rapidly, multiple minimal liquidations may occur in quick succession. For full details, refer to the [Liquidation article](../src/03-margin-accounts/liquidation.md).
 
 ### What errors can occur when using the Max button?
 
