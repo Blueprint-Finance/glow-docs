@@ -17,7 +17,7 @@ Once your wallet is connected and your margin account is created, you can follow
 
 ## 1. Using the Top-Right Deposit Button
 
-- **Step 1:** Locate the **Deposit** button in the top-right corner of the screen.
+- **Step 1:** In the [Margin Account Panel](../margin-accounts/portfolio-management#margin-account-panel-explainer), locate the **Deposit** button in the top-right corner.
 
 ![](/img/deposit-1.png)
 

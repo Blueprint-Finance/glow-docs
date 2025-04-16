@@ -41,7 +41,7 @@ The amount of 0.072 SOL does not cover the additional SOL required to process tr
 
 <img
   src="/img/create-2.png"
-  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+  style={{ maxWidth: "300px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
 
@@ -50,7 +50,7 @@ The amount of 0.072 SOL does not cover the additional SOL required to process tr
 <img
   src="/img/create-3.png"
   alt="New Margin Account Rent Fee Modal"
-  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+  style={{ maxWidth: "300px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
 ## Step 2: Access Margin Account Creation
@@ -126,6 +126,6 @@ You can always switch between margin accounts using the **account dropdown selec
 
 ## Step 7: Review Your Margin Account Panel
 
-After successfully creating a margin account, the Markets page will update to reflect your new account. At the top of the screen, you’ll now see the Margin Account Panel, which displays key stats for the currently active margin account.
+After successfully creating a margin account, the Markets page will update to reflect your new account. At the top of the screen, you’ll now see the [Margin Account Panel](../margin-accounts/portfolio-management#margin-account-panel-explainer), which displays key stats for the currently active margin account.
 
 ![](/img/create-11.png)
