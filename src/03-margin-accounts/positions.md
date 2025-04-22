@@ -52,7 +52,12 @@ Then borrow SOL (you don’t hold it yet) → **+2** (borrow + redeposit)
 
 ## Viewing Position Limits
 
-Glow displays your position usage in two key places, displayed as a fraction of the currently used number of positions out of the 24 max available slots. These counters help you manage usage and avoid errors when approaching the cap:
+Glow shows position usage in two key places:
+
+- **Margin Account Panel** – Located at the top of the screen when viewing a specific margin account (e.g., **6/24 used**). This is also a **clickable button** that opens the **Manage Positions popup** for that account. Hover or click to view position usage across all your margin accounts without switching between them.
+- **Portfolio Page** – Displays a side-by-side overview of all margin accounts and their current position usage, helping you monitor them at a glance.
+
+These counters help you manage usage and avoid errors when approaching the cap:
 
 1. **Margin Account Panel**:
 ![](/img/position-1.png)
@@ -75,11 +80,11 @@ This will open the **Manage Positions Popup**, where you can:
 - See how many of your 24 available positions are in use
 - Understand how each asset is using positions, e.g. `+1 pool deposit`, `+1 pool borrow`, or `+1 empty position`
 - Take direct action to free up space by withdrawing deposits or repaying loans
-- Close all empty positions in a single click using the button at the top
+- Close all empty positions in a single click using the button at the top. If any empty positions exist, this is the easiest way to get more space for additional positions.
 :::tip
 Empty positions can occur when a position slot remains open after certain operations (like full repayment or withdrawal) but hasn’t yet been reclaimed by the system.
 :::
 
-Each row in the popup represents an asset, with a clear description of its position usage and an action button (e.g. **Withdraw Fully**, **Repay Loan Fully**) to close that position if needed.
+Each entry in the popup represents an asset, with a clear description of its position usage and an action button (e.g. **Withdraw Fully**, **Repay Loan Fully**) to close that position if needed. A single asset can contain more than one row if it is taking more than one position.
 
 ![](/img/position-3.png)
