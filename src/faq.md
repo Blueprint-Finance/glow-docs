@@ -410,6 +410,16 @@ These tokens may still count towards account collateral, but cannot be borrowed.
   style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
+### Why did my transaction fail with “your account is being liquidated”?
+
+This error means that your **margin account is currently undergoing liquidation** due to the health level for that account reaching 0.0%.
+
+During liquidation, all actions—like deposits, borrows, and withdrawals—are temporarily blocked until the process completes.
+
+Since the liquidation process typically completes within a few seconds, it’s rare to encounter this message unless your account is critically unhealthy and you are online during a volatile market swing.
+
+Glow’s protocol uses **partial liquidations** to preserve as much of your position as possible. However, in exceptional cases where prices move rapidly, multiple minimal liquidations may occur in quick succession. For full details, refer to the [Liquidation article](../src/03-margin-accounts/liquidation.md).
+
 ### What errors can occur when using the Max button?
 
 There are three primary errors users might encounter when withdrawing or borrowing:

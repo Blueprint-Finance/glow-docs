@@ -33,6 +33,7 @@ const sidebars = {
         'margin-accounts/overview',
         'margin-accounts/how-to-create-a-margin-account',
         'margin-accounts/how-to-deposit',
+    
         'margin-accounts/portfolio-management',
         'margin-accounts/settings-modal-and-custom-rpc-setup',
         'margin-accounts/health-level',

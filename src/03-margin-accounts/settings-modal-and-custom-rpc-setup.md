@@ -1,7 +1,7 @@
 ---
 title: "Settings Modal & Custom RPC Setup"
 description: "User-Configurable Settings"
-sidebar_label: "Settings Modal and Custom RPC Setup"
+sidebar_label: "Settings Modal & Custom RPC Setup"
 sidebar_position: 4
 ---
 
