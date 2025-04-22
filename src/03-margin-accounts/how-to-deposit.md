@@ -27,8 +27,6 @@ Once your wallet is connected and your margin account is created, you can follow
 
 - **Step 3:** Select the desired asset to deposit.
 
-![](/img/deposit-3.png)
-
 ## 2. Review Your Deposit Before Confirmation
 
 To review and confirm a deposit, Glow gives you a powerful **Asset Details Page** that shows a preview of how your margin account will change:

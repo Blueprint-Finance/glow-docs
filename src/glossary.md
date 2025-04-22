@@ -35,16 +35,15 @@ A section in Glow Finance that displays key financial metrics of a user's margin
 
 **Contribution to Collateral**
 
-- Refers to the amount of Effective Collateral added (if the given assets is net deposited, meaning more tokens are deposited than borrowed) or detracted (if this asset are net borrows, meaning more tokens are borrowed than deposited) to the margin account due to the deposit.
-- The true measure of margin health—shows how much of your deposits are securing borrow positions.
-- A negative value means collateral is in use; if it reaches zero, liquidation is imminent.
+- Refers to the amount of **Effective Collateral** added (if the given assets is net deposited, meaning more tokens are deposited than borrowed) or detracted (if this asset are net borrows, meaning more tokens are borrowed than deposited) to the margin account due to the deposit.
+- The true measure of margin health — shows how much of your deposits are securing borrow positions.
+- A negative value in the Contribution to Collateral row means this asset is reducing your account’s effective collateral by the amount shown. In contrast, a positive value means the asset is adding to your effective collateral. If your effective collateral drops below your required collateral, your available collateral becomes zero or negative — at which point liquidation becomes imminent.
 - Unlike Net Balance, Contribution to Collateral directly impacts your Health Level and borrowing power.
 
-Key Takeaway:
-
+**Key Takeaway:**
 - **Net Balance ≠ Risk Indicator** – It only shows deposits vs. borrows.
-- **Contribution to Collateral = Risk & Liquidation Metric** – The closer it gets to zero, the **higher your liquidation risk**.
-- **Monitor Contribution to Collateral, not just Net Balance**, to stay safe and optimize your borrowing strategies.
+- **Monitor Contribution to Collateral, not just Net Balance**, to stay safe to stay safe and aware of the effect each deposited token has on your account while optimizing your borrowing strategies.
+- **Contribution to Collateral value** shows how much a specific asset is contributing to or detracting from your Effective Collateral. A positive value means the asset adds to your account’s effective collateral. A negative value means the asset reduces your effective collateral. If your Effective Collateral – Required Collateral ≤ 0, your account is at risk of liquidation.
 
 ### **Account Leverage**
 
