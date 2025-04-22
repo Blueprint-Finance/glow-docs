@@ -23,7 +23,7 @@ To mitigate this possibility for lenders who do want to withdraw, Glow utilizes 
     - A pool’s health and usability are primarily determined by its **utilization rate**. Interest rates are calculated based on **utilization rate** — the ratio of borrowed liquidity to total available liquidity. High utilization signifies that most of the pool’s liquidity is borrowed, triggering higher interest rates to attract new deposits. Conversely, low utilization leads to lower interest rates in order to incentivize inexpensive borrowing.
     - Higher utilization increases interest rates, incentivizing new deposits and balancing the pool’s liquidity.
 
-![](/img/integrate.png)
+![](/img/integrate-1.png)
 
 2. **Dual Roles for Users**:
     - **Lenders**: Deposit assets into Margin Pools and earn yield, benefiting from competitive rates while increasing account collateral in case borrowing is desired.
