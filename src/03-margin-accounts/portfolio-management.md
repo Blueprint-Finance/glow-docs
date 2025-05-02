@@ -75,7 +75,7 @@ The panel allows sophisticated users to:
 
 The **Portfolio** section provides a high-level view of all your margin accounts, enabling efficient management of your positions and accounts without the need to switch between them. The dashboard displays all active margin accounts under your wallet with key metrics for each account:
 
-- **(Health Level)[../03-margin-accounts/health-level.md]**: Indicates the overall safety of the account as a percentage, color-coded for clarity (green for safe, blue for middle, and red for at-risk).
+- [Health Level](../03-margin-accounts/health-level.md): Indicates the overall safety of the account as a percentage, color-coded for clarity (green for safe, blue for middle, and red for at-risk).
 - **Account Leverage**: The leverage ratio showing how much of the collateral is utilized.
 - **Available Balance**: A breakdown of assets and liabilities in the account.
 - **Available Collateral**: Represents the difference between your **Effective Collateral** and **Required Collateral**. When this value reaches zero, your account becomes unhealthy, and partial liquidation may occur to restore a healthy margin position.
