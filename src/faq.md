@@ -383,7 +383,7 @@ You can only withdraw or borrow up to the remaining available liquidity in the p
 
 ![](/img/faq-1.png)
 
-### What does the “Pool Utilization Too High” error mean?
+### What does the “Pool Utilization Violation" error mean?
 
 This error appears when a borrow/withdraw action would push the utilization of the pool above 95%, which Glow prevents to ensure enough liquidity remains available for other users.
 
