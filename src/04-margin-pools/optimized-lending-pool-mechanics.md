@@ -20,7 +20,7 @@ Most DeFi lending protocols use a **two-segment** interest rate model, where rat
 | **95% - 100%** | Interest rate spikes to **150%**, maxing out at **200%** | Strongly incentivizes new deposits and borrower repayments as the pool nears full utilization |
 
 :::note
-Due to [Glow’s 95% utilization cap](../03-margin-accounts/integration-with-margin-pools.md#key-features), users will not be able to borrow in a way that pushes a pool above 95% utilization. The steep final segment (95%–100%) still exists in the interest rate curve to ensure the system reacts appropriately as utilization approaches the cap, serving as an incentive for additional deposits and borrower repayments.
+Due to [Glow’s 95% utilization cap](../04-margin-pools/overview.md#key-features), users will not be able to borrow in a way that pushes a pool above 95% utilization. The steep final segment (95%–100%) still exists in the interest rate curve to ensure the system reacts appropriately as utilization approaches the cap, serving as an incentive for additional deposits and borrower repayments.
 :::
 
 **Key Parameter Values:**

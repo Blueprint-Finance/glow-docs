@@ -1,8 +1,7 @@
 ---
-title: "Integration with Margin Pools"
-description: "Integration with Margin Pools"
-sidebar_label: "Integration with Margin Pools"
-sidebar_position: 8
+title: "Margin Pools"
+description: "Margin Pools"
+sidebar_label: "Margin Pools"
 ---
 
 Glow Finance’s **Margin Pools** serve as the backbone for managing liquidity within margin accounts. These pools provide a dynamic framework that adjusts interest rates based on utilization, ensuring an optimized environment for both lenders and borrowers.
