@@ -38,11 +38,14 @@ To mitigate this possibility for lenders who do want to withdraw, Glow utilizes 
 
 ### **User Experience in Margin Pools**
 
-When users interact with Glow’s Margin Pools:
+Deposited assets are pooled automatically and begin earning interest instantly, even before they’re borrowed.
 
-- They can **deposit assets** directly into the pools by simply depositing assets to a margin account, which increases the available liquidity.
-- Users can **borrow** from these pools, leveraging their collateral for advanced strategies.
-- Interest rates for both deposits and loans are transparently displayed in the application interface, enabling users to make informed decisions.
+When users interact with Glow’s Margin Pools, they can:
+
+- **Deposit assets** directly into the pools by simply depositing assets to a margin account, which increases the available liquidity.
+- **Borrow** from these pools, leveraging their collateral for advanced strategies.
+
+Interest rates for both deposits and loans are transparently displayed in the application interface, enabling users to make informed decisions.
 
 ### **How Glow Enhances Margin Pools**
 
