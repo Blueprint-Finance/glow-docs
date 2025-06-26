@@ -6,6 +6,10 @@ sidebar_label: "Overview"
 
 Glow Finance’s **Margin Pools** serve as the backbone for managing liquidity within margin accounts. These pools provide a dynamic framework that adjusts interest rates based on utilization, ensuring an optimized environment for both lenders and borrowers.
 
+:::tip
+When you deposit assets into your margin account, they’re added to a shared lending pool. This pool automatically earns interest based on current borrowing demand, so your funds start generating yield right away — even if you’re not borrowing yet.
+:::
+
 ## **What Are Margin Pools?**
 
 Margin Pools are liquidity reserves where users deposit assets to facilitate borrowing and leveraging activities. The pools dynamically adjust interest rates according to supply and demand, promoting an efficient and competitive lending ecosystem. These pools operate with dual goals:
