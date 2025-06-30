@@ -387,7 +387,7 @@ You can only withdraw or borrow up to the remaining available liquidity in the p
 
 This error appears when a borrow/withdraw action would push the utilization of the pool above 95%, which Glow prevents to ensure enough liquidity remains available for other users.
 
-- Glow enforces a [95% utilization cap](../src/03-margin-accounts/optimized-lending-pool-mechanics.md) on all pools to maintain protocol health and solvency.
+- Glow enforces a [95% utilization cap](../src/04-margin-pools/optimized-lending-pool-mechanics.md) on all pools to maintain protocol health and solvency.
 - You’ll need to **reduce your input amount**, or wait until **more liquidity is added** to the pool.
 - This error can appear on both borrow and withdraw panels when pool liquidity is nearly fully used.
 
