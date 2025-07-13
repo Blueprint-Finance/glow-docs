@@ -38,34 +38,42 @@ const sidebars = {
         'margin-accounts/settings-modal-and-custom-rpc-setup',
         'margin-accounts/health-level',
         'margin-accounts/liquidation',
-        'margin-accounts/integration-with-margin-pools',
-        'margin-accounts/optimized-lending-pool-mechanics',
         'margin-accounts/formulas',
       ],
     },
 
-    // 4. Fees
+    // 4. Margin Pools
+{
+  type: 'category',
+  label: 'Margin Pools',
+  items: [
+    'margin-pools/overview',
+    'margin-pools/optimized-lending-pool-mechanics',
+  ],
+},
+
+    // 5. Fees
     'fees',
 
-    // 5. Rewards
+    // 6. Rewards
     'rewards',
 
-    // 6. Restricted Jurisdictions
+    // 7. Restricted Jurisdictions
     'restrictions',
 
-    // 7. Audits
+    // 8. Audits
     'audits',
 
-    // 8. FAQ
+    // 9. FAQ
     'faq',
 
-    // 9. Support
+    // 10. Support
     'support',
 
-    // 10. Tooltips
+    // 11. Tooltips
     'tooltips',
 
-    // 11. Glossary
+    // 12. Glossary
     'glossary',
   ],
 };

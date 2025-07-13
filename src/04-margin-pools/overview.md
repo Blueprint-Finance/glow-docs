@@ -1,11 +1,14 @@
 ---
-title: "Integration with Margin Pools"
-description: "Integration with Margin Pools"
-sidebar_label: "Integration with Margin Pools"
-sidebar_position: 8
+title: "Overview"
+description: "Overview"
+sidebar_label: "Overview"
 ---
 
 Glow Finance’s **Margin Pools** serve as the backbone for managing liquidity within margin accounts. These pools provide a dynamic framework that adjusts interest rates based on utilization, ensuring an optimized environment for both lenders and borrowers.
+
+:::tip
+When you deposit assets into your margin account, they’re added to a shared lending pool. This pool automatically earns interest based on current borrowing demand, so your funds start generating yield right away — even if you’re not borrowing yet.
+:::
 
 ## **What Are Margin Pools?**
 
@@ -35,11 +38,14 @@ To mitigate this possibility for lenders who do want to withdraw, Glow utilizes 
 
 ### **User Experience in Margin Pools**
 
-When users interact with Glow’s Margin Pools:
+Deposited assets are pooled automatically and begin earning interest instantly, even before they’re borrowed.
 
-- They can **deposit assets** directly into the pools by simply depositing assets to a margin account, which increases the available liquidity.
-- Users can **borrow** from these pools, leveraging their collateral for advanced strategies.
-- Interest rates for both deposits and loans are transparently displayed in the application interface, enabling users to make informed decisions.
+When users interact with Glow’s Margin Pools, they can:
+
+- **Deposit assets** directly into the pools by simply depositing assets to a margin account, which increases the available liquidity.
+- **Borrow** from these pools, leveraging their collateral for advanced strategies.
+
+Interest rates for both deposits and loans are transparently displayed in the application interface, enabling users to make informed decisions.
 
 ### **How Glow Enhances Margin Pools**
 

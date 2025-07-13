@@ -9,7 +9,7 @@ Glow Finance offers a transparent fee structure, ensuring competitive rates acro
 
 ## Main App Fees
 
-### 1. Lending Pool Fee (Borrowing Interest Split)
+### 1. Lending Pool Fee (Lending Interest Split)
 
 When a borrower pays interest on their loan, that interest is normally paid to the depositors (i.e. users who lent their assets to the pool).
 
