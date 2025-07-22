@@ -28,7 +28,7 @@ $HL = 100 - \left( \frac{\text{requiredCollateral} + \text{liabilities}}{\text{w
 The Health Level provides a benchmark for users to monitor their account risk, and the web application also includes visual cues and warnings to encourage proactive management before liquidation occurs.
 
 - **100% Threshold**: When the Health Level is at 100%, it indicates that no debts or borrowing positions are open, and the account has sufficient collateral without any risk of liquidation. This is the ideal state for accounts without leverage.
-- **5% Threshold**: At 5%, the account is flagged with a **Health Alert Banner Warning** in the application interface. This serves as an alert to the user that the Health Level is dangerously close to liquidation. While no action is taken by the protocol at this level, the app warns the user to take preemptive steps to avoid liquidation. [Learn more about the health level alert banner](../03-margin-accounts/liquidation.md).
+- **6% Threshold**: At 6%, the account is flagged with a **Health Alert Banner Warning** in the application interface. This serves as an alert to the user that the Health Level is dangerously close to liquidation. While no action is taken by the protocol at this level, the app warns the user to take preemptive steps to avoid liquidation. [Learn more about the health level alert banner](../03-margin-accounts/liquidation.md).
 - **0% Threshold**: When the Health Level drops to 0%, the account is subject to liquidation. At this point, the protocol begins the liquidation process to bring the account back to a healthy state by partially liquidating collateral to cover liabilities.
 - Additionally, the graphical indicator of the Health Level as displayed in the margin account panel appears in different colors depending on the numerical value:
     - Green when 100.0% ≤ Health Level < 60.0%:
@@ -88,13 +88,11 @@ The Health Level helps users track how secure their account is. A higher percent
 
 ### 2. Proactive Alerts
 
-When the health level of *any* margin account controlled by a wallet is below 5.0%, Glow alerts users via a **Risky Health Level Alert Banner**. This banner is displayed regardless of which margin account is the active account in the application, so that the user is made aware of all of their margin accounts controlled by that wallet that are at.
+When the health level of *any* margin account controlled by a wallet is below 6.0%, Glow alerts users via a **Risky Health Level Alert Banner**. This banner is displayed regardless of which margin account is the active account in the application, so that the user is made aware of all of their margin accounts controlled by that wallet that are at.
 
 ![](/img/h-5.png)
 
-![](/img/h-6.png)
-
-The app will not allow users to complete transactions that would result in a Health Level below 5.0%. This restriction ensures that users maintain a minimum buffer to avoid immediate liquidation risk. By setting this boundary, Glow prioritizes account stability and helps users manage their positions responsibly.
+The app will not allow users to complete transactions that would result in a Health Level below 6.0%. This restriction ensures that users maintain a minimum buffer to avoid immediate liquidation risk. By setting this boundary, Glow prioritizes account stability and helps users manage their positions responsibly.
 
 
 <img
