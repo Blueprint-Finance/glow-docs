@@ -67,12 +67,18 @@ This can happen in quick succession if your position remains undercollateralized
 
 **Solution:** Monitor your Health Level closely and take action before it reaches 0%.
 
-### What is the difference between "Withdrawable Amount" and "Borrowable Amount"?
+### What is the transaction panel?
 
-These three terms are displayed in the transaction panel depending on the type of action and refer to different concepts in Glow Finance:
+The **transaction panel** is the interface where you enter amounts to deposit, borrow, or withdraw. It ensures you’ll never input a value that triggers an error or warning, keeping your account safe without needing to guess or adjust values manually.
 
-1. Withdrawable Amount → The amount you can safely withdraw without dropping your Health Level below 10%. You may click this field to input it to the panel.
-2. Borrowable Amount → The maximum amount you can borrow while keeping your Health Level above 10% and considering pool liquidity constraints. You may click this field to input it to the panel.
+![](/img/faq-0.png)
+
+The transaction panel includes:
+
+- An **input field** – Where you manually enter an amount.
+- A **slider** (0–100%)  – Lets you quickly choose a percentage of your available balance. 100% shows the theoretical maximum, but doesn’t always match what’s safe.
+- A **Max button**  – Inputs the actual maximum value that is safe and valid for the current action. This includes logic for Health Level, pool liquidity, buffer for SOL fees, and more.
+- **Real-time Feedback** – Displays dynamic metrics like Health Level, expected output, and borrow APR as you adjust values.
 
 ### Why does the "Withdraw" tab show more than I can actually withdraw?
 
@@ -85,27 +91,71 @@ Clicking the "Max" button inputs the total amount of the asset deposited in your
 
 ### What does the Max button do?
 
-The Max button inputs the highest amount the user can borrow or withdraw without lowering their Health Level below 10%. This ensures that users never accidentally enter liquidation risk.
+All limit logic is built into the slider and Max button.
 
-For borrowing, clicking Max will set the input field to the largest amount that keeps the account’s Health Level at or above 10%.
+The **Max** button inputs the highest amount the user can borrow or withdraw **without lowering their Health Level below 10%**. This ensures that users **never accidentally enter liquidation risk**.
 
-### What is the difference between “Max,” “Withdrawable,” and “Borrowable” amounts?
+The **Max** button inputs the **highest amount allowed** without triggering any warnings or errors.
 
-- The "Max" button inputs the highest amount the user can withdraw or borrow based on their Health Level (without considering pool liquidity).
-- The “Withdrawable” field dynamically displays the actual amount that can be withdrawn, factoring in pool liquidity and account health. This field is clickable, allowing users to set the input to a valid amount automatically.
-- The “Borrowable” field shows the maximum amount that can be borrowed while maintaining a safe Health Level and within available pool liquidity. This field is also clickable, ensuring the input is set to an amount that won’t trigger an error.
+It automatically checks:
 
-![](/img/faq-1.png)
+- **Health Level**: Ensures the transaction won't drop your account below the minimum 10% threshold.
+- **Pool Liquidity Limits**: Prevents actions that exceed available liquidity for withdrawals or borrowing.
+- **Deposit Limits**: Checks if the amount exceeds current global caps for token deposits.
+- **Pool Utilization**: Avoids borrowing amounts that would push the pool over 95% utilization.
 
-Example Scenarios:
+For deposits, you'll still see your wallet balance (shown as “Held in Wallet”) so you can select how much to supply. For **withdrawing**, clicking Max will set the amount to the highest value that won’t bring Health Level below 10%.
 
-- User clicks “Max”: The input field is filled with the full amount available based on account health, but an error may appear if pool liquidity is insufficient.
-- User clicks “Withdrawable” field: The input field is updated with the actual amount that is safe to withdraw, ensuring the transaction can proceed.
-- User clicks “Borrowable” field: The input field is updated with the maximum borrowable amount that won’t trigger a Health Level error or exceed the borrow limit.
+### Why doesn’t the Max button use my full balance?
 
-### Why does the "Max" button for borrowing/withdrawing not select my full balance?
+Because it prioritizes **safety and success**.
 
-The Max button considers pool liquidity (ensuring there is enough available capital to withdraw or borrow).
+For example:
+- When depositing SOL, it subtracts a small **transaction fee buffer**
+- When withdrawing or borrowing, it ensures your **Health Level stays above 10%**
+- If liquidity or pool limits apply, it adjusts the value accordingly
+
+The goal is to **prevent errors**, not just hit 100%.
+
+
+### Why is 100% on the slider different from the Max button?
+
+| Element | What it means | **Deposit Action** | **Withdraw Action** |
+| --- | --- | --- | --- |
+| **Slider (100%)** | The theoretical maximum — e.g. full wallet balance or position | Full wallet balance (minus fee buffer for SOL only) | Full position or wallet value (regardless of health or liquidity) |
+| **Max Button** | The actual, validated max — safe, warning-free, and health-aware input | Amount minus fee buffer + within deposit limits | Withdrawable amount, considering pool liquidity + min 10% health level |
+
+The **100% on the slider** represents what *could* be entered if no warnings or constraints existed — it’s just a reference point.
+
+The **Max button**, on the other hand, uses **live calculations** to figure out what’s **actually valid** at that moment. It protects you from:
+
+- Triggering errors (e.g. trying to deposit too much)
+- Breaking pool caps or protocol rules
+- Dropping below minimum Health Level (10%)
+- Leaving too little SOL to pay transaction fees
+
+That’s why the Max value is often less than 100% on the slider — because it’s adjusted for reality, not just potential.
+
+### What types of errors are now prevented automatically?
+
+- Entering amounts that would drop your **Health Level below 10%**
+- Exceeding **deposit limits** or **borrow caps** for a given asset
+- Withdrawing more than the **available pool liquidity** (withdrawals only)
+- Borrowing beyond the **95% utilization ceiling** (via Pool Utilization cap — not liquidity availability)
+- Depositing 100% of SOL in your wallet, leaving no buffer for **transaction fees**
+
+**Note:** While withdrawal actions may be blocked due to insufficient pool liquidity, borrowing is capped via utilization rules (not liquidity exhaustion). Borrow warnings are enforced through a 95% pool utilization limit — not a lack of borrowable funds.
+
+If you manually input an invalid amount, the interface will show a warning — but the **Max button** always avoids these issues by using the safest possible amount.
+
+### Why is the Max button showing less than 100% of my wallet or position?
+
+Even though the **slider** shows 100% as the theoretical max, the **Max** button uses a **safety-adjusted value**.
+
+That’s why:
+
+- When **depositing**, it might leave a small buffer (e.g. for SOL transaction fees)
+- When **withdrawing** or **borrowing**, it ensures your **Health Level stays ≥ 10%** and liquidity caps aren’t exceeded.
 
 ### Why is the Withdraw button disabled?
 
@@ -191,7 +241,7 @@ The 24-position cap exists due to **on-chain memory constraints**.
 Glow helps you work within this limit by surfacing usage counters, warning messages, and optimized UI feedback.
 
 
-### What does "Maximum Positions Violation" mean when depositing?
+### What does "Maximum Positions Exceeded" mean when depositing?
 
 This message means your **deposit** would push the margin account over its **24-position limit**.
 
@@ -201,7 +251,7 @@ Even though you're depositing a small amount, if it's a **new asset**, it still 
   style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
-### What does "Maximum Positions Violation" mean when borrowing?
+### What does "Maximum Positions Exceeded" mean when borrowing?
 
 This message appears if the **borrow action** would exceed the **24-position limit per margin account**.
 
@@ -405,9 +455,9 @@ The maximum leverage available when borrowing is equal to the amount that would 
   style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
-### What does the “Deposit Limit Violation” error mean?
+### What does the “Pool Deposit Limit Violation” error mean?
 
-The Deposit Limit Violation error appears when your deposit exceeds the maximum amount allowed in the pool. Each pool has a set limit on how much can be deposited at a given time. If you encounter this error:
+The Pool Deposit Limit Violation error appears when your deposit exceeds the maximum amount allowed in the pool. Each pool has a set limit on how much can be deposited at a given time. If you encounter this error:
 
 - You can only deposit up to the remaining deposit limit shown in the error message.
 - The limit may increase over time or if other users withdraw from the pool.
@@ -426,9 +476,9 @@ The images below show the two places in the app UI where you can check the curre
 
 ![](/img/faq-8.png)
 
-### What does the “Borrow Limit Violation” error mean?
+### What does the “Pool Borrow Limit Violation” error mean?
 
-The Borrow Limit Violation error appears when your borrowing request exceeds the maximum amount allowed for that pool. Each lending pool has a set borrow limit to ensure stability and liquidity.
+The Pool Borrow Limit Violation error appears when your borrowing request exceeds the maximum amount allowed for that pool. Each lending pool has a set borrow limit to ensure stability and liquidity.
 
 If you encounter this error:
 
@@ -451,7 +501,7 @@ The images below show the two places in the app UI where you can check the curre
 
 ![](/img/faq-11.png)
 
-### What does the “Not enough available liquidity” error mean?
+### What does the “Pool Liquidity Violation” error mean?
 
 This error occurs when the Glow pool doesn’t have enough available liquidity to fulfill your withdrawal/borrow request.
 
@@ -464,7 +514,10 @@ You can only withdraw or borrow up to the remaining available liquidity in the p
 - Wait for new deposits from other users to increase pool liquidity.
 - Try withdrawing/borrowing a smaller amount.
 
-![](/img/faq-1.png)
+<img
+  src="/img/faq-1.png"
+  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+/>
 
 ### What does the “Pool Utilization Violation" error mean?
 
@@ -473,8 +526,6 @@ This error appears when a borrow/withdraw action would push the utilization of t
 - Glow enforces a [95% utilization cap](../src/04-margin-pools/optimized-lending-pool-mechanics.md) on all pools to maintain protocol health and solvency.
 - You’ll need to **reduce your input amount**, or wait until **more liquidity is added** to the pool.
 - This error can appear on both borrow and withdraw panels when pool liquidity is nearly fully used.
-
-Clicking the **“Borrowable”** or **“Withdrawable”** value will automatically input the **maximum amount** that stays within the safe limits—ensuring the transaction won’t trigger this error.
 
 <img
   src="/img/faq-13.png"
