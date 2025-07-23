@@ -11,7 +11,6 @@ At Glow Finance, we prioritize compliance with international laws and regulation
 - **OFAC-Sanctioned Countries**: These are countries and regions sanctioned by the Office of Foreign Assets Control (OFAC), including:
   - **North Korea**
   - **Iran**
-  - **Syria**
   - **Cuba**
   - **Russia**
   - **Crimea region of Ukraine**
