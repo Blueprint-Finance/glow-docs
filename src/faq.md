@@ -132,6 +132,7 @@ The **Max button**, on the other hand, uses **live calculations** to figure out 
 - Triggering errors (e.g. trying to deposit too much)
 - Breaking pool caps or protocol rules
 - Dropping below minimum Health Level (10%)
+- The system prevents any action (like choosing excessive leverage) that would cause your Health Level (HL) to fall below the minimum threshold (currently 10%). The maximum leverage available per transaction is dynamically capped — it's the highest amount you can borrow without dropping your HL below this constraint.
 - Leaving too little SOL to pay transaction fees
 
 That’s why the Max value is often less than 100% on the slider — because it’s adjusted for reality, not just potential.
@@ -139,9 +140,9 @@ That’s why the Max value is often less than 100% on the slider — because it�
 ### What types of errors are now prevented automatically?
 
 - Entering amounts that would drop your **Health Level below 10%**
-- Exceeding **deposit limits** or **borrow caps** for a given asset
-- Withdrawing more than the **available pool liquidity** (withdrawals only)
+- Exceeding **deposit limits** or **borrow limits** for a given asset
 - Borrowing beyond the **95% utilization ceiling** (via Pool Utilization cap — not liquidity availability)
+- Withdrawing more than the **available pool liquidity** (withdrawals only, since for borrows only 95% of the pool can be borrowed)
 - Depositing 100% of SOL in your wallet, leaving no buffer for **transaction fees**
 
 **Note:** While withdrawal actions may be blocked due to insufficient pool liquidity, borrowing is capped via utilization rules (not liquidity exhaustion). Borrow warnings are enforced through a 95% pool utilization limit — not a lack of borrowable funds.
@@ -155,7 +156,7 @@ Even though the **slider** shows 100% as the theoretical max, the **Max** button
 That’s why:
 
 - When **depositing**, it might leave a small buffer (e.g. for SOL transaction fees)
-- When **withdrawing** or **borrowing**, it ensures your **Health Level stays ≥ 10%** and liquidity caps aren’t exceeded.
+- When **withdrawing** or **borrowing**, it ensures your **Health Level stays ≥ 10%** and liquidity caps aren’t exceeded
 
 ### Why is the Withdraw button disabled?
 
@@ -446,7 +447,7 @@ This ensures borrowers don’t over-leverage.
 - Borrow limit exceeded.
 - Liquidity too low.
 
-### What does the “Health level too low” error mean?
+### What does the “Health level Violation” error mean?
 
 The maximum leverage available when borrowing is equal to the amount that would leave the account's Health Level at exactly 6.0%. If a transaction would reduce the Health Level below this threshold, a "Health Level too low" error will appear at the bottom of the panel as shown below.
 
