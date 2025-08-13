@@ -60,6 +60,7 @@ const sidebars = {
 
     // 7. Restricted Jurisdictions
     'restrictions',
+    'risks',
 
     // 8. Audits
     'audits',
