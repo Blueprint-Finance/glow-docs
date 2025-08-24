@@ -6,6 +6,13 @@ sidebar_label: "Risks and Safety"
 
 Glow Finance leverages advanced DeFi mechanics to provide leveraged staking, borrowing, and restaking opportunities. While these features offer potential for amplified yields, they also carry inherent risks. This article outlines the key risk categories associated with Glow Finance and provides actionable mitigation strategies for each.
 
+## Audits
+
+All core smart contracts in Glow Finance are periodically [audited by leading security firms](./audits.md). However, even audited contracts carry residual risk.
+
+**Mitigation:** 
+Always make sure you’re using the official app URL: [https://app.glowfinance.xyz/](https://app.glowfinance.xyz/), Interacting with lookalike or unofficial sites can put your funds at risk. Bookmark the official app link and double-check it before connecting your wallet.
+
 ## Smart Contract Risk
 
 Glow Finance operates through smart contracts that manage critical functions like leverage swaps, liquidation mechanics, and margin account management. Despite comprehensive audits, potential vulnerabilities may exist.
@@ -85,19 +92,12 @@ Initiating a glowSOL withdrawal starts a **7-day unstaking queue**, during which
     - Consider initiating unstaking when SOL borrow APR is relatively low or stable, as this reduces the chance of your Health Level declining if interest costs temporarily exceed your leveraged restaking yield during the 7-day queue period. This risk is uncommon — SOL borrow rates tend to revert quickly, and prolonged high-rate periods have historically been rare.
     - You may cancel a pending unstaking request during the 7-day queue if needed. However, this comes with a small cancellation fee. The performance fee (charged in glowSOL) is taken at the moment you initiate withdrawal. If you cancel the withdrawal during the queue, that fee will *not* be refunded. This applies even if the glowSOL is never converted back to SOL.
 
-## Audits
-
-All core smart contracts in Glow Finance are periodically [audited by leading security firms](./audits.md). However, even audited contracts carry residual risk**.**
-
-- **Mitigation:**
-    - Always make sure you’re using the official app URL: [https://app.glowfinance.xyz/](https://app.glowfinance.xyz/), Interacting with lookalike or unofficial sites can put your funds at risk. Bookmark the official app link and double-check it before connecting your wallet.
-
 ## Interest Rate Spikes
 
 Borrowing costs in Glow Finance adjust dynamically based on pool utilization, with key utilization thresholds affecting borrowing rates:
 
 - **Regimes:**
-    - Leass than 85% Utilization: Base Borrow Rate at 0.50%
+    - Less than 85% Utilization: Base Borrow Rate at 0.50%
     - 85%-95% Utilization: Rate increases to 6.00%
     - 95% Utilization: Max Borrow Rate spikes to 160% to discourage further borrowing.
 - **Mitigation:**
@@ -132,5 +132,4 @@ The **Leveraged glowSOL Recipe** uses **glowSOL**, a wrapped version of **sSOL**
 **Mitigation:**
 
 - Monitor the **sSOL/SOL peg** (and by extension the **glowSOL/SOL peg**) for signs of instability.
-- Use **moderate leverage** to leave room for peg volatility without endangering your Health Level.
 - Stay informed via Glow Finance and Solayer announcements and status updates on supported assets.
