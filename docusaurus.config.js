@@ -16,7 +16,7 @@ const config = {
   favicon: 'img/logo.png',
 
   // Set the production url of your site here
-  url: 'https://docs.glow-finance.xyz',
+  url: 'https://docs.glowfinance.xyz',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -91,8 +91,8 @@ const config = {
                     { name: 'twitter:card', content: 'summary_large_image' },
                     { name: 'twitter:title', content: 'Glow Docs' },
                     { name: 'twitter:description', content: 'DeFi protocol' },
-                    { name: 'twitter:image', content: 'https://docs.glow.xyzdocs.glow-finance.xyz/img/mark.svg' },
-                    { property: 'og:image', content: 'https://docs.glow-finance.xyz/img/mark.svg' },
+                    { name: 'twitter:image', content: 'https://docs.glowfinance.xyz/img/mark.svg' },
+                    { property: 'og:image', content: 'https://docs.glowfinance.xyz/img/mark.svg' },
                   ],
       navbar: {
         logo: {
