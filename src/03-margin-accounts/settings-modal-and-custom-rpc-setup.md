@@ -1,10 +1,14 @@
 ---
 title: "Settings Modal & Custom RPC Setup"
-description: "User-Configurable Settings"
+description: "Configure Glow settings and custom RPC: node selection, testing connections, troubleshooting, and performance banners."
 sidebar_label: "Settings Modal & Custom RPC Setup"
 sidebar_position: 4
+keywords:
+  - settings
+  - custom rpc
+  - solana rpc
+  - performance
 ---
-
 
 Glow Finance provides a robust set of configurable options to enhance user experience, including operational preferences and the ability to connect to custom RPC nodes for improved performance and reliability.
 
@@ -13,8 +17,8 @@ Glow Finance provides a robust set of configurable options to enhance user exper
 The **Settings Modal** is the central hub for managing user preferences, offering control over various aspects such as time and date formats, and most importantly, the connection to RPC nodes.
 
 <img
-  src="/img/settings-1.png"
-  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+src="/img/settings-1.png"
+style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
 ### **Key Features**:
@@ -23,8 +27,8 @@ The **Settings Modal** is the central hub for managing user preferences, offerin
 - **Time Display and Date Format**: Customize how time and date are displayed in the application.
 
 <img
-  src="/img/settings-2.png"
-  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+src="/img/settings-2.png"
+style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
 ## **Default vs. Custom RPC Node Setup**
@@ -34,35 +38,37 @@ RPC nodes facilitate the communication between the application and the blockchai
 ### **Default RPC Nodes**
 
 - Pre-configured options, such as **Helius RPC - Mainnet** and **Helius RPC - Devnet**, are available to users. The Devnet option allows users to experiment with the application in a risk-free environment, enabling them to test features and workflows without using real money.
-- Helius RPC - Mainnet, ****Automatically selected to ensure seamless blockchain interaction.
+- Helius RPC - Mainnet, \*\*\*\*Automatically selected to ensure seamless blockchain interaction.
 
 ### **Custom RPC Nodes**
 
 Custom nodes can be configured to improve performance, enhance privacy, or access specific network features.
 
 <img
-  src="/img/settings-3.png"
-  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+src="/img/settings-3.png"
+style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
+
 ### **Step-by-Step Guide**:
 
 1. **Select 'Custom RPC URL'** from the Node Selection dropdown.
 2. **Enter the RPC URL** (e.g., `https://rpc.ftm.tools/`).
 3. **Test the Connection**:
-    - Use the **Test** button to validate the connection.
-    - A green success message confirms a valid setup.
 
-    <img
-      src="/img/settings-4.png"
-      style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
-    />
+   - Use the **Test** button to validate the connection.
+   - A green success message confirms a valid setup.
 
-    - If the connection fails, a red error message will appear.
+   <img
+   src="/img/settings-4.png"
+   style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+   />
 
-    <img
-      src="/img/settings-5.png"
-      style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
-    />
+   - If the connection fails, a red error message will appear.
+
+   <img
+   src="/img/settings-5.png"
+   style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+   />
 
 4. **Save Preferences** once the connection is successfully tested.
 

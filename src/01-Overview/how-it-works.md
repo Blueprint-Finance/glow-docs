@@ -1,8 +1,16 @@
 ---
 title: "How It Works"
-description: "How It Works"
+description: "How Glow Finance works on Solana: architecture with margin accounts, margin pools, adapters, and recipes."
 sidebar_label: "How It Works"
 sidebar_position: 3
+keywords:
+  - glow finance
+  - solana
+  - architecture
+  - margin accounts
+  - margin pools
+  - adapters
+  - recipes
 ---
 
 :::info

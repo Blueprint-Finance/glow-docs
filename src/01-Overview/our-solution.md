@@ -1,8 +1,14 @@
 ---
 title: "Solution: Capital Efficiency"
-description: "An Approach to DeFi Lending and Liquidation Protection"
+description: "Glow’s approach to DeFi: margin accounts, pooled lending, and liquidation protection for capital efficiency on Solana."
 sidebar_label: "Solution: Capital Efficiency"
 sidebar_position: 2
+keywords:
+  - capital efficiency
+  - defi lending
+  - liquidation protection
+  - solana
+  - glow finance
 ---
 
 :::info

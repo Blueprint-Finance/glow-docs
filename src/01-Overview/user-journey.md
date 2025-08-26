@@ -1,8 +1,15 @@
 ---
 title: "User Journey"
-description: "From Deposit to Full Utilization of Glow’s Features"
+description: "A step-by-step guide from wallet connect and margin account creation to lending, borrowing, recipes, and risk management."
 sidebar_label: "User Journey"
 sidebar_position: 4
+keywords:
+  - user journey
+  - margin accounts
+  - lending
+  - borrowing
+  - glow recipes
+  - health level
 ---
 
 :::info

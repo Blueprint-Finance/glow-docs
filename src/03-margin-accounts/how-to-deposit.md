@@ -1,8 +1,13 @@
 ---
 title: "How to Deposit"
-description: "How to Deposit"
+description: "How to deposit assets into a Glow margin account: entry points, asset details page, projections, and confirmations."
 sidebar_label: "How to Deposit"
 sidebar_position: 2
+keywords:
+  - deposit
+  - margin account
+  - apy
+  - collateral
 ---
 
 Glow makes it easy to earn interest on your assets. Instead of letting them sit idly in a wallet, you can deposit your assets with just a couple clicks to immediately begin lending to borrowers and earn the displayed APY for that asset!
@@ -64,6 +69,7 @@ All **yellow values** represent real-time **projected changes** based on the amo
 - Unlike Net Balance, Contribution to Collateral directly impacts your Health Level and borrowing power.
 
 **Key Takeaway:**
+
 - **Net Balance ≠ Risk Indicator** – It only shows deposits vs. borrows.
 - **Monitor Contribution to Collateral, not just Net Balance**, to stay safe to stay safe and aware of the effect each deposited token has on your account while optimizing your borrowing strategies.
 - **Contribution to Collateral value** shows how much a specific asset is contributing to or detracting from your Effective Collateral. A positive value means the asset adds to your account’s effective collateral. A negative value means the asset reduces your effective collateral. If your Effective Collateral – Required Collateral ≤ 0, your account is at risk of liquidation.
@@ -76,7 +82,7 @@ On the **right side**, the **Deposit Panel** also updates to reflect key changes
 - **Account Leverage**: Projects how your overall account leverage will shift.
 - **Held in Wallet**: Lets you easily adjust how much to deposit based on your balance.
 
-Again, all updated values appear in yellow — making it clear what the impact will be *before* you click **Deposit SOL**.
+Again, all updated values appear in yellow — making it clear what the impact will be _before_ you click **Deposit SOL**.
 
 ## 3. From the Markets Page
 

@@ -1,8 +1,15 @@
 ---
 title: "FAQ"
-description: "FAQ"
+description: "Frequently asked questions about Glow Finance: portfolio, positions, glowSOL restaking, health level, rates, and errors."
 sidebar_label: "FAQ"
 sidebar_position: 8
+keywords:
+  - faq
+  - glow finance
+  - portfolio
+  - glowSOL
+  - health level
+  - borrowing
 ---
 
 - [General Questions](#general-questions)
@@ -56,12 +63,12 @@ Yes! Your funds remain in smart contracts controlled by your margin account conn
 - The slider allows users to see the full range of possible withdrawals or borrows.
 - Moving the slider past a certain point may trigger an error (e.g., too low liquidity or Health Level warning).
 - The projected rate impact is displayed for the operation being performed:
-    - On Deposit and Withdraw panels, users see the estimated effect on the deposit rate.
-    - On Borrow and Repay panels, users see the estimated post-transaction borrow rate.
+  - On Deposit and Withdraw panels, users see the estimated effect on the deposit rate.
+  - On Borrow and Repay panels, users see the estimated post-transaction borrow rate.
 
 ### Can my account be liquidated multiple times?
 
-Liquidations to account assets occurs in order to return the health level of an account to above 0%. If your Health Level reaches 0% multiple times, the system may liquidate collateral  in stages.
+Liquidations to account assets occurs in order to return the health level of an account to above 0%. If your Health Level reaches 0% multiple times, the system may liquidate collateral in stages.
 
 This can happen in quick succession if your position remains undercollateralized.
 
@@ -76,8 +83,8 @@ The **transaction panel** is the interface where you enter amounts to deposit, b
 The transaction panel includes:
 
 - An **input field** – Where you manually enter an amount.
-- A **slider** (0–100%)  – Lets you quickly choose a percentage of your available balance. 100% shows the theoretical maximum, but doesn’t always match what’s safe.
-- A **Max button**  – Inputs the actual maximum value that is safe and valid for the current action. This includes logic for Health Level, pool liquidity, buffer for SOL fees, and more.
+- A **slider** (0–100%) – Lets you quickly choose a percentage of your available balance. 100% shows the theoretical maximum, but doesn’t always match what’s safe.
+- A **Max button** – Inputs the actual maximum value that is safe and valid for the current action. This includes logic for Health Level, pool liquidity, buffer for SOL fees, and more.
 - **Real-time Feedback** – Displays dynamic metrics like Health Level, expected output, and borrow APR as you adjust values.
 
 ### Why does the "Withdraw" tab show more than I can actually withdraw?
@@ -111,21 +118,21 @@ For deposits, you'll still see your wallet balance (shown as “Held in Wallet�
 Because it prioritizes **safety and success**.
 
 For example:
+
 - When depositing SOL, it subtracts a small **transaction fee buffer**
 - When withdrawing or borrowing, it ensures your **Health Level stays above 10%**
 - If liquidity or pool limits apply, it adjusts the value accordingly
 
 The goal is to **prevent errors**, not just hit 100%.
 
-
 ### Why is 100% on the slider different from the Max button?
 
-| Element | What it means | **Deposit Action** | **Withdraw Action** |
-| --- | --- | --- | --- |
-| **Slider (100%)** | The theoretical maximum — e.g. full wallet balance or position | Full wallet balance (minus fee buffer for SOL only) | Full position or wallet value (regardless of health or liquidity) |
-| **Max Button** | The actual, validated max — safe, warning-free, and health-aware input | Amount minus fee buffer + within deposit limits | Withdrawable amount, considering pool liquidity + min 10% health level |
+| Element           | What it means                                                          | **Deposit Action**                                  | **Withdraw Action**                                                    |
+| ----------------- | ---------------------------------------------------------------------- | --------------------------------------------------- | ---------------------------------------------------------------------- |
+| **Slider (100%)** | The theoretical maximum — e.g. full wallet balance or position         | Full wallet balance (minus fee buffer for SOL only) | Full position or wallet value (regardless of health or liquidity)      |
+| **Max Button**    | The actual, validated max — safe, warning-free, and health-aware input | Amount minus fee buffer + within deposit limits     | Withdrawable amount, considering pool liquidity + min 10% health level |
 
-The **100% on the slider** represents what *could* be entered if no warnings or constraints existed — it’s just a reference point.
+The **100% on the slider** represents what _could_ be entered if no warnings or constraints existed — it’s just a reference point.
 
 The **Max button**, on the other hand, uses **live calculations** to figure out what’s **actually valid** at that moment. It protects you from:
 
@@ -182,7 +189,6 @@ If still blocked, try lowering the withdrawal amount or reconnecting your wallet
 - Borrowing limit reached → Glow enforces borrow caps to prevent excessive leverage.
 - Health Level constraint → The system ensures your margin account stays above 10% Health Level.
 - Liquidity constraints → Pool conditions can prevent full borrowing.
-
 
 ## **Handling Positions**
 
@@ -241,15 +247,14 @@ The 24-position cap exists due to **on-chain memory constraints**.
 
 Glow helps you work within this limit by surfacing usage counters, warning messages, and optimized UI feedback.
 
-
 ### What does "Maximum Positions Exceeded" mean when depositing?
 
 This message means your **deposit** would push the margin account over its **24-position limit**.
 
 Even though you're depositing a small amount, if it's a **new asset**, it still counts as **+1 position**. Glow blocks the transaction to keep you within the position cap.
 <img
-  src="/img/faq-17.png"
-  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+src="/img/faq-17.png"
+style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
 ### What does "Maximum Positions Exceeded" mean when borrowing?
@@ -261,8 +266,8 @@ This message appears if the **borrow action** would exceed the **24-position lim
 If you deposit a token, it uses up 1 position. If you borrow a token that is already deposited or borrowed in your margin account, it uses up another 1 position. If you're borrowing a token not currently in your account, it uses **2 positions** (one for the borrow, one for the redeposit into the pool). Glow prevents the transaction to maintain system limits.
 
 <img
-  src="/img/faq-166.png"
-  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+src="/img/faq-166.png"
+style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
 ## **glowSOL & Restaking**
@@ -285,7 +290,7 @@ glowSOL is Glow’s Liquid Restaking Token (LRT) that allows you to:
 
 Note: Users can also stake their Glow and deposit assets as part of more advanced strategies. For example, you can deposit wBTC, borrow SOL, and then restake it.
 
-*In the future releases, users will also be able to restake directly from within a margin account.*
+_In the future releases, users will also be able to restake directly from within a margin account._
 
 ### How do I unstake glowSOL?
 
@@ -301,7 +306,7 @@ Health Level = (Effective Collateral / Required Collateral) x 100
 - 100% = No risk (No debt).
 - Below 20% = High risk (Liquidation possible).
 - 0% = Liquidation begins.
-    - Note that this is equivalent to when the effective collateral of an account goes below the required collateral.
+  - Note that this is equivalent to when the effective collateral of an account goes below the required collateral.
 
 🔗 [Health Level Guide](../src/03-margin-accounts/health-level.md)
 
@@ -340,7 +345,7 @@ The Glow UI provides a real-time projection of your Health Level before executin
 - Glow Finance enforces a minimum Health Level (HL) of 10% to prevent users from entering an extremely risky position that could result in liquidation.
 - If a withdrawal or borrow action would bring the HL below 10%, the button to continue submitting the transaction is disabled and an error message is displayed.
 
-Example:*"This transaction would bring your Health Level below the minimum required (10%). Please adjust your withdrawal/borrow amount to keep your account safe."*
+Example:_"This transaction would bring your Health Level below the minimum required (10%). Please adjust your withdrawal/borrow amount to keep your account safe."_
 
 ### Why is my Health Level stuck at 0%?
 
@@ -363,17 +368,17 @@ Your margin account enters liquidation, where a portion of your collateral is so
 There are three primary transaction errors that users may face when performing borrow, withdraw, or deposit transactions:
 
 1. Pool Limit Error (Deposit/Borrow Limit Reached)
-    - Occurs when the deposit or borrow amount exceeds the set pool limits.
-    - Users will see an error message indicating the maximum allowable amount for deposit or borrowing.
-    - The UI will provide an underlined clickable value that, when clicked, will auto-fill the input field with the highest allowable amount.
+   - Occurs when the deposit or borrow amount exceeds the set pool limits.
+   - Users will see an error message indicating the maximum allowable amount for deposit or borrowing.
+   - The UI will provide an underlined clickable value that, when clicked, will auto-fill the input field with the highest allowable amount.
 2. Liquidity Error (Insufficient Pool Liquidity)
-    - Occurs when there are insufficient funds in the pool to fulfill a withdrawal or borrow request.
-    - The error message will indicate the maximum amount the user can withdraw or borrow at that moment.
-    - Like the pool limit error, the UI includes a clickable input value for easy adjustment.
+   - Occurs when there are insufficient funds in the pool to fulfill a withdrawal or borrow request.
+   - The error message will indicate the maximum amount the user can withdraw or borrow at that moment.
+   - Like the pool limit error, the UI includes a clickable input value for easy adjustment.
 3. Health Level Error (Account Below Minimum Health Level)
-    - Occurs when a withdrawal or borrow transaction would reduce the Health Level (HL) below the minimum threshold (10%).
-    - To prevent liquidation, Glow Finance blocks any transaction that would lower HL below the required safety level.
-    - Users will see an error message explaining the situation and will need to adjust their transaction amount.
+   - Occurs when a withdrawal or borrow transaction would reduce the Health Level (HL) below the minimum threshold (10%).
+   - To prevent liquidation, Glow Finance blocks any transaction that would lower HL below the required safety level.
+   - Users will see an error message explaining the situation and will need to adjust their transaction amount.
 
 ### Why is my transaction failing?
 
@@ -397,16 +402,16 @@ Yes! The underlined value in the error message is dynamic and clickable. Clickin
 - If this was the case, you will see the following error message:
 
 <img
-  src="/img/faq-3.png"
-  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+src="/img/faq-3.png"
+style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
 - Your borrow limit is reached.
 - Your Health Level would drop below 5%, triggering a safety block. If this was the case, you will see the following error message:
 
 <img
-  src="/img/faq-4.png"
-  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+src="/img/faq-4.png"
+style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
 ### Why can’t I withdraw even though I have enough balance?
@@ -452,8 +457,8 @@ This ensures borrowers don’t over-leverage.
 The maximum leverage available when borrowing is equal to the amount that would leave the account's Health Level at exactly 6.0%. If a transaction would reduce the Health Level below this threshold, a "Health Level too low" error will appear at the bottom of the panel as shown below.
 
 <img
-  src="/img/faq-5.png"
-  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+src="/img/faq-5.png"
+style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
 ### What does the “Pool Deposit Limit Violation” error mean?
@@ -467,8 +472,8 @@ The Pool Deposit Limit Violation error appears when your deposit exceeds the max
 This safeguard ensures liquidity balance and prevents overloading the pool. Clicking the underlined link in the error messaging will input the maximum allowable amount of tokens to deposit without violating the limit.
 
 <img
-  src="/img/faq-6.png"
-  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+src="/img/faq-6.png"
+style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
 The images below show the two places in the app UI where you can check the current deposit limit for an asset, and the current amount of that asset borrowed globally across the protocol:
@@ -492,8 +497,8 @@ This safeguard ensures that the protocol remains liquid and prevents excessive b
 Clicking the underlined link in the error messaging will input the maximum borrowawble amount of tokens without violating the limit, just as clicking the “borrowable” field towards the top of the panel would do.
 
 <img
-  src="/img/faq-9.png"
-  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+src="/img/faq-9.png"
+style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
 The images below show the two places in the app UI where you can check the current borrow limit for an asset, and the current amount borrowed of that asset globally across the protocol:
@@ -516,8 +521,8 @@ You can only withdraw or borrow up to the remaining available liquidity in the p
 - Try withdrawing/borrowing a smaller amount.
 
 <img
-  src="/img/faq-1.png"
-  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+src="/img/faq-1.png"
+style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
 ### What does the “Pool Utilization Violation" error mean?
@@ -529,10 +534,9 @@ This error appears when a borrow/withdraw action would push the utilization of t
 - This error can appear on both borrow and withdraw panels when pool liquidity is nearly fully used.
 
 <img
-  src="/img/faq-13.png"
-  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+src="/img/faq-13.png"
+style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
-
 
 ### Why do I see “This token cannot be borrowed”?
 
@@ -541,8 +545,8 @@ This error appears when a token is **not enabled for borrowing** in Glow Finance
 These tokens may still count towards account collateral, but cannot be borrowed.
 
 <img
-  src="/img/faq-14.png"
-  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+src="/img/faq-14.png"
+style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
 ### Why did my transaction fail with “your account is being liquidated”?
@@ -560,14 +564,14 @@ Glow’s protocol uses **partial liquidations** to preserve as much of your posi
 There are three primary errors users might encounter when withdrawing or borrowing:
 
 1. Health Level Below 10%
-    - Error: The transaction is blocked if it would reduce Health Level below 10%.
-    - Fix: Adjust the amount to stay above 10%.
+   - Error: The transaction is blocked if it would reduce Health Level below 10%.
+   - Fix: Adjust the amount to stay above 10%.
 2. Liquidity Error (Insufficient Pool Liquidity)
-    - Error: The pool doesn’t have enough liquidity to fulfill the full withdrawal/borrow.
-    - Fix: Click the underlined, dynamic input value in the error message to auto-adjust the amount.
+   - Error: The pool doesn’t have enough liquidity to fulfill the full withdrawal/borrow.
+   - Fix: Click the underlined, dynamic input value in the error message to auto-adjust the amount.
 3. Pool Limit Exceeded (Deposit/Borrow Limit Reached)
-    - Error: The amount entered would exceed the current deposit/borrow cap of the pool.
-    - Fix: Click the underlined text in the error to auto-set the valid max amount.
+   - Error: The amount entered would exceed the current deposit/borrow cap of the pool.
+   - Fix: Click the underlined text in the error to auto-set the valid max amount.
 
 ### How does Glow Finance ensure users don’t exceed pool limits?
 
@@ -584,7 +588,7 @@ Depositing this amount would exceed the deposit limit for this pool. Currently, 
 - If a user attempts to withdraw more than the available balance, the transaction is blocked, and a message informs them of the maximum withdrawable amount.
 
 Example:
-Withdrawing this amount would exceed the amount of deposited liquidity currently available in this pool. Currently, this pool can only support withdrawing up to **remaining_token_liquidity_amount** tokens until more tokens are deposited."*
+Withdrawing this amount would exceed the amount of deposited liquidity currently available in this pool. Currently, this pool can only support withdrawing up to **remaining_token_liquidity_amount** tokens until more tokens are deposited."\*
 
 ## **Fees & Costs**
 
@@ -623,8 +627,8 @@ Glow Recipes help user execute trading strategies that combine multiple steps in
 Yes! Based on user feedback, Glow Finance is working on:
 
 - Improved balance labels to clearly differentiate between:
-    - Deposited Balance
-    - Withdrawable Amount
-    - Borrowable Amount
+  - Deposited Balance
+  - Withdrawable Amount
+  - Borrowable Amount
 - Slider improvements → A mark will be added to indicate the true max amount users can withdraw/borrow safely.
 - More visible warnings when an action could lower Health Level too much.

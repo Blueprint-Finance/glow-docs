@@ -1,8 +1,14 @@
 ---
 title: "Welcome to Glow"
-description: "Welcome to Glow"
+description: "Glow Finance documentation: margin accounts, lending pools, glowSOL restaking, recipes, and key concepts on Solana."
 sidebar_label: "Welcome"
 sidebar_position: 0
+keywords:
+  - glow docs
+  - glow finance
+  - solana
+  - margin accounts
+  - glowsol
 ---
 
 Our documentation will guide you through every aspect of Glow, from setting up margin accounts to exploring our innovative Glow Recipes.
@@ -11,5 +17,5 @@ Glow Finance offers advanced DeFi solutions designed to maximize capital efficie
 
 You can already try:
 
-* [Glow Main App](https://app.glowfinance.xyz/)
-* [Glow Restaking App](https://restake.glowfinance.xyz/)
+- [Glow Main App](https://app.glowfinance.xyz/)
+- [Glow Restaking App](https://restake.glowfinance.xyz/)

@@ -1,8 +1,14 @@
 ---
 title: "Overview"
-description: "Overview"
+description: "Glow margin accounts on Solana: deposits, collateral, borrowing, leverage, health level, and adapters."
 sidebar_label: "Overview"
 sidebar_position: 0
+keywords:
+  - margin accounts
+  - collateral
+  - leverage
+  - health level
+  - solana
 ---
 
 Glow’s **Margin Accounts** provide a structured environment for users to deposit assets, earn interest, and leverage those deposits as collateral for borrowing and advanced trading strategies. Glow’s margin accounts integrate with various DeFi protocols on Solana through adapters, enabling composable strategies without leaving the Glow ecosystem.
@@ -27,7 +33,7 @@ These accounts serve as the foundation for risk-segmented strategies and allow f
 The Glow margin account architecture centers on calculating **effective collateral** and **required collateral** to support borrowing and prevent liquidation.
 
 - **Available Collateral**: This is the collateral value that users can use for new actions, such as borrowing. Glow adjusts the value based on each asset’s **collateral weight**, a risk adjustment metric that scales the collateral’s value relative to its market volatility and ability to liquidate.
-    - Example: An asset like USDC may have a high collateral weight, close to 1.0, given its stability, whereas more volatile assets like SOL may be weighted lower, affecting the amount counted towards an account’s effective collateral.
+  - Example: An asset like USDC may have a high collateral weight, close to 1.0, given its stability, whereas more volatile assets like SOL may be weighted lower, affecting the amount counted towards an account’s effective collateral.
 - **Required Collateral**: Required collateral is the minimum collateral needed to maintain the account's debt positions and prevent liquidation. It is calculated dynamically, accounting for current borrow levels, leverage ratios, and asset price fluctuations.
 
 Together, these collateral metrics enable Glow to evaluate a margin account’s health in real time, helping manage potential liquidation risks.

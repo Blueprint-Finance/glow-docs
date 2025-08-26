@@ -1,8 +1,14 @@
 ---
 title: "Overview"
-description: "Overview"
+description: "Liquid restaking and glowSOL on Solana: how LRTs work, benefits, allocation strategy, and risk-adjusted returns."
 sidebar_label: "Overview"
 sidebar_position: 0
+keywords:
+  - liquid restaking
+  - lrts
+  - glowSOL
+  - solayer
+  - solana
 ---
 
 **Restaking** is an innovative concept in blockchain security that allows users to leverage their staked tokens multiple times to secure not just the underlying blockchain but also additional applications and protocols. Unlike traditional staking, where assets are locked and serve a single purpose—validating transactions and maintaining network integrity—restaking enables those same assets to provide security guarantees to other mechanisms, such as decentralized services, middleware, or alternative consensus layers.
@@ -52,23 +58,26 @@ An essential value proposition of liquid restaking tokens (LRTs) is their abilit
 
 1. **Operator and Service Selection:**
 
-    LRT providers, like Glow, allocate user deposits to specific operators (e.g., validators or restaking services) based on risk assessments and expected risk-adjusted returns.
+   LRT providers, like Glow, allocate user deposits to specific operators (e.g., validators or restaking services) based on risk assessments and expected risk-adjusted returns.
 
-    - **Risk Assessment:** Evaluating slashing risks, operator reliability, and network security.
-    - **Return Optimization:** Estimating potential yields and adjusting strategies for the best balance of reward and risk.
+   - **Risk Assessment:** Evaluating slashing risks, operator reliability, and network security.
+   - **Return Optimization:** Estimating potential yields and adjusting strategies for the best balance of reward and risk.
+
 2. **Automated Allocation for Users:**
 
-    Glow LRT takes care of staking and restaking decisions for users by:
+   Glow LRT takes care of staking and restaking decisions for users by:
 
-    - Restaking assets with Solayer’s optimal services.
-    - Dynamically reallocating assets as risk and reward factors change.
+   - Restaking assets with Solayer’s optimal services.
+   - Dynamically reallocating assets as risk and reward factors change.
+
 3. **Transparent Decision-Making:**
 
-    The allocation process is backed by robust dashboards and analytics, providing users with visibility into how their assets are distributed and the risks/rewards associated with them. For instance:
+   The allocation process is backed by robust dashboards and analytics, providing users with visibility into how their assets are distributed and the risks/rewards associated with them. For instance:
 
-    - **Proof of Reserves Dashboard:** Displays underlying holdings to ensure transparency.
-    - **Analytics Tools:** Offers real-time insights into the performance of restaked assets.
+   - **Proof of Reserves Dashboard:** Displays underlying holdings to ensure transparency.
+   - **Analytics Tools:** Offers real-time insights into the performance of restaked assets.
+
 4. **Example from Glow’s Strategy:**
-    - Users deposit SOL and receive Glow’s LRT (glowSOL).
-    - Glow’s system atomically restakes the SOL with Solayer to earn restaking yield and Solayer Points.
-    - A comprehensive risk-adjusted strategy ensures minimal slashing risks while optimizing returns.
+   - Users deposit SOL and receive Glow’s LRT (glowSOL).
+   - Glow’s system atomically restakes the SOL with Solayer to earn restaking yield and Solayer Points.
+   - A comprehensive risk-adjusted strategy ensures minimal slashing risks while optimizing returns.

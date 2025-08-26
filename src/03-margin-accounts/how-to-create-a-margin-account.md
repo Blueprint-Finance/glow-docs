@@ -1,14 +1,18 @@
 ---
 title: "How to Create a Margin Account"
-description: "How to Create a Margin Account"
+description: "Step-by-step guide to create a Glow margin account on Solana, requirements, rent fee, and UI indicators."
 sidebar_label: "How to Create a Margin Account"
 sidebar_position: 1
+keywords:
+  - create margin account
+  - solana
+  - glow finance
+  - setup
 ---
 
+This guide explains the steps involved in creating a margin account, the Solana blockchain requirements, and the visual indicators Glow uses to help users through the process.
 
-This guide explains the steps involved in creating a margin account, the Solana blockchain requirements, and the visual indicators Glow uses to help users through the process.  
-
- A margin account is a necessary prerequisite for interacting with the Glow Finance application, enabling access to its full range of features and functionalities. Glow margin accounts underpin the interaction between a user’s wallet and the Glow Protocol on-chain programs. With just a few clicks, you can create your margin account and unlock the full potential of Glow's innovative DeFi products.
+A margin account is a necessary prerequisite for interacting with the Glow Finance application, enabling access to its full range of features and functionalities. Glow margin accounts underpin the interaction between a user’s wallet and the Glow Protocol on-chain programs. With just a few clicks, you can create your margin account and unlock the full potential of Glow's innovative DeFi products.
 
 :::tip
 Glow even supports creating multiple margin accounts under a single wallet, thus allowing risk segmentation and strategy isolation.
@@ -20,10 +24,9 @@ Glow even supports creating multiple margin accounts under a single wallet, thus
 2. **SOL Balance Requirement**: You must have at least **0.072 SOL** in your wallet to cover the rent fees for both required transactions — one for creating the margin account and another for creating the associated lookup table. This fee is used for Solana blockchain storage. In a later release, we will allow users to close their margin accounts and receive a full refund of this rent fee.
 
 3. **Multiple Accounts = Additional Rent Fees**: Each additional margin account requires payment an additional rent fee. In a future release, users will have the option to close a margin account and receive the full rent fee refunded back to their wallets.
-:::tip
-The amount of 0.072 SOL does not cover the additional SOL required to process transactions on the blockchain. Transaction fees are typically minimal, averaging less than 0.001 SOL per transaction.
-:::
-
+   :::tip
+   The amount of 0.072 SOL does not cover the additional SOL required to process transactions on the blockchain. Transaction fees are typically minimal, averaging less than 0.001 SOL per transaction.
+   :::
 
 ## Key Visual Indicators
 
@@ -34,23 +37,21 @@ The amount of 0.072 SOL does not cover the additional SOL required to process tr
 
 - Navigate to the Glow website and click either of the **Connect Wallet** buttons in the top right section of the web app.
 
-
 ![](/img/create-1.png)
 
 - Select your preferred wallet from the available options.
 
 <img
-  src="/img/create-2.png"
-  style={{ maxWidth: "300px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+src="/img/create-2.png"
+style={{ maxWidth: "300px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
-
 
 - Approve the connection in your wallet interface to allow Glow to view your balances and activities.
 
 <img
-  src="/img/create-3.png"
-  alt="New Margin Account Rent Fee Modal"
-  style={{ maxWidth: "300px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+src="/img/create-3.png"
+alt="New Margin Account Rent Fee Modal"
+style={{ maxWidth: "300px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
 ## Step 2: Access Margin Account Creation
@@ -71,12 +72,11 @@ In the **New Margin Account** modal:
 - Click **Create Margin Account** to proceed.
 
 <img
-  src="/img/create-5.png"
-  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+src="/img/create-5.png"
+style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
 - After paying the rent fee, you’ll be prompted to complete one more step: **setting up a lookup table** for your margin account. This is required for transacting efficiently on Glow and helps reduce transaction size on Solana. You’ll need to approve a second transaction to complete this step.
-
 
 ## Step 4: Handle Insufficient SOL Balance (If Applicable)
 
@@ -86,8 +86,8 @@ You’ll need approximately **0.072 SOL** to cover the rent fees for **both requ
 :::
 
 <img
-  src="/img/create-6.png"
-  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+src="/img/create-6.png"
+style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
 ## Step 5: Set Up the Lookup Table
@@ -97,8 +97,8 @@ Once the rent payment is successful, Glow will prompt you to create a **lookup t
 - The "Create Lookup Table" button will appear
 
 <img
-  src="/img/create-10.png"
-  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+src="/img/create-10.png"
+style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
 - Confirm the transaction in your wallet to proceed
@@ -113,15 +113,15 @@ Once both steps are complete—**rent fee payment** and **lookup table creation*
 You can always switch between margin accounts using the **account dropdown selector** in the top-left corner of the margin account panel. Alternatively, visit the [Portfolio page](../03-margin-accounts/portfolio-management.md) to view and manage all your accounts in one place.
 
 <img
-  src="/img/create-10.png"
-  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+src="/img/create-10.png"
+style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
 - If the creation fails, an error banner will notify you of the failure. For any issues, please feel free to contact us via our [Support](../support.md).
 
 <img
-  src="/img/create-9.png"
-  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+src="/img/create-9.png"
+style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
 ## Step 7: Review Your Margin Account Panel
