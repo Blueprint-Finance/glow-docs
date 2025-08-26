@@ -20,7 +20,7 @@ const sidebars = {
       label: 'LRT',
       items: [
         'LRT/overview',
-        'LRT/$glowSol',
+        'LRT/glowSol',
         'LRT/using-glowSol',
       ],
     },
