@@ -9,6 +9,8 @@ keywords:
   - glowSOL
   - solayer
   - solana
+  - glow
+  - SOL
 ---
 
 **Restaking** is an innovative concept in blockchain security that allows users to leverage their staked tokens multiple times to secure not just the underlying blockchain but also additional applications and protocols. Unlike traditional staking, where assets are locked and serve a single purpose—validating transactions and maintaining network integrity—restaking enables those same assets to provide security guarantees to other mechanisms, such as decentralized services, middleware, or alternative consensus layers.

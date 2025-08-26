@@ -5,9 +5,12 @@ sidebar_label: "Using glowSOL"
 sidebar_position: 2
 keywords:
   - glowSOL
+  - solana
+  - solayer
+  - glow
+  - SOL
   - liquid restaking
   - staking
-  - solana
   - redemption
 ---
 

@@ -11,6 +11,11 @@ keywords:
   - margin pools
   - adapters
   - recipes
+  - glowSOL
+  - solayer
+  - solana
+  - glow
+  - SOL
 ---
 
 :::info

@@ -8,6 +8,11 @@ keywords:
   - liquidity risk
   - interest rates
   - unstaking
+  - glowSOL
+  - solayer
+  - solana
+  - glow
+  - SOL
 ---
 
 Glow Finance leverages advanced DeFi mechanics to provide leveraged staking, borrowing, and restaking opportunities. While these features offer potential for amplified yields, they also carry inherent risks. This article outlines the key risk categories associated with Glow Finance and provides actionable mitigation strategies for each.

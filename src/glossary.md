@@ -9,6 +9,11 @@ keywords:
   - margin accounts
   - collateral
   - utilization
+  - glowSOL
+  - solayer
+  - solana
+  - glow
+  - SOL
 ---
 
 ## **A**

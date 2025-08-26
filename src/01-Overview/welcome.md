@@ -8,7 +8,10 @@ keywords:
   - glow finance
   - solana
   - margin accounts
-  - glowsol
+  - glowSOL
+  - solayer
+  - glow
+  - SOL
 ---
 
 Our documentation will guide you through every aspect of Glow, from setting up margin accounts to exploring our innovative Glow Recipes.

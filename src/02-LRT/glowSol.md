@@ -5,6 +5,9 @@ sidebar_label: "$glowSOL"
 sidebar_position: 1
 keywords:
   - glowSOL
+  - solana
+  - glow
+  - SOL
   - lrt
   - solana
   - solayer

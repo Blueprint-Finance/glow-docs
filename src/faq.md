@@ -8,6 +8,10 @@ keywords:
   - glow finance
   - portfolio
   - glowSOL
+  - solayer
+  - solana
+  - glow
+  - SOL
   - health level
   - borrowing
 ---

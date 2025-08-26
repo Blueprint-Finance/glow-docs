@@ -7,7 +7,11 @@ keywords:
   - fees
   - lending fees
   - liquidation fee
-  - glowsol
+  - glowSOL
+  - solayer
+  - solana
+  - glow
+  - SOL
 ---
 
 Glow Finance offers a transparent fee structure, ensuring competitive rates across its ecosystem.
