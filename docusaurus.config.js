@@ -73,6 +73,7 @@ const config = {
           customCss: "./src/css/custom.css",
         },
         sitemap: {
+          lastmod: "datetime",
           changefreq: "weekly",
           priority: 0.5,
           ignorePatterns: ["/search", "/tags/**"],
