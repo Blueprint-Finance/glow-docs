@@ -71,6 +71,12 @@ const config = {
         theme: {
           customCss: './src/css/custom.css',
         },
+        sitemap: {
+              changefreq: 'weekly',
+              priority: 0.5,
+              ignorePatterns: ['/tags/**'],
+              filename: 'sitemap.xml',
+},
       }),
     ],
   ],
@@ -87,7 +93,8 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/mark.svg',
-      metadata: [
+      metadata: [   { name: 'description', content: 'Glow Finance Docs — Learn how to use Glow Recipes, margin accounts, fees, risks, and more.' },
+                    { name: 'keywords', content: 'Glow Finance, DeFi, Recipes, Solana, glowSOL, restaking' },
                     { name: 'twitter:card', content: 'summary_large_image' },
                     { name: 'twitter:title', content: 'Glow Docs' },
                     { name: 'twitter:description', content: 'DeFi protocol' },
