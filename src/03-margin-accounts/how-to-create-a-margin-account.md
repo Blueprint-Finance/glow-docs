@@ -126,6 +126,6 @@ style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", mar
 
 ## Step 7: Review Your Margin Account Panel
 
-After successfully creating a margin account, the Markets page will update to reflect your new account. At the top of the screen, you’ll now see the [Margin Account Panel](../margin-accounts/portfolio-management#margin-account-panel-explainer), which displays key stats for the currently active margin account.
+After successfully creating a margin account, the Markets page will update to reflect your new account. At the top of the screen, you’ll now see the [Margin Account Panel](../portfolio-management#margin-account-panel-explainer), which displays key stats for the currently active margin account.
 
 ![](/img/create-11.png)
