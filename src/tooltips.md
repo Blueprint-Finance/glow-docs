@@ -59,10 +59,8 @@ Each tooltip is strategically placed to assist users in making informed decision
 | **Assets**               | The USD value of tokens and positions that you own in your margin account.                                                                                                                                                                                               |
 | **Liabilites**           | The USD value of tokens and positions that you owe in your margin account.                                                                                                                                                                                               |
 | **Available Collateral** | The portion of deposited assets that can be used as collateral for new borrowings. Also: The difference between your effective collateral and required collateral, quoted in USD. When available collateral reaches zero, your margin account is subject to liquidation. |
-
-|
-| **Effective Collateral** | The risk-adjusted collateral amount, factoring in asset weights. |
-| **Required Collateral** | The minimum amount of collateral needed to maintain open borrow positions. |
+| **Effective Collateral** | The risk-adjusted collateral amount, factoring in asset weights.                                                                                                                                                                                                         |
+| **Required Collateral**  | The minimum amount of collateral needed to maintain open borrow positions.                                                                                                                                                                                               |
 
 ### 4. Deposit, Borrow, Withdraw, and Repay
 
