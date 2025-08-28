@@ -1,8 +1,17 @@
 ---
 title: "$glowSOL"
-description: "$glowSOL"
+description: "What is glowSOL: Glow Finance’s liquid restaking token on Solana, integration with Solayer, rewards, and utility."
 sidebar_label: "$glowSOL"
 sidebar_position: 1
+keywords:
+  - glowSOL
+  - solana
+  - glow
+  - SOL
+  - lrt
+  - solana
+  - solayer
+  - restaking
 ---
 
 glowSOL is a **liquid restaking token (LRT)** that represents staked SOL assets via [Solayer](https://docs.solayer.org/getting-started/introduction), combining liquidity and tradability with the ability to earn staking rewards. Designed as part of the Glow Finance ecosystem, glowSOL provides users with an innovative way to access their staked assets without forfeiting rewards, unlocking additional use cases within decentralized finance (DeFi).
@@ -14,7 +23,6 @@ glowSOL stands out due to its automated processes:
 - The **Restaking Process** automatically converts SOL to glowSOL while securely managing sSOL.
 - The **Redeem Process** ensures a transparent withdrawal system, with alerts for admins to manage liquidity.
 
-
 ## Unlock Liquidity for Restaked Assets
 
 glowSOL allows users to access liquidity without waiting for the traditional staking lock-up period, enabling immediate use of their staked assets. Users can use their glowSOL in various DeFi activities, lending, or collateralizing other positions within Glow Finance.
@@ -24,8 +32,8 @@ glowSOL allows users to access liquidity without waiting for the traditional sta
 Users earn staking yield, Glow Points, Solayer Points, and AVS rewards while retaining the flexibility to trade or leverage their glowSOL holdings.
 
 1. **Staking Yield**: glowSOL earns top-tier staking rewards through Solayer’s validator infrastructure.  
-  → 🔗 [Check current APY on restake.glowfinance.xyz](https://restake.glowfinance.xyz)  
-  → 🔗 [Learn how Solayer generates rewards](https://docs.solayer.org/assets/mega-validator/transaction-acceleration/endoavs)
+   → 🔗 [Check current APY on restake.glowfinance.xyz](https://restake.glowfinance.xyz)  
+   → 🔗 [Learn how Solayer generates rewards](https://docs.solayer.org/assets/mega-validator/transaction-acceleration/endoavs)
 2. **Glow Points Incentives**: glowSOL holders receive **Glow Points**. These points are part of Glow’s broader incentive program to reward active participation.
 3. **Solayer Points**: Additional rewards come in the form of **Solayer Points**, further enhancing the value of holding glowSOL.
 

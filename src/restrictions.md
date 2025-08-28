@@ -1,8 +1,12 @@
 ---
 title: "Restricted Jurisdictions"
-description: "Restricted Jurisdictions for Glow Finance"
+description: "List of restricted jurisdictions for Glow Finance and compliance notes; subject to updates."
 sidebar_label: "Restricted Jurisdictions"
 sidebar_position: 6
+keywords:
+  - restricted jurisdictions
+  - compliance
+  - sanctions
 ---
 
 At Glow Finance, we prioritize compliance with international laws and regulations. As part of this commitment, access to our services is restricted in certain jurisdictions, including:

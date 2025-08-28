@@ -1,8 +1,14 @@
 ---
 title: "The Problem: DeFi Limitations"
-description: "The Problem: DeFi Limitations"
+description: "Why traditional DeFi is inefficient: over-collateralization, static capital, limited strategies, liquidation risk, and silos."
 sidebar_label: "The Problem"
 sidebar_position: 1
+keywords:
+  - defi limitations
+  - overcollateralization
+  - liquidation risk
+  - capital efficiency
+  - solana
 ---
 
 :::info

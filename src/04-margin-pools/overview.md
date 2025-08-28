@@ -1,7 +1,14 @@
 ---
 title: "Overview"
-description: "Overview"
+description: "Margin pools in Glow: utilization-based rates, liquidity management, lender/borrower roles, and user experience."
 sidebar_label: "Overview"
+keywords:
+  - margin pools
+  - utilization rate
+  - interest rates
+  - liquidity
+  - lenders
+  - borrowers
 ---
 
 Glow Finance’s **Margin Pools** serve as the backbone for managing liquidity within margin accounts. These pools provide a dynamic framework that adjusts interest rates based on utilization, ensuring an optimized environment for both lenders and borrowers.
@@ -23,18 +30,17 @@ To mitigate this possibility for lenders who do want to withdraw, Glow utilizes 
 ### **Key Features**
 
 1. **Dynamic Interest Rates - Utilization and Rates**:
-    - A pool’s health and usability are primarily determined by its **utilization rate**. Interest rates are calculated based on **utilization rate** — the ratio of borrowed liquidity to total available liquidity. High utilization signifies that most of the pool’s liquidity is borrowed, triggering higher interest rates to attract new deposits. Conversely, low utilization leads to lower interest rates in order to incentivize inexpensive borrowing.
-    - Higher utilization increases interest rates, incentivizing new deposits and balancing the pool’s liquidity.
+   - A pool’s health and usability are primarily determined by its **utilization rate**. Interest rates are calculated based on **utilization rate** — the ratio of borrowed liquidity to total available liquidity. High utilization signifies that most of the pool’s liquidity is borrowed, triggering higher interest rates to attract new deposits. Conversely, low utilization leads to lower interest rates in order to incentivize inexpensive borrowing.
+   - Higher utilization increases interest rates, incentivizing new deposits and balancing the pool’s liquidity.
 
 ![](/img/integrate-1.png)
 
 2. **Dual Roles for Users**:
-    - **Lenders**: Deposit assets into Margin Pools and earn yield, benefiting from competitive rates while increasing account collateral in case borrowing is desired.
-    - **Borrowers**: Access liquidity by borrowing against their deposited collateral, leveraging their positions for strategic investments.
+   - **Lenders**: Deposit assets into Margin Pools and earn yield, benefiting from competitive rates while increasing account collateral in case borrowing is desired.
+   - **Borrowers**: Access liquidity by borrowing against their deposited collateral, leveraging their positions for strategic investments.
 3. **Deposit and Borrow Limits:** Glow Finance enforces **global limits** on the amount users can deposit and borrow to ensure the platform's stability and liquidity management. These limits are designed to safeguard the protocol from overexposure and maintain a sustainable ecosystem for all users, and will be raised over time.
 4. **Risk Management**:
-    The system ensures sufficient liquidity is maintained by managing interest rates and imposing collateral requirements for borrowers.  Additionally, there is a safety buffer feature in place that caps pool utilization at 95%. In the rare event where bad debt occurs, **losses will be socialized across lenders**. This approach ensures that no single user bears the brunt of protocol-level risks, aligning Glow Finance with best practices in DeFi liquidity management.  In the event of an unrecoverable bad debt beyond insurance, losses will be socialized across lenders. Standing protocol fees that have been earned for a particular asset pool can also be counted as a backstop/insurance fund (likely only will partially cover bad debt until fees accrue over time).
-
+   The system ensures sufficient liquidity is maintained by managing interest rates and imposing collateral requirements for borrowers. Additionally, there is a safety buffer feature in place that caps pool utilization at 95%. In the rare event where bad debt occurs, **losses will be socialized across lenders**. This approach ensures that no single user bears the brunt of protocol-level risks, aligning Glow Finance with best practices in DeFi liquidity management. In the event of an unrecoverable bad debt beyond insurance, losses will be socialized across lenders. Standing protocol fees that have been earned for a particular asset pool can also be counted as a backstop/insurance fund (likely only will partially cover bad debt until fees accrue over time).
 
 ### **User Experience in Margin Pools**
 

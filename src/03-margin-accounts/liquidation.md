@@ -1,8 +1,13 @@
 ---
 title: "Liquidation"
-description: "Liquidation"
+description: "How liquidation works in Glow: triggers, process, fees, alerts, and managing risk with health levels."
 sidebar_label: "Liquidation"
 sidebar_position: 6
+keywords:
+  - liquidation
+  - health level
+  - risk management
+  - solana
 ---
 
 Glow Finance integrates sophisticated tools to safeguard user portfolios from bad debt while maintaining the integrity of the lending ecosystem. Below is an in-depth explanation of how liquidation operates within the platform.
@@ -29,14 +34,13 @@ Glow Finance provides timely alerts to users in the web application, enabling th
 ## Health Level Monitoring
 
 - **5.0% Threshold Warning**: The banner is triggered when the Health Level of **any margin account** associated with the currently connected wallet drops below 5.0%.
-    - **Health Alert Banner:** it is displayed globally throughout the app, regardless of the page or section the user is navigating. It ensures users are promptly notified when the Health Level of any margin account associated with their connected wallet drops below 5.0%
+  - **Health Alert Banner:** it is displayed globally throughout the app, regardless of the page or section the user is navigating. It ensures users are promptly notified when the Health Level of any margin account associated with their connected wallet drops below 5.0%
 
 ![](/img/liq-1.png)
 
     - **Health Alert Modal** Summarizes all at-risk accounts, helping users prioritize which accounts require immediate action.
 
 ![](/img/h-6.png)
-
 
 ## Liquidation Notification
 
@@ -45,8 +49,8 @@ Glow Finance provides timely alerts to users in the web application, enabling th
 - **Account(s) Liquidated:** A detailed summary of the affected accounts. The modal displays the accounts liquidated since the last time the user viewed and acknowledged this information. Once the **ACK LIQUIDATIONS** button is clicked, the app considers the shown liquidations acknowledged.
 
 <img
-  src="/img/liq-3.png"
-  style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+src="/img/liq-3.png"
+style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
 - **Asset Breakdown:** When a user clicks on one of the liquidated account rows in the initial modal, they are directed to a detailed view modal. This second modal provides a comprehensive breakdown of the liquidation, liquidation fees, timestamps, and a link to the corresponding blockchain transaction on SolScan’s block explorer for full transparency.

@@ -1,8 +1,19 @@
 ---
 title: "Glossary"
-description: "Glossary"
+description: "Key terms used in Glow Finance: margin accounts, collateral values, utilization, leverage, restaking, and more."
 sidebar_label: "Glossary"
 sidebar_position: 10
+keywords:
+  - glossary
+  - definitions
+  - margin accounts
+  - collateral
+  - utilization
+  - glowSOL
+  - solayer
+  - solana
+  - glow
+  - SOL
 ---
 
 ## **A**
@@ -41,6 +52,7 @@ A section in Glow Finance that displays key financial metrics of a user's margin
 - Unlike Net Balance, Contribution to Collateral directly impacts your Health Level and borrowing power.
 
 **Key Takeaway:**
+
 - **Net Balance ≠ Risk Indicator** – It only shows deposits vs. borrows.
 - **Monitor Contribution to Collateral, not just Net Balance**, to stay safe to stay safe and aware of the effect each deposited token has on your account while optimizing your borrowing strategies.
 - **Contribution to Collateral value** shows how much a specific asset is contributing to or detracting from your Effective Collateral. A positive value means the asset adds to your account’s effective collateral. A negative value means the asset reduces your effective collateral. If your Effective Collateral – Required Collateral ≤ 0, your account is at risk of liquidation.
@@ -276,7 +288,7 @@ Dynamic Interest Rates: Determined by utilization rate—higher utilization lead
 
 The highest possible leverage a user may take is defined as borrowing the amount of the debt asset that would leave their health level equal to 6.0%.
 
-Note that this also takes into account the [collateral values](/glossary#collateral-values) of the borrowed assets (e.g. a margin account is able to borrow more of an asset that has a higher *collateral weight,* since the borrowed asset will also counts towards account collateral)
+Note that this also takes into account the [collateral values](/glossary#collateral-values) of the borrowed assets (e.g. a margin account is able to borrow more of an asset that has a higher _collateral weight,_ since the borrowed asset will also counts towards account collateral)
 
 ---
 
@@ -342,12 +354,12 @@ $Utilization\ Rate = \frac{\text{Total Borrowed}}{\text{Total Deposited}}$
 
 This system ensures efficient capital allocation, maintains liquidity, and allows Glow Finance to function as a resilient and adaptive lending protocol.
 
-🔗 **See also**: [Interest Rate Curve](/glossary#interest-rate-curve)  
+🔗 **See also**: [Interest Rate Curve](/glossary#interest-rate-curve)
 
 ### **Undercollateralized**
 
 Unlike most DeFi protocols that require full overcollateralization, Glow Finance enables undercollateralized borrowing, allowing users to borrow more than their available collateral.
 
-- Assets aren’t locked up unnecessarily, enabling more productive use of funds.  
-- Users can borrow against future yield and strategic positions without excessive collateral.  
+- Assets aren’t locked up unnecessarily, enabling more productive use of funds.
+- Users can borrow against future yield and strategic positions without excessive collateral.
 - Facilitates leveraged staking, recursive borrowing, and restaking strategies.

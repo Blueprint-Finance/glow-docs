@@ -3,6 +3,11 @@ title: "Rewards (Coming Soon)"
 description: "Rewards for Glow Finance"
 sidebar_label: "Rewards"
 sidebar_position: 5
+keywords:
+  - rewards
+  - points
+  - glow points
+  - incentives
 ---
 
 Exciting rewards are on the way! Glow Finance will soon introduce its **Points Program**, offering users a unique opportunity to earn and benefit from their engagement with our platform.

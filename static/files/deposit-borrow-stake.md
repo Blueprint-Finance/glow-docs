@@ -3,6 +3,14 @@ title: "Deposit wBTC, Borrow SOL & Stake glowSOL"
 description: "Deposit wBTC, Borrow SOL & Stake glowSOL"
 sidebar_label: "Deposit wBTC, Borrow SOL & Stake glowSOL"
 sidebar_position: 4
+keywords:
+  - glowSOL
+  - glow
+  - SOL
+  - liquid restaking
+  - staking
+  - solana
+  - redemption
 ---
 
 Glow Finance allows users to deposit a variety of collateral types. If you have any idle assets (not limited to just wBTC), you can **deposit them to earn interest while simultaneously using them as collateral** for borrowing and running a strategy such as the one described here.
@@ -14,9 +22,9 @@ Depositing assets in Glow Finance provides multiple benefits (by combining these
 1. **Earn Passive Yield** – Deposited assets generate **Deposit APY** over time.
 2. **Increase Borrowing Power** – Collateral enables users to borrow assets and utilize leverage.
 3. **Stack Rewards** – Depositors benefit from:
-    - Interest from lending pools
-    - Staking yield from glowSOL (when SOL is restaked)
-    - Boosted Glow Points, Solayer Points, and AVS Rewards
+   - Interest from lending pools
+   - Staking yield from glowSOL (when SOL is restaked)
+   - Boosted Glow Points, Solayer Points, and AVS Rewards
 
 Users who hold a significant amount of Bitcoin can **maximize its utility** by simultaneously:
 
@@ -57,11 +65,11 @@ You will see both:
 - **Before You Deposit APY** – The current rate before your transaction is completed.
 - **After You Deposit APY** – An estimate of the rate after your deposit is added to the pool.
 
-*Note:* These rates may fluctuate based on market conditions and utilization.
+_Note:_ These rates may fluctuate based on market conditions and utilization.
 
 - Click **Approve wBTC Deposit** and confirm the transaction in your wallet.
 
-📌 *Note:* Ensure you have sufficient funds and network fees available before approving the deposit.
+📌 _Note:_ Ensure you have sufficient funds and network fees available before approving the deposit.
 
 ## Step 2: Borrow SOL Against wBTC
 
@@ -69,24 +77,23 @@ Once your **wBTC is deposited**, you can **use it as collateral** to borrow **SO
 
 1. **Navigate to SOL Market:** From the **Markets** page, find **SOL**.
 2. **Check Borrowing Capacity:**
-    - Your **available borrowing power** depends on your **Health Level** and deposited collateral.
-    - You can check your borrowing capacity on the **Borrow** tab of the asset page.
-    - **Use the slider** to see the **maximum amount you can borrow** while maintaining a safe Health Level.
-    - **Max Leverage**: The highest possible leverage is reached when your **Health Level** is at 10%. See [Max Leverage](../glossary#max-leverage) for details.
+   - Your **available borrowing power** depends on your **Health Level** and deposited collateral.
+   - You can check your borrowing capacity on the **Borrow** tab of the asset page.
+   - **Use the slider** to see the **maximum amount you can borrow** while maintaining a safe Health Level.
+   - **Max Leverage**: The highest possible leverage is reached when your **Health Level** is at 10%. See [Max Leverage](../glossary#max-leverage) for details.
 3. **Borrow SOL**
-    - Click the Borrow button next to SOL in the **Markets** list, or click on the SOL row in the assets list to open the **Asset Details** page, then navigate to the **Borrow** tab.
-    - Enter the amount of **SOL** you want to borrow. Your **available borrowing power** is based on the **collateral weight** of your wBTC.
-    - **Check the Borrow APY**: You’ll see both the **current APY** and the **after-borrow APY**, showing how your transaction impacts the lending pool, allowing you to make the best-informed decision based on current protocol condition.
-    - **Review your resulting Health Level** in the transaction panel before approving. This helps you assess risk and avoid liquidation.
-    - Click **Borrow SOL** and **approve** the transaction in your wallet.
+   - Click the Borrow button next to SOL in the **Markets** list, or click on the SOL row in the assets list to open the **Asset Details** page, then navigate to the **Borrow** tab.
+   - Enter the amount of **SOL** you want to borrow. Your **available borrowing power** is based on the **collateral weight** of your wBTC.
+   - **Check the Borrow APY**: You’ll see both the **current APY** and the **after-borrow APY**, showing how your transaction impacts the lending pool, allowing you to make the best-informed decision based on current protocol condition.
+   - **Review your resulting Health Level** in the transaction panel before approving. This helps you assess risk and avoid liquidation.
+   - Click **Borrow SOL** and **approve** the transaction in your wallet.
 4. **Confirm Borrowing**
-    - Your borrowed SOL will appear in your account.
-    - Your **Health Level** will update based on your new loan.
+   - Your borrowed SOL will appear in your account.
+   - Your **Health Level** will update based on your new loan.
 
-✅ *You now have SOL in your wallet, ready to stake.*
+✅ _You now have SOL in your wallet, ready to stake._
 
 > Important: Borrowing SOL increases your account leverage. Be mindful of your Health Level, as borrowing too much can lead to liquidation.
->
 
 ## Step 3: Stake Borrowed SOL as glowSOL
 
@@ -156,8 +163,8 @@ By completing this strategy, you maximize your capital efficiency and earn rewar
 - Your wBTC deposit accrues interest via Deposit APY.
 - Your glowSOL stake earns staking yield that auto-compounds over time.
 - You earn points from:
-    - **Glow Points** – Rewarding activity within Glow Finance.
-    - **Solayer Points** – Earned for participating in Solayer’s restaking ecosystem.
+  - **Glow Points** – Rewarding activity within Glow Finance.
+  - **Solayer Points** – Earned for participating in Solayer’s restaking ecosystem.
 - You can unstake glowSOL anytime to redeem it back for SOL.
 
 ### 4.3 Repay Your Borrowed SOL (Optional)
