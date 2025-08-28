@@ -9,7 +9,8 @@ import { themes as prismThemes } from "prism-react-renderer";
 /** @type {import('@docusaurus/types').Config} */
 
 require("dotenv").config();
-const isProd = process.env.DEPLOY_ENV === "production";
+const vercelEnv = process.env.VERCEL_ENV;
+const isProd = vercelEnv === "production";
 
 const config = {
   title: "Glow Docs",
