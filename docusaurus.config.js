@@ -96,28 +96,7 @@ const config = {
     ({
       // Replace with your project's social card
       image: "img/mark.svg",
-      metadata: [
-        {
-          name: "description",
-          content:
-            "Glow Finance Docs — Learn how to use Glow Recipes, margin accounts, fees, risks, and more.",
-        },
-        {
-          name: "keywords",
-          content: "Glow Finance, DeFi, Recipes, Solana, glowSOL, restaking",
-        },
-        { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:title", content: "Glow Docs" },
-        { name: "twitter:description", content: "DeFi protocol" },
-        {
-          name: "twitter:image",
-          content: "https://docs.glowfinance.xyz/img/mark.svg",
-        },
-        {
-          property: "og:image",
-          content: "https://docs.glowfinance.xyz/img/mark.svg",
-        },
-      ],
+      metadata: [{ name: "twitter:card", content: "summary_large_image" }],
       navbar: {
         logo: {
           alt: "Glow Logo",
