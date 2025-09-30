@@ -32,7 +32,7 @@ Below, you can find the latest Glow Audit Reports (Zellic, Certora and Halborn),
   * **Token configuration bypasses** allowing immutability checks to be circumvented.
   * **Two-step authority transfers** breaking on incorrect pubkeys.
 
-### Recommendations from Zellic
+### Recommendations
 
 * Strengthen **account constraints** and validation logic.
 * Improve **PDA seed design** to avoid collisions.
@@ -47,12 +47,6 @@ Below, you can find the latest Glow Audit Reports (Zellic, Certora and Halborn),
 - **Scope:** Smart contract security, vulnerability assessments, and risk management.
 - [View Full Audit Report](/files/Glow-report.pdf)
 
-### What Was Audited?
-
-- **Core smart contracts** managing deposits, withdrawals, and staking.  
-- **Security protections** against potential exploits.  
-- **Governance controls** to ensure safe protocol operations.
-
 ### Summary of Findings
 
 Glow Finance partnered with **Certora** to review the security of **Glow LRT** in **December 2024**. The audit focused on identifying potential risks, improving safety measures, and ensuring smart contract reliability.  
@@ -61,6 +55,12 @@ Glow Finance partnered with **Certora** to review the security of **Glow LRT** i
 - **Status:** **All identified issues have been resolved.**  
 - **High-Severity Fix:** A **Share Inflation Attack** vulnerability was found and fixed.  
 - **Other Key Fixes:** Improvements to frontrunning protection, governance security, and contract logic.
+
+### What Was Audited?
+
+- **Core smart contracts** managing deposits, withdrawals, and staking.  
+- **Security protections** against potential exploits.  
+- **Governance controls** to ensure safe protocol operations.
 
 ## Halborn Audit
 
