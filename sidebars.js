@@ -52,6 +52,14 @@ const sidebars = {
   ],
 },
 
+{
+  type: 'category',
+  label: 'Vaults',
+  items: [
+    'Vaults/overview',
+  ],
+},
+
     // 5. Fees
     'fees',
 
