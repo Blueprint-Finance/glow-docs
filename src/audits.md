@@ -9,6 +9,13 @@ Glow Finance values **security and transparency**. To protect users and ensure t
 
 Below, you can find the latest Glow Audit Reports (Zellic, Certora and Halborn), which details our security assessment.
 
+## Glow Chainlink Oracle Support
+
+- **Auditor:** **Halborn** (Industry-leading Web3 security firm)  
+- **Date:** **December 08, 2025**
+- [View Full Audit Report](/files/Glow-Chainlink-Oracle-Support.pdf)
+
+
 ## Glow Margin Vaults
 
 - **Auditor:** **Halborn** (Industry-leading Web3 security firm)  
