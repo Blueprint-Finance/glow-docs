@@ -70,37 +70,27 @@ The flow of funds for the SyrupUSDC vault is the same as the above general flow 
 
 Each smart contract integrates **role-based access control** to restrict sensitive functions. The system defines multiple roles, each with clearly scoped permissions and capabilities:
 
+## **Access Control**
+
+Each smart contract integrates **role-based access control** to restrict sensitive functions. The system defines multiple roles, each with clearly scoped permissions and capabilities:
+
 | Actor | Role | Configuration |
 | --- | --- | --- |
-| Protocol Authority | Deploy and upgrade smart contracts, onboard vaults and tokens, and configure vault parameters (e.g. disable deposits/withdrawals, change fee parameters) | The authority is controlled by a Squads multisig, with 3 signers required to make a change. This configuration ensures proper coverage by requiring two signers with technical oversight and one signer providing organizational and governance oversight. |
-| Strategy Operator | Manages the funds in the vault, having the ability to withdraw transfer funds to strategies. | Strategy operations are conducted through a leading, secure digital asset management platform that provides granular permissions, role-based controls, and robust policy configurations to ensure multiple layers of protection. |
-| Valuation Authority | A separate and automated account/process that has permission to update valuation of multisig strategies. The authority periodically sends updates to the network on the USD value of funds held in a strategy if that strategy is not a margin account. | The authority operates as a service account with a private key/wallet that is only owned by the service and is not exposed to the team.
+| **Protocol Authority** | Deploy and upgrade smart contracts, onboard vaults and tokens, and configure vault parameters (e.g., disable deposits/withdrawals, change fee parameters). | The authority is controlled by a Squads multisig, with 3 signers required to make a change.<br /><br />This configuration ensures proper coverage by requiring two signers with technical oversight and one signer providing organizational and governance oversight. |
+| **Strategy Operator** | Manages the funds in the vault, having the ability to transfer funds to strategies. | Strategy operations are conducted through a leading, secure digital asset management platform that provides granular permissions, role-based controls, and robust policy configuration to ensure multiple layers of protection. |
+| **Valuation Authority** | A separate and automated account or process that has permission to update valuation of multisig strategies. The authority periodically sends updates to the network on the USD value of funds held in a strategy if that strategy is not a margin account. | The authority operates as a service account with a private key or wallet that is only owned by the service and is not exposed to the team.<br /><br />The protocol authority can change this valuation authority through a multisig vote. |
+| **Operator Margin Account** | A Glow margin account constrained and designated to a Strategy Operator. | The Glow Vault program communicates with the Glow Margin program to constrain the permissions of a margin account.<br /><br />This prevents Strategy Operators from:<br />- Withdrawing funds from the margin account<br />- Transferring between margin accounts<br /><br />This action is enforced via cross-program invocation between the two smart contracts. |
 
-The protocol authority can change this valuation authority through a multisig vote. |
-| Operator Margin Account | A Glow margin account constrained and designated to a Strategy Operator. | The Glow Vault program communicates with the Glow Margin program to constrain the permissions of a margin account.
-
-This prevents Strategy Operators from:
-* Withdrawing funds from the margin account
-* Transferring between margin accounts
-
-This action is enforced via cross-program-invocation between the two smart contracts. |
 
 ## Control & Security Model
 
 | Role / Function | Powers & Actions | Safeguards / Limitations |
 | --- | --- | --- |
-| **Protocol Authority** | * Upgrade protocol contracts, including vaults
-* Add new vaults | * Squads Multisig with 3 signers
-* Rare, program changes after audit completion
-* Configuration changes when adding new tokens or vaults |
-| **Strategy Owner** | • Owns individual strategies | * Owned by nominated vault owner
-* Can be a multisig or secured automated wallet, depending on vault type |
-| **Multisig Strategy Operator** | * Propose vault valuation updates (automation)
-* Transfers funds to vault for redemptions | * Cannot withdraw funds directly without accounting for the transfer in the vault
-* Operator can be replaced/removed by Strategy Owner |
-| **LPs (Liquidity Providers)** | * Deposit underlying assets
-* Redeem vault shares as SPL (Solana Public Library) tokens | * Shares are held by a program derived account that is owned by the LP, only the LP can redeem funds
-* Withdrawals honored per stated policy |
+| **Protocol Authority** | - Upgrade protocol contracts, including vaults<br />- Add new vaults | - Squads multisig with 3 signers<br />- Rare program changes after audit completion<br />- Configuration changes when adding new tokens or vaults |
+| **Strategy Owner** | - Owns individual strategies | - Owned by nominated vault owner<br />- Can be a multisig or secured automated wallet, depending on vault type |
+| **Multisig Strategy Operator** | - Propose vault valuation updates (automation)<br />- Transfer funds to vault for redemptions | - Cannot withdraw funds directly without accounting for the transfer in the vault<br />- Operator can be replaced or removed by the Strategy Owner |
+| **LPs (Liquidity Providers)** | - Deposit underlying assets<br />- Redeem vault shares as SPL (Solana Program Library) tokens | - Shares are held by a program-derived account owned by the LP; only the LP can redeem funds<br />- Withdrawals honored per stated policy |
+
 
 ## Frontend Protection
 
