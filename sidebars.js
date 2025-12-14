@@ -57,7 +57,7 @@ const sidebars = {
   label: 'Vaults',
   items: [
     'Vaults/overview',
-    'Vaults/overview/architecture',
+    'Vaults/architecture',
     'Vaults/security',
   ],
 },
