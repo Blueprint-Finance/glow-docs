@@ -65,4 +65,4 @@ Future vaults may include additional partner reward programs.
 
 ## Vault Risks
 
-Before depositing, review the full [Vault Risk Disclosure](../risks#vault-risks) for details on risk mitigation, collateral safeguards, and underlying protocol integrations.
+Before depositing, review the full [Vault Risk Disclosure](../../risks/#vault-risks) for details on risk mitigation, collateral safeguards, and underlying protocol integrations.
