@@ -15,7 +15,7 @@ Below, you can find the latest Glow Audit Reports (Zellic, Certora and Halborn),
 - **Date:** **November 26, 2025**
 - [View Full Audit Report](/files/Glow-Margin-Vaults.pdf)
 
-## GlowSOL Liquid Restaking and Margin Recipe
+## GlowSOL Liquid Restaking
 
 - **Auditor:** **Halborn** (Industry-leading Web3 security firm)  
 - **Date:** **October 17, 2025**

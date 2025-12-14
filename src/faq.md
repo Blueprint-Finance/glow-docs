@@ -35,7 +35,7 @@ Glow Finance is a DeFi protocol on Solana offering margin accounts, lending pool
 
 - One account for everything → Deposit, borrow, and trade from a single margin account.
 - Capital Efficiency → Maximize your deposited capital through strategic leverage and pooled lending.
-- Automated Strategies → Glow Recipes allow users to execute multi-step DeFi operations automatically.
+- Automated Strategies → Glow Vaults allow users to execute multi-step DeFi operations automatically.
 
 ### Is Glow Finance non-custodial?
 
@@ -620,11 +620,7 @@ Yes! You can use glowSOL as collateral and borrow against it.
 Yes! Glow integrates with DeFi protocols using Adapters to connect to:
 
 - Solayer (Restaking).
-- Jupiter (will be integrated after the first recipe release).
-
-### What is Glow Recipes?
-
-Glow Recipes help user execute trading strategies that combine multiple steps into one action.
+- Jupiter (will be integrated after the first vault release).
 
 ### Are there plans to improve the borrowing/withdrawing experience?
 
