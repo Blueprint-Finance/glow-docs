@@ -41,15 +41,20 @@ Funds are still isolated per vault for depositors, and loss events in other part
 
 The following visualises the flow of funds for our vaults. It is broken down into 2 flows. The security aspects of each flow are also described.
 
-**Deposits**
 
-1. Depositors deposit funds into the vault smart contract through the Glow web app
-    1. The contract supports disabling deposits if there are security issues that the team identifies
-2. The Strategy Operator requests funds from the vault through signing for a vault smart contract instruction. Only the registered Strategy Operator may request a fund allocation.
-    1. The contract supports disabling operator actions if there are security issues
+### Deposits
+
+1. Depositors deposit funds into the vault smart contract through the Glow web app.
+   - The contract supports disabling deposits if there are security issues that the team identifies.
+
+2. The Strategy Operator requests funds from the vault by signing a vault smart contract instruction.  
+   Only the registered Strategy Operator may request a fund allocation.
+   - The contract supports disabling operator actions if there are security issues.
+
 3. The Strategy Operator, or a designated Valuation Authority, updates the USD value of allocated funds.
-    1. If funds are allocated to Operator Margin Accounts, their valuation is performed automatically and frequently without need for external valuation/accounting.
-    2. If funds are allocated to a Multisig Strategy, the smart contract has a valuation instruction, which only the Strategy Operator or Vault Authority can sign to execute.
+   - If funds are allocated to Operator Margin Accounts, their valuation is performed automatically and frequently without the need for external valuation or accounting.
+   - If funds are allocated to a multisig strategy, the smart contract includes a valuation instruction that only the Strategy Operator or Vault Authority can sign and execute.
+
 
 **Redemptions**
 
@@ -67,10 +72,6 @@ The flow of funds for the SyrupUSDC vault is the same as the above general flow 
 - The funds deposited will initially only be allocated to a multisig strategy. The Glow team are building integrations into more Solana protocols to enable more capital efficiency, thus only the multisig strategy will be deployed in the short term.
 
 ## Access control
-
-Each smart contract integrates **role-based access control** to restrict sensitive functions. The system defines multiple roles, each with clearly scoped permissions and capabilities:
-
-## **Access Control**
 
 Each smart contract integrates **role-based access control** to restrict sensitive functions. The system defines multiple roles, each with clearly scoped permissions and capabilities:
 
@@ -118,10 +119,10 @@ Glow’s frontend is deployed using **Vercel (Next.js)** with security features 
 - **HTTP Strict Transport Security (HSTS)** to enforce encrypted connections and prevent SSL stripping
 - **Strict rate limits** on backend endpoints to prevent abuse and brute-force patterns
 
-### Risk & Compliance Controls
+### Risk and Compliance Controls
 
 - **Geo-restriction enforcement** to block high-risk regions and sanctioned jurisdictions
-- **Chainalysis Risk API integration** for wallet screening
+- **Chainalysis Risk API integration** for wallet screening:
     - Blocks high-risk addresses involved in theft, fraud, laundering, or sanctioned activity
     - Only allows transactions from wallets rated **Low** or **Medium** risk
 
@@ -133,7 +134,7 @@ We maintain proactive visibility over frontend security through continuous monit
 - **Sentry** for real-time frontend error tracking and anomaly reporting
 - **Vercel deployment monitoring** to prevent supply-chain or injection attacks during build/deploy processes
 
-## Risks & Mitigations
+## Risks and Mitigations
 
 | Risk | Mitigation |
 | --- | --- |
@@ -143,4 +144,4 @@ We maintain proactive visibility over frontend security through continuous monit
 
 ## Audits
 
-[Glow Margin Vaults](/files/Glow-Margin-Vaults.pdf)
+[Glow Margin Vaults](../../audits/#glow-margin-vaults)

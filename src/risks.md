@@ -61,17 +61,17 @@ Glow Vaults — including the **syrupUSDC Vault** and future Vaults — pool use
 
 Participation in Glow Vaults involves risk, including the potential loss of principal. Nothing in this article constitutes financial, investment, or legal advice. Please review the [Terms of Use](https://www.glowfinance.xyz/terms) and consider your individual risk tolerance before engaging with any vault.
 
-### Smart Contract & Protocol Risk
+### Smart Contract and Protocol Risk
 
 Vaults rely on smart contracts and external protocol integrations. Vulnerabilities, exploits, or failures in any integrated protocol could result in loss of funds or temporary performance disruption.
 
 **Mitigation**
 
-- All integrated protocols undergo **third-party [audits** and internal security](https://docs.glowfinance.xyz/audits/) reviews before deployment.
+- All integrated protocols undergo third-party [audits and internal security](../audits/) reviews before deployment.
 - The Glow team continuously monitors for **protocol-level risk signals** and may pause deposits or rebalance allocations when necessary.
 - Protocol exposures and strategy allocations are **transparently displayed** within the Glow app and vault documentation.
 
-### Liquidity & Redemption Risk
+### Liquidity and Redemption Risk
 
 Vault liquidity depends on the availability of funds within integrated strategies. During periods of high utilization, market stress, or heavy withdrawal activity, withdrawals may be **delayed** or placed into a **Withdrawal Queue**.
 
@@ -81,7 +81,7 @@ Vault liquidity depends on the availability of funds within integrated strategie
 - The Glow interface displays **real-time queue status** and ****countdown timers
 - Selected vaults may maintain **liquidity buffers** to improve redemption efficiency during volatile conditions.
 
-### Market & Performance Risk
+### Market and Performance Risk
 
 Vault yields are **variable** and depend on market conditions, interest rate changes, and underlying protocol incentives. Historical APYs do not guarantee future results.
 
@@ -91,7 +91,7 @@ Vault yields are **variable** and depend on market conditions, interest rate cha
 - The Glow team actively **rebalances allocations** to maintain stable, risk-adjusted returns.
 - The app shows the **“Last updated” timestamp** under each vault’s APY/Rewards field for full transparency.
 
-### Collateral & Liquidation Risk
+### Collateral and Liquidation Risk
 
 Some vault strategies use **collateralized borrowing** (e.g., syrupUSDC supplied to Kamino to borrow USDC to use them in a strategy). Sudden price swings or oracle errors can impact collateral ratios, which could trigger **partial liquidations** within the strategy.
 
@@ -101,7 +101,7 @@ Some vault strategies use **collateralized borrowing** (e.g., syrupUSDC supplied
 - Vault operators continuously monitor **collateral health** and can rebalance or unwind positions proactively.
 - Liquidation management is **automated at the vault level** — individual users are never margin-called or required to take action.
 
-### Operator & Administrative Risk
+### Operator and Administrative Risk
 
 Each vault is managed by an authorized **Vault Operator**, responsible for allocation, reporting, and vault maintenance. Misconfigurations or delays in operator updates may temporarily affect displayed metrics or share valuations.
 

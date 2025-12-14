@@ -35,15 +35,15 @@ Vaults are fully on-chain and integrate with leading DeFi protocols using secure
 
 Glow Vault strategies generally fall into three core categories:
 
-### 1. **Lending & Rebalancing Strategies**
+### 1. Lending & Rebalancing Strategies
 
 Vaults dynamically rebalance liquidity between integrated markets (e.g. Glow, Kamino and Jupiter Lend) to capture the best yield opportunities while maintaining safety thresholds.
 
-### 2. **Leveraged Yield**
+### 2. Leveraged Yield
 
 Certain vaults use **collateralized borrowing** to amplify returns — managed automatically within safe liquidation limits.
 
-### 3. **Liquidity Buffers (Planned)**
+### 3. Liquidity Buffers (Planned)
 
 Future versions may introduce **liquidity buffers** (secondary highly liquid strategies) to support faster [withdrawals](#withdrawals) and reduce queue reliance.
 
