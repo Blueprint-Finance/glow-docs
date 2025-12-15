@@ -50,3 +50,9 @@ Enjoy the benefits of liquid restaking with **no hidden charges** or deductions.
 
 - **No Fees for Stakers:** Glow Finance does not take any fee cut from stakers.
 - **glowSOL Restaking:** **0%** Restaking your SOL through glowSOL is completely free.
+
+## Vault Fees
+
+- **Management fee:** **1% per year** (charged at the vault level over time).
+- **Performance fee:** **15%** on performance **above your entry basis** (tracked per user).
+- Fees accrue automatically during user transactions, while performance fees are periodically settled on vault positions that remain inactive (no deposits or withdrawals) for a given period.
