@@ -126,7 +126,7 @@ Glow’s frontend is deployed using **Vercel (Next.js)** with security features 
     - Blocks high-risk addresses involved in theft, fraud, laundering, or sanctioned activity
     - Only allows transactions from wallets rated **Low** or **Medium** risk
 
-### **Monitoring & Threat Detection**
+### Monitoring & Threat Detection
 
 We maintain proactive visibility over frontend security through continuous monitoring:
 
