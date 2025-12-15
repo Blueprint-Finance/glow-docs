@@ -37,7 +37,17 @@ Glow Vaults introduce several architectural and operational features that distin
 
 These design principles deliver the flexibility of modern automated yield systems while preserving robust operational safety.
 
-## Vault Architecture
+## Types
+
+Glow Vaults may support:
+
+- Single-strategy vaults
+- Multi-strategy vaults
+- Leverage-enabled strategies using constrained Operator Margin Accounts
+- Future liquidity-buffer vaults
+- Migration or restricted-deposit vaults for operational transitions
+
+## Architecture
 
 Glow Vaults follow a modular, security-first architecture using coordinated components defined in the protocol’s smart contracts.
 
@@ -74,7 +84,7 @@ Withdrawals follow a waiting-period model defined per vault. Funds move through:
 - A Pending Redemptions pool
 - Final redemption by the depositor
 
-## Roles & Permissions
+## Roles and Permissions
 
 Glow enforces strict separation of responsibilities:
 
@@ -134,7 +144,7 @@ A valuation update is submitted prior to any redemption-related transfers.
 
 **Note:** Operator actions may also be paused under abnormal conditions for user safety.
 
-## Access Control & Safety Model
+## Access Control and Safety Model
 
 Glow Vaults incorporate layered safeguards:
 
@@ -146,7 +156,7 @@ Glow Vaults incorporate layered safeguards:
 
 All operator actions and valuation updates are recorded on-chain for auditability.
 
-## Valuation & Accounting
+## Valuation and Accounting
 
 Glow Vaults use operator-submitted valuation updates rather than continuous share-price accrual.
 
@@ -159,16 +169,6 @@ When a valuation update is submitted:
 - user claim balances adjust proportionally
 - deviation bounds ensure accuracy and reject abnormal values
 
-## Vault Fees
+## Fees
 
-Vaults may include configurable fee parameters, which are applied through valuation updates and reflected in user claim amounts. Fee structures are documented per vault in the Glow app and Fees documentation.
-
-## Vault Types
-
-Glow Vaults may support:
-
-- Single-strategy vaults
-- Multi-strategy vaults
-- Leverage-enabled strategies using constrained Operator Margin Accounts
-- Future liquidity-buffer vaults
-- Migration or restricted-deposit vaults for operational transitions
+Vaults may include configurable fee parameters, which are applied through valuation updates and reflected in user claim amounts. Fee structures are documented per vault in the Glow app and [Fees documentation](../../fees).
