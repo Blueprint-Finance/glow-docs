@@ -106,7 +106,7 @@ Glow enforces strict separation of responsibilities:
 - Initiate withdrawals through the redemption queue
 - May optionally **leverage deposits using Glow Margin Pools** to amplify exposure
 
-# Flow of Funds (Deposits & Redemptions)
+## Flow of Funds
 
 Glow Vaults follow an auditable lifecycle consistent with the official vault flow diagrams.
 
