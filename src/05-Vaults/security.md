@@ -65,12 +65,6 @@ The following visualises the flow of funds for our vaults. It is broken down int
 
 ![](/img/vault-flow-of-funds.png)
 
-### Example Flow of Funds for SyrupUSDC
-
-The flow of funds for the SyrupUSDC vault is the same as the above general flow of funds, with the following exception(s):
-
-- The funds deposited will initially only be allocated to a multisig strategy. The Glow team are building integrations into more Solana protocols to enable more capital efficiency, thus only the multisig strategy will be deployed in the short term.
-
 ## Access control
 
 Each smart contract integrates **role-based access control** to restrict sensitive functions. The system defines multiple roles, each with clearly scoped permissions and capabilities:
