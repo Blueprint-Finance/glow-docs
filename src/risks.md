@@ -57,7 +57,7 @@ Learn more in our [Margin Pools Overview](../src/04-margin-pools/overview.md) an
 
 ## Vault Risks
 
-Glow Vaults — including the **syrupUSDC Vault** and future Vaults — pool user assets and deploy them across integrated DeFi protocols to optimize yield. While vaults are engineered for security, diversification, and risk-managed performance, they introduce several inherent risks that users should understand before depositing.
+Glow Vaults pool user assets and deploy them across integrated DeFi protocols to optimize yield. While vaults are engineered for security, diversification, and risk-managed performance, they introduce several inherent risks that users should understand before depositing.
 
 Participation in Glow Vaults involves risk, including the potential loss of principal. Nothing in this article constitutes financial, investment, or legal advice. Please review the [Terms of Use](https://www.glowfinance.xyz/terms) and consider your individual risk tolerance before engaging with any vault.
 
@@ -93,7 +93,7 @@ Vault yields are **variable** and depend on market conditions, interest rate cha
 
 ### Collateral and Liquidation Risk
 
-Some vault strategies use **collateralized borrowing** (e.g., syrupUSDC supplied to Kamino to borrow USDC to use them in a strategy). Sudden price swings or oracle errors can impact collateral ratios, which could trigger **partial liquidations** within the strategy.
+Some vault strategies use **collateralized borrowing**. Sudden price swings or oracle errors can impact collateral ratios, which could trigger **partial liquidations** within the strategy.
 
 **Mitigation**
 
