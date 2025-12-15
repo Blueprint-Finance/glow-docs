@@ -150,7 +150,7 @@ All operator actions and valuation updates are recorded on-chain for auditabilit
 
 Glow Vaults use operator-submitted valuation updates rather than continuous share-price accrual.
 
-### Valuation Model
+**Valuation Model**
 
 When a valuation update is submitted:
 
