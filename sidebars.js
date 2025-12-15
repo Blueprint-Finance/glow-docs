@@ -52,6 +52,16 @@ const sidebars = {
   ],
 },
 
+{
+  type: 'category',
+  label: 'Vaults',
+  items: [
+    'Vaults/overview',
+    'Vaults/architecture',
+    'Vaults/security',
+  ],
+},
+
     // 5. Fees
     'fees',
 
