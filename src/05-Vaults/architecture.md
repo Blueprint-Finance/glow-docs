@@ -39,13 +39,13 @@ These design principles deliver the flexibility of modern automated yield system
 
 ## Types
 
-Glow Vaults may support:
+Glow Vaults may support different operational designs, including:
 
-- Single-strategy vaults
-- Multi-strategy vaults
-- Leverage-enabled strategies using constrained Operator Margin Accounts
-- Future liquidity-buffer vaults
-- Migration or restricted-deposit vaults for operational transitions
+- Vaults running a single strategy
+- Vaults running multiple strategies with automated rebalancing
+- Vaults running leverage-enabled strategies within isolated margin accounts
+- Vaults with liquidity buffers to support faster withdrawals (planned)
+- Vaults with restricted deposits or migration-only modes for operational transitions
 
 ## Architecture
 
