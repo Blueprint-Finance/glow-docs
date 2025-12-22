@@ -18,11 +18,20 @@ keywords:
   - SOL
 ---
 
-Glow Vaults are **automated yield strategies** that deploy deposited assets across integrated DeFi protocols to maximize returns while managing risk. They are built to make DeFi yield simple, transparent, and automated — giving users access to diversified on-chain strategies without manual management.
+**Glow Vaults** are on-chain containers that manage deposited assets using predefined strategies, allocating and deploying capital across integrated DeFi protocols to maximize returns while managing risk.
 
 Each Vault represents a curated investment approach, balancing **liquidity, security, and yield optimization** through smart contract automation.
 
 Vaults are fully on-chain and integrate with leading DeFi protocols using secure and audited smart contracts.
+
+## Vaults vs Strategy Vaults
+
+All Glow Vaults are vaults — the difference lies in the **strategy they run**.
+
+- **Vaults** may run simple strategies, such as earning yield on a single asset without leverage.
+- **Strategy Vaults** are still vaults — they simply run more advanced strategies and may expose additional controls and risk metrics.
+
+Both are accessed and managed through the same vault interface. Strategy Vaults simply apply more complex strategy logic.
 
 ## Vault Objectives
 
@@ -32,6 +41,8 @@ Vaults are fully on-chain and integrate with leading DeFi protocols using secure
 - Maintain full transparency on allocations, APY, and risk metrics.
 
 ## Deployment Strategies
+
+Each vault may run one or more strategies depending on its design. Some vaults apply a single strategy, while others combine multiple strategies or rebalance between them over time.
 
 Glow Vault strategies generally fall into three core categories:
 
@@ -55,8 +66,7 @@ Future versions may introduce **liquidity buffers** (secondary highly liquid str
 
 ## Withdrawals
 
-All withdrawals are processed through a **queued withdrawal** system — typically completed within **~72 hours** once liquidity becomes available.
-Queued withdrawals appear in the **Withdrawal Queue** with countdown timers and can be finalized once ready.
+Withdrawals are processed according to the vault’s strategy design. Some vaults support queued withdrawals (typically completed within ~72 hours once liquidity becomes available), while others may support faster or instant withdrawals depending on underlying liquidity.
 
 ## Rewards
 
@@ -64,5 +74,7 @@ Vault participants earn **Glow Points** for participating in the Glow vault ecos
 Future vaults may include additional partner reward programs.
 
 ## Vault Risks
+
+Risk profiles may differ between vaults, especially for vaults running advanced or leveraged strategies.
 
 Before depositing, review the full [Vault Risk Disclosure](../../risks/#vault-risks) for details on risk mitigation, collateral safeguards, and underlying protocol integrations.
