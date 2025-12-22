@@ -1,6 +1,6 @@
 ---
 title: "User Journey"
-description: "A step-by-step guide from wallet connect and margin account creation to lending, borrowing, recipes, and risk management."
+description: "A step-by-step guide from wallet connect and margin account creation to lending, borrowing, vaults, and risk management."
 sidebar_label: "User Journey"
 sidebar_position: 4
 keywords:
@@ -8,7 +8,7 @@ keywords:
   - margin accounts
   - lending
   - borrowing
-  - glow recipes
+  - glow vaults
   - health level
 ---
 
@@ -56,10 +56,14 @@ Users can switch between their margin accounts using a dropdown menu and easily 
 - **Position Details**: Users can access detailed breakdowns of each position in their accounts. Here, they can view how individual deposits or borrows are contributing to, or detracting from, the effective collateral in each margin account.
 - **Account History:** Each margin account's History tab in the Portfolio provides a comprehensive record of all transactions and any rewards earnned, including detailed liquidation events. This transparency helps users review past actions, learn from prior events, and better understand how market conditions or strategies impacted their accounts.
 
-## 5. Glow Recipes for Automated and Advanced Strategies
+## 5. Glow Strategy Vault for Automated and Advanced Strategies
 
-Beyond individual transactions, Glow Recipes automate advanced strategies, saving users time and optimizing their capital. Recipes range from simple yield farming setups to more complex arbitrage strategies that involve cross-protocol opportunities.
+Beyond individual transactions, **Glow Strategy Vaults** are vaults that run automated strategies designed to simplify complex DeFi workflows while optimizing capital efficiency. Each Strategy Vault encapsulates a specific strategy within an isolated position, allowing users to participate in advanced opportunities without manual configuration.
 
-**Example**: In the future, Glow may support adapters for external protocols, unlocking the potential for advanced cross-protocol arbitrage. This would allow users to borrow stablecoins from one protocol and lend them on another to arbitrage rate differences, with all deposits and borrowings across platforms contributing to the collateral value of their Glow margin account.
+Strategy Vaults focus on advanced strategies—such as automated borrowing, restaking, or liquidity deployment—that go beyond simple yield generation, while maintaining clear risk boundaries and transparent performance metrics.
+
+**Example (Future Strategy Vaults):**
+
+In the future, Glow may introduce Strategy Vaults that leverage adapters to interact with external protocols, enabling automated strategies such as cross-protocol rate arbitrage. For example, a vault could borrow stablecoins at a lower rate from one protocol and deploy them into higher-yield opportunities elsewhere, with all activity managed cohesively through Glow’s margin account framework.
 
 ![](/img/user.png)
