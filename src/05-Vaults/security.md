@@ -91,18 +91,12 @@ Each smart contract integrates **role-based access control** to restrict sensiti
 
 Glow’s frontend infrastructure is secured through multiple layers designed to prevent disruption, tampering, or malicious access.
 
-Our DNS is hosted on Cloudflare, which provides enterprise-grade protection against network-layer and application-layer attacks. We enable Cloudflare’s “I’m Under Attack” mode to mitigate Distributed Denial of Service (DDoS) attacks and filter out malicious traffic before it reaches our frontend.
-
-Glow’s frontend and web access infrastructure are secured through layered defense mechanisms designed to prevent service disruption, unauthorized access, and security threats targeting users.
-
 ### DNS & Network Layer Protection
 
 Our DNS is hosted on **Cloudflare**, providing global availability, resilience, and advanced network security:
 
 - **DNSSEC** enabled to prevent DNS spoofing and hijacking
-- **Encrypted DNS** via DNS-over-HTTPS (DoH) and DNS-over-TLS (DoT)
 - **Layer 3–7 DDoS protection** with automated mitigation and adaptive challenge system
-- **“I’m Under Attack” mode** (Cloudflare IUAM) available for rapid response against volumetric attacks and bot-based threats
 
 ### Application Security
 
