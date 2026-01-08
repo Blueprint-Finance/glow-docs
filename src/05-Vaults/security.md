@@ -91,13 +91,6 @@ Each smart contract integrates **role-based access control** to restrict sensiti
 
 Glow’s frontend infrastructure is secured through multiple layers designed to prevent disruption, tampering, or malicious access.
 
-### DNS & Network Layer Protection
-
-Our DNS is hosted on **Cloudflare**, providing global availability, resilience, and advanced network security:
-
-- **DNSSEC** enabled to prevent DNS spoofing and hijacking
-- **Layer 3–7 DDoS protection** with automated mitigation and adaptive challenge system
-
 ### Application Security
 
 Glow’s frontend is deployed using **Vercel (Next.js)** with security features hardened for production:
@@ -118,7 +111,6 @@ Glow’s frontend is deployed using **Vercel (Next.js)** with security features 
 
 We maintain proactive visibility over frontend security through continuous monitoring:
 
-- **Cloudflare Security Analytics** for threat detection and firewall insights
 - **Sentry** for real-time frontend error tracking and anomaly reporting
 - **Vercel deployment monitoring** to prevent supply-chain or injection attacks during build/deploy processes
 
