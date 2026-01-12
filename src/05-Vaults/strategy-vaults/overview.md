@@ -19,6 +19,13 @@ keywords:
   - SOL
 ---
 
+All Glow Vaults are vaults — the difference lies in the **strategy they run**.
+
+- **Vaults** may run simple strategies, such as earning yield on a single asset without leverage.
+- **Strategy Vaults** are still vaults — they simply run more advanced strategies and may expose additional controls and risk metrics.
+
+Both are accessed and managed through the same vault interface. Strategy Vaults simply apply more complex strategy logic.
+
 ## What Is a Strategy Vault?
 
 A **Strategy Vault** is a vault that runs a pre-built, automated DeFi strategy composed of a coordinated sequence of actions — such as depositing collateral, borrowing, restaking, swapping, or creating long/short positions — executed through a single guided flow.
