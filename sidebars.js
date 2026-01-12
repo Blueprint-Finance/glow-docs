@@ -59,6 +59,13 @@ const sidebars = {
     'Vaults/overview',
     'Vaults/architecture',
     'Vaults/security',
+    {
+      type: 'category',
+      label: 'Strategy Vaults',
+      items: [
+        'Vaults/strategy-vaults/overview',
+      ],
+    },
   ],
 },
 
