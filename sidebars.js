@@ -62,6 +62,14 @@ const sidebars = {
   ],
 },
 
+{
+  type: 'category',
+  label: 'Strategy Vaults',
+  items: [
+    'strategy-vaults/overview',
+  ],
+},
+
     // 5. Fees
     'fees',
 
