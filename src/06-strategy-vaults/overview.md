@@ -41,6 +41,18 @@ Each Strategy Vault can have:
 - Custom parameters and risk settings
 - Unique yield opportunities, rewards, and fee structures
 
+### Architecture (High Level)
+
+While Strategy Vaults share a common vault interface and safety principles, their underlying architecture is defined on a **case-by-case basis** depending on the requirements of each strategy.
+
+Many Strategy Vaults are **composed of**:
+
+- One or more isolated margin accounts
+- Adapters to Glow pools and/or external protocols
+- Strategy-specific execution logic and safeguards
+
+The exact components and flow vary per Strategy Vault to ensure each strategy is implemented safely, efficiently, and with appropriate risk isolation.
+
 ### Built for Modularity
 
 Glow Strategy Vaults are modular and designed to evolve. New strategies — and new assets — can be added over time. Each Strategy Vault has its own page with specific instructions, risks, and FAQs.
