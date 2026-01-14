@@ -181,7 +181,8 @@ const config = {
     }),
 
     plugins: [
-    '@docusaurus/plugin-client-redirects',
+    [
+      '@docusaurus/plugin-client-redirects',
     {
       redirects: [
         {
@@ -190,6 +191,7 @@ const config = {
         },
       ],
     },
+],
 ],
 };
 
