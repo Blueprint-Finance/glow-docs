@@ -179,6 +179,20 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
     }),
+
+    plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+    {
+      redirects: [
+        {
+          from: '/Vaults/strategy-vaults/overview',
+          to: '/strategy-vaults/overview',
+        },
+      ],
+    },
+],
+],
 };
 
 export default config;

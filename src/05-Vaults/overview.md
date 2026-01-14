@@ -31,7 +31,8 @@ All Glow Vaults are vaults — the difference lies in the **strategy they run**.
 - **Vaults** may run simple strategies, such as earning yield on a single asset without leverage.
 - **Strategy Vaults** are still vaults — they simply run more advanced strategies and may expose additional controls and risk metrics.
 
-Both are accessed and managed through the same vault interface. Strategy Vaults simply apply more complex strategy logic.
+Both are accessed and managed through the same vault interface. Strategy Vaults simply apply more complex strategy logic. Strategy Vaults may rely on strategy-specific architectures such as isolated margin accounts or external protocol adapters depending on the requirements of the strategy.
+
 
 ## Vault Objectives
 
@@ -44,7 +45,7 @@ Both are accessed and managed through the same vault interface. Strategy Vaults 
 
 Each vault may run one or more strategies depending on its design. Some vaults apply a single strategy, while others combine multiple strategies or rebalance between them over time.
 
-Glow Vault strategies generally fall into three core categories:
+Some of the strategies below are used exclusively by Strategy Vaults, while others may be employed by simpler allocation-focused vaults. Glow Vault strategies generally fall into **three core categories**:
 
 ### 1. Lending & Rebalancing Strategies
 
