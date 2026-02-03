@@ -89,7 +89,7 @@ The transaction panel includes:
 - An **input field** – Where you manually enter an amount.
 - A **slider** (0–100%) – Lets you quickly choose a percentage of your available balance. 100% shows the theoretical maximum, but doesn’t always match what’s safe.
 - A **Max button** – Inputs the actual maximum value that is safe and valid for the current action. This includes logic for Health Level, pool liquidity, buffer for SOL fees, and more.
-- **Real-time Feedback** – Displays dynamic metrics like Health Level, expected output, and borrow APR as you adjust values.
+- **Real-time Feedback** – Displays dynamic metrics like Health Level, expected output, and borrow APY as you adjust values.
 
 ### Why does the "Withdraw" tab show more than I can actually withdraw?
 

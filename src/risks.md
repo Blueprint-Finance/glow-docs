@@ -44,7 +44,7 @@ If liquidity in the pool drops significantly, users may face borrowing or withdr
 
   **Why This Is Temporary:**
 
-  When utilization spikes, Glow’s dynamic interest rate model raises the borrow APR. This incentivizes new lenders to supply liquidity, helping to restore balance naturally. As a result, high-utilization periods tend to self-correct over time.
+  When utilization spikes, Glow’s dynamic interest rate model raises the borrow APY. This incentivizes new lenders to supply liquidity, helping to restore balance naturally. As a result, high-utilization periods tend to self-correct over time.
 
 - **Mitigation:**
   - Monitor pool utilization metrics before initiating large transactions.
@@ -129,7 +129,7 @@ If you're using the Leveraged glowSOL Vault, it's important to understand:
 SOL price drops do _not_ affect your Health Level or trigger liquidations. This strategy is designed with no SOL market price exposure. Your position health is only impacted by:
 
 - A glowSOL or sSOL depeg (i.e. if glowSOL trades significantly below SOL).
-- Prolonged periods where borrow APR exceeds leveraged yield, causing slow Health Level decline. For example: At 2× leverage, if glowSOL earns 6% and your SOL borrow rate is 3%, you break even. But if the borrow rate goes up to 4%, you start losing yield — and over time, your Health Level will go down.
+- Prolonged periods where borrow APY exceeds leveraged yield, causing slow Health Level decline. For example: At 2× leverage, if glowSOL earns 6% and your SOL borrow rate is 3%, you break even. But if the borrow rate goes up to 4%, you start losing yield — and over time, your Health Level will go down.
 
 ## Strategy-Specific Risks
 
@@ -145,7 +145,7 @@ The **Leveraged glowSOL Vault** helps users boost their staking rewards by borro
 - **Mitigation:**
   - Monitor the **Unstaking Queue** or set an alarm when in the withdrawal process, to anticipate when assets will become available.
   - Use the **Liquidation Price** metric to assess exposure.
-  - Check the **current SOL borrow rate** to see if the vault is profitable. The strategy is unprofitable if your **leveraged restaking APR** (glowSOL base APR × selected leverage) is **less than** the SOL borrow APR.
+  - Check the **current SOL borrow rate** to see if the vault is profitable. The strategy is unprofitable if your **leveraged restaking APY** (glowSOL base APY × selected leverage) is **less than** the SOL borrow APY.
 
 ## Unstaking Queue Delays
 
@@ -157,7 +157,7 @@ Initiating a glowSOL withdrawal starts a **7-day unstaking queue**, during which
 - **Mitigation:**
   - When you initiate unstaking, your glowSOL enters a 7-day illiquid period. During this time, it cannot be withdrawn or used in other strategies. You will still be able to manage your position (including borrow and repay actions) while unstaking is in progress — but the unstaking glowSOL itself remains locked until the 7-day queue completes. \*\*\*\*
   - Monitor the unstaking queue directly within the “Manage Vault” section of the Leveraged glowSOL Vault. It shows exactly when each unstaking request will complete and when your SOL will become available for withdrawal.
-  - Consider initiating unstaking when SOL borrow APR is relatively low or stable, as this reduces the chance of your Health Level declining if interest costs temporarily exceed your leveraged restaking yield during the 7-day queue period. This risk is uncommon — SOL borrow rates tend to revert quickly, and prolonged high-rate periods have historically been rare.
+  - Consider initiating unstaking when SOL borrow APY is relatively low or stable, as this reduces the chance of your Health Level declining if interest costs temporarily exceed your leveraged restaking yield during the 7-day queue period. This risk is uncommon — SOL borrow rates tend to revert quickly, and prolonged high-rate periods have historically been rare.
   - You may cancel a pending unstaking request during the 7-day queue if needed. However, this comes with a small cancellation fee. The performance fee (charged in glowSOL) is taken at the moment you initiate withdrawal. If you cancel the withdrawal during the queue, that fee will _not_ be refunded. This applies even if the glowSOL is never converted back to SOL.
 
 ## Interest Rate Spikes
