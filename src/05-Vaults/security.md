@@ -91,15 +91,6 @@ Each smart contract integrates **role-based access control** to restrict sensiti
 
 Glow’s frontend infrastructure is secured through multiple layers designed to prevent disruption, tampering, or malicious access.
 
-### Application Security
-
-Glow’s frontend is deployed using **Vercel (Next.js)** with security features hardened for production:
-
-- **Isolated edge compute environments** to limit resource sharing and reduce cross-tenant attack surface
-- **Skew protection** to mitigate timing-based side-channel attacks
-- **HTTP Strict Transport Security (HSTS)** to enforce encrypted connections and prevent SSL stripping
-- **Strict rate limits** on backend endpoints to prevent abuse and brute-force patterns
-
 ### Risk and Compliance Controls
 
 - **Geo-restriction enforcement** to block high-risk regions and sanctioned jurisdictions
