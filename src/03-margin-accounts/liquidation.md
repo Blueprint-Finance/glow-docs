@@ -54,10 +54,7 @@ style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", mar
 
 - **During Liquidation:** If your account is actively being liquidated, any attempt to borrow, deposit, or withdraw will be blocked, and you’ll see the following message:
 
-<img
-src="/img/liq-7.png"
-style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
-/>
+![](/img/liq-7.png)
 
 This safeguard ensures the liquidation process completes without interference. Liquidations on Solana are typically executed very quickly due to the network’s high throughput and fast finality, so users are unlikely to encounter this state for more than a brief moment.
 
