@@ -65,6 +65,8 @@ To help prevent accounts from reaching this stage, Glow displays a **Health Leve
 
 - **Asset Breakdown:** When a user clicks on one of the liquidated account rows in the initial modal, they are directed to a detailed view modal. This second modal provides a comprehensive breakdown of the liquidation, liquidation fees, timestamps, and a link to the corresponding blockchain transaction on SolScan’s block explorer for full transparency.
 
+![](/img/liq-4.png)
+
 ## Managing Risk with Health Levels
 
 Glow Finance equips users with tools to manage their portfolio risk effectively by monitoring and improving their Health Level. A higher Health Level indicates a more stable account, reducing the likelihood of liquidation. For users seeking detailed guidance on strategies to maintain a healthy account, including depositing collateral, repaying borrowed assets, or adjusting leverage. For more information, you can check the [Health Level](../03-margin-accounts/health-level.md) article.
