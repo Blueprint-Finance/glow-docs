@@ -26,11 +26,9 @@ Once your wallet is connected and your margin account is created, you can follow
 
 ![](/img/deposit-1.png)
 
-- **Step 2:** Click the button to bring up the **Asset Selection Panel**.
+- **Step 2:** Select the desired asset to deposit.
 
 ![](/img/deposit-2.png)
-
-- **Step 3:** Select the desired asset to deposit.
 
 ## 2. Review Your Deposit Before Confirmation
 
@@ -106,9 +104,9 @@ Note that Any asset row in the **Markets** or **Portfolio** pages is clickable, 
 ## 5. From the Portfolio Dashboard
 
 - **Step 1:** Navigate to the **Portfolio Dashboard** to manage your accounts.
-- **Step 2:** Click on the **View Positions** button for the margin account where you wish to deposit assets.
+- **Step 2:** Click on the **Manage Positions** button for the margin account where you wish to deposit assets.
 
-![](/img/deposit-7.png)
+![](/img/portfolio-3.png)
 
 - **Step 3:** Select the asset row, which works similarly to the **Markets Page**, and proceed to the **Asset Details Page** with the deposit action pre-selected.
 
