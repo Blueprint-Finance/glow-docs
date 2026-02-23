@@ -11,8 +11,6 @@ keywords:
 
 This article explains what **margin account positions** are, how they are counted, and what users should be aware of when managing many tokens within a single margin account.
 
-![](/img/position-2.png)
-
 ## What is a “Position”?
 
 A **position** represents a distinct asset tracked in your margin account. Glow uses a memory-efficient structure that supports **up to 32 positions per account**, of which:
