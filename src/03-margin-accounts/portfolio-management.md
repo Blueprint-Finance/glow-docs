@@ -103,7 +103,7 @@ Each section is collapsible, allowing you to expand only the positions you want 
 
 ### Margin Account Positions - Expandable View
 
-The Portfolio Dashboard provides a unified view of all lending and borrowing activity across every margin account connected to your wallet. Instead of reviewing accounts one by one, users can now see health levels, leverage, assets, and liabilities for all accounts in a single consolidated interface — making it easier to understand overall exposure and manage risk.
+The Portfolio Dashboard provides a unified view of all lending and borrowing activity across every margin account connected to your wallet. From a single page, users can view the positions within each individual margin account — including health levels, leverage, assets, and liabilities — without navigating into separate account views. Each margin account can be expanded to display its positions on a per-token basis, allowing users to quickly assess exposure and risk across all accounts.
 
 In the list of margin accounts, the positions within margin account can be viewed on a per token basis in the expandable section that appears after the first deposit is made to it. Inside this expandable section, individual positions are sorted by their impact on the account’s [effective collateral](../../glossary/#effective-collateral), although you may sort by any of the columns available (price, deposited, borrowed, and contribution to collateral) . This includes both assets with large deposited values (which provide an account’s effective collateral) and assets with large borrowed values (which consume effective collateral). Positions can be reordered using other columns as needed.
 
