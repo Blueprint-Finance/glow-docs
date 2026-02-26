@@ -9,6 +9,12 @@ Glow Finance values **security and transparency**. To protect users and ensure t
 
 Below, you can find the latest Glow Audit Reports from industry-leading Web3 security firms (Zellic, Certora and Halborn), which details our security assessment.
 
+## Glow Margin
+
+- **Auditor:** Halborn  
+- **Date:** February 11, 2026
+- [View Full Audit Report](/files/Glow-Margin-Diff-Audit.pdf)
+
 ## LRT Migration Review & Fee Calculation
 
 - **Auditor:** Halborn  

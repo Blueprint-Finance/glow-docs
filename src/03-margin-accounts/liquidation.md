@@ -16,14 +16,13 @@ Glow Finance integrates sophisticated tools to safeguard user portfolios from ba
 
 Liquidation is initiated when the **Health Level** of a margin account drops to **0.0%**. This critical point occurs when the account’s **Effective Collateral** becomes insufficient to cover the **Required Collateral** for the borrowed positions. Once triggered:
 
-- Glow Finance liquidates a portion of the collateral.
+- Glow Finance liquidates a portion of the collateral. Liquidations are designed to be as minimally disruptive as possible. The protocol attempts partial liquidation first — reducing only the amount necessary to restore the account’s health. Where possible, it will prioritize using held tokens that correspond to the outstanding debt to cover the liquidation, rather than selling unrelated collateral.
 - The liquidated amount covers the outstanding loan and a 5% liquidation fee.
 
 ## Liquidation Process
 
 - **Asset Conversion**: Collateral assets are converted into the borrowed asset to settle the debt.
-- **Fee Deduction**: Any fees associated with the liquidation process (e.g., platform fees, gas fees) are subtracted.
-- **Residual Balance**: Any remaining collateral, post-debt settlement, is returned to the user.
+- **Fee Deduction**: Any fees associated with the liquidation process are subtracted.
 
 This ensures systemic stability and safety for all users by preventing bad debt accumulation in the protocol.
 
@@ -36,7 +35,7 @@ Glow Finance provides timely alerts to users in the web application, enabling th
 - **5.0% Threshold Warning**: The banner is triggered when the Health Level of **any margin account** associated with the currently connected wallet drops below 5.0%.
   - **Health Alert Banner:** it is displayed globally throughout the app, regardless of the page or section the user is navigating. It ensures users are promptly notified when the Health Level of any margin account associated with their connected wallet drops below 5.0%
 
-![](/img/liq-1.png)
+![](/img/h-5.png)
 
     - **Health Alert Modal** Summarizes all at-risk accounts, helping users prioritize which accounts require immediate action.
 
@@ -52,6 +51,14 @@ Glow Finance provides timely alerts to users in the web application, enabling th
 src="/img/liq-3.png"
 style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
+
+- **During Liquidation:** If your account is actively being liquidated, any attempt to borrow, deposit, or withdraw will be blocked, and you’ll see the following message:
+
+![](/img/liq-7.png)
+
+This safeguard ensures the liquidation process completes without interference. Liquidations on Solana are typically executed very quickly due to the network’s high throughput and fast finality, so users are unlikely to encounter this state for more than a brief moment.
+
+To help prevent accounts from reaching this stage, Glow displays a **Health Level warning banner** when an account’s Health Level falls below 5%, giving users an opportunity to add collateral or repay debt before liquidation is triggered. For more information, you can check the [Health Level](../03-margin-accounts/health-level.md) article. Once the liquidation ends, your account may either be fully closed or resume normal operation, depending on the remaining collateral.
 
 - **Asset Breakdown:** When a user clicks on one of the liquidated account rows in the initial modal, they are directed to a detailed view modal. This second modal provides a comprehensive breakdown of the liquidation, liquidation fees, timestamps, and a link to the corresponding blockchain transaction on SolScan’s block explorer for full transparency.
 

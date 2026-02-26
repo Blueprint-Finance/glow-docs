@@ -79,7 +79,7 @@ The panel allows sophisticated users to:
 
 ![](/img/portfolio-3.png)
 
-The **Portfolio** section provides a high-level view of all your margin accounts, enabling efficient management of your positions and accounts without the need to switch between them. The dashboard displays all active margin accounts under your wallet with key metrics for each account:
+The **Portfolio** section provides a high-level overview of all your margin accounts and vault positions. The dashboard displays all active vault positions, strategy vault positions, and margin accounts under your wallet with key metrics for each account:
 
 - [Health Level](../03-margin-accounts/health-level.md): Indicates the overall safety of the account as a percentage, color-coded for clarity (green for safe, blue for middle, and red for at-risk).
 - **Account Leverage**: The leverage ratio showing how much of the collateral is utilized.
@@ -88,22 +88,63 @@ The **Portfolio** section provides a high-level view of all your margin accounts
 - **Effective Collateral**: The total value of deposited assets adjusted by their respective **Collateral Weights**. Each asset type has a **Collateral Weight**, a percentage representing how much of its value can be considered usable collateral. For example, an asset with a 70% weight contributes 70% of its value to your Effective Collateral.
 - **Required Collateral**: The minimum collateral value needed to support your current leverage and avoid liquidation.
 
+### Sections & Filters
+
+The Portfolio Dashboard organizes your assets into expandable sections, making it easier to manage different position types from a single view.
+
+Users can filter the dashboard by:
+
+- **All** – shows everything in one view
+- **Vaults** – simple, non-leveraged vault positions
+- **Strategy Vaults** – advanced vaults running multi-step or leveraged strategies
+- **Accounts** – standalone margin accounts
+
+Each section is collapsible, allowing you to expand only the positions you want to review while.
+
+### Margin Account Positions - Expandable View
+
+The Portfolio Dashboard provides a unified view of all lending and borrowing activity across every margin account connected to your wallet. From a single page, users can view the positions within each individual margin account — including health levels, leverage, assets, and liabilities — without navigating into separate account views. Each margin account can be expanded to display its positions on a per-token basis, allowing users to quickly assess exposure and risk across all accounts.
+
+In the list of margin accounts, the positions within margin account can be viewed on a per token basis in the expandable section that appears after the first deposit is made to it. Inside this expandable section, individual positions are sorted by their impact on the account’s [effective collateral](../../glossary/#effective-collateral), although you may sort by any of the columns available (price, deposited, borrowed, and contribution to collateral) . This includes both assets with large deposited values (which provide an account’s effective collateral) and assets with large borrowed values (which consume effective collateral). Positions can be reordered using other columns as needed.
+
+This reduces the cognitive overhead of managing multiple accounts and helps users identify risky positions or unused capital.
+
+![](/img/portfolio-8.png)
+
+
+### Vault Positions
+
+Vault positions remain fully integrated with your margin account while providing a simplified, strategy-focused management experience.
+
+When a wallet has an active vault position:
+
+- The Portfolio dashboard highlights the account containing the vault.
+- Selecting the account allows you to navigate directly to the vault’s **Manage Position** page.
+- From there, you can deposit more SOL, initiate withdrawals, and monitor vault-specific metrics such as leverage, health level, and liquidation ratio.
+
 ## Managing Positions
 
-The Portfolio page is tailored for advanced users, enabling them to efficiently perform a series of actions across multiple margin accounts without needing to switch back and forth between the main interface. This streamlined workflow significantly enhances the user experience, especially for those managing complex portfolios or executing multiple strategies.
+From the Portfolio page, users can manage both **vault-based positions** (Vaults and Strategy Vaults) and **standalone margin accounts**.
+
+Vault-based positions appear in the Portfolio only if the user has an active position. Expanding a vault section — or clicking the individual row — allows users to view key position metrics and access actions such as Manage Vault, Withdraw, or view the Unstaking Queue.
+
+Standalone (normal) margin account positions are expandable. Expanding a margin account provides access to position-level actions such as borrowing, repaying, or withdrawing assets.
+
+The Portfolio page is tailored to assist users, enabling them to efficiently perform a series of actions across multiple margin accounts without needing to switch back and forth between the main interface. This streamlined workflow significantly enhances the user experience, especially for those managing complex portfolios or executing multiple strategies.
 
 ![](/img/position-2.png)
 
-**View Positions**: Clicking this button opens a detailed view of all the positions within the selected margin account.
+When a margin account row is expanded, users can view all positions within that account.
 
 - **Asset Overview**: Lists all assets in the account with columns for:
-  - **Deposited Amount**: Total assets deposited. The total value of assets deposited into the margin account. For clarity, the USD equivalent is displayed alongside each asset's amount, providing users with an intuitive understanding of their portfolio's value.
-  - **Borrowed Amount**: Outstanding debts in each asset.
-  - **Contribution to Collateral**: Displays the positive or negative impact of each asset on the account’s collateral.
-- **Action Buttons**: Intuitively designed for each asset, allowing users to:
-  - **Deposit** more.
-  - **Borrow**, **Repay**, or **Withdraw** as applicable.
-- **Filter for Active Positions**: Easily filter out zero-balance assets to focus only on active positions.
+    - **Deposited Amount**: Total assets deposited. The USD equivalent is displayed alongside each asset’s amount for clarity.
+    - **Borrowed Amount**: Outstanding debts in each asset.
+    - **Contribution to Collateral**: The positive or negative impact of each asset on the account’s effective collateral.
+- **Action Buttons**: For each asset, users can:
+    - **Deposit**
+    - **Borrow**
+    - **Repay**
+    - **Withdraw**
 
 ## Immediate Alerts
 
