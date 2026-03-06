@@ -21,7 +21,7 @@ Glow even supports creating multiple margin accounts under a single wallet, thus
 ## Prerequisites
 
 1. **Wallet Connection**: Ensure your wallet (Phantom, Backpack, Solflare, WalletConnect, or Coinbase Wallet) is connected to the Glow platform. Glow supports multiple wallets for seamless integration.
-2. **SOL Balance Requirement**: You must have at least **0.072 SOL** in your wallet to cover the rent fees for both required transactions — one for creating the margin account and another for creating the associated lookup table. This fee is used for Solana blockchain storage. In a later release, we will allow users to close their margin accounts and receive a full refund of this rent fee.
+2. **SOL Balance Requirement**: You must have at least **0.072 SOL** in your wallet to cover the rent fees for both required transactions — one for creating the margin account and another for completing the final account setup. This fee is used for Solana blockchain storage. In a later release, we will allow users to close their margin accounts and receive a full refund of this rent fee.
 
 3. **Multiple Accounts = Additional Rent Fees**: Each additional margin account requires payment an additional rent fee. In a future release, users will have the option to close a margin account and receive the full rent fee refunded back to their wallets.
    :::tip
@@ -76,13 +76,13 @@ src="/img/create-5.png"
 style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
-- After paying the rent fee, you’ll be prompted to complete one more step: **setting up a lookup table** for your margin account. This is required for transacting efficiently on Glow and helps reduce transaction size on Solana. You’ll need to approve a second transaction to complete this step.
+- After paying the rent fee, you’ll be prompted to complete one more step to finish setting up your margin account. This step is required to finish setting up your margin account. You’ll need to approve a second transaction to complete this step.
 
 ## Step 4: Handle Insufficient SOL Balance (If Applicable)
 
 If you don’t have enough SOL in your wallet, the button will be disabled, and an error message will prompt you to add more SOL to your wallet.
 :::tip
-You’ll need approximately **0.072 SOL** to cover the rent fees for **both required transactions** — one for creating the margin account and another for creating the associated **lookup table**. Make sure your wallet has sufficient SOL before proceeding.
+You’ll need approximately **0.072 SOL** to cover the rent fees for **both required transactions** — one for creating the margin account and another for completing the final account setup. Make sure your wallet has sufficient SOL before proceeding.
 :::
 
 <img
@@ -90,9 +90,9 @@ src="/img/create-6.png"
 style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
-## Step 5: Set Up the Lookup Table
+## Step 5: Complete Margin Account Setup
 
-Once the rent payment is successful, Glow will prompt you to create a **lookup table** as a second transaction. Lookup tables help Glow reduce transaction sizes and ensure your margin account can efficiently interact with the Glow Protocol.
+Once the rent payment is successful, Glow will prompt you to complete the final setup step for your margin account as a second transaction. This step helps ensure your margin account can efficiently interact with the Glow Protocol and support multiple positions.
 
 - The "Create Lookup Table" button will appear
 
@@ -105,7 +105,7 @@ style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", mar
 
 ## Step 6: Confirmation
 
-Once both steps are complete—**rent fee payment** and **lookup table creation**—you’ll receive a confirmation that your new margin account has been successfully created.
+Once both steps are complete—rent fee payment and the final account setup transaction—you’ll receive a confirmation that your new margin account has been successfully created.
 
 - If this is **not your first margin account**, a shortcut will appear allowing you to quickly switch to the newly created account.
 - Otherwise, your current view will remain unchanged.
