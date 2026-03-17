@@ -64,7 +64,7 @@ You don't need to check — Glow detects this automatically and shows you the co
 
 ## Step 4: Confirmation
 
-Once the closure transaction is confirmed, you'll receive a success notification. Your SOL rent deposit (0.072 SOL) will be refunded to your wallet, and the account will be removed from your Portfolio.
+Once the closure transaction is confirmed, a **"Margin account closed successfully"** snackbar will appear at the top of the screen. Your SOL rent deposit (0.072 SOL) will be refunded to your wallet, and the account will be removed from your Portfolio.
 
 {/* TODO: add screenshot of success notification */}
 
