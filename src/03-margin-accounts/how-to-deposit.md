@@ -2,7 +2,7 @@
 title: "How to Deposit"
 description: "How to deposit assets into a Glow margin account: entry points, asset details page, projections, and confirmations."
 sidebar_label: "How to Deposit"
-sidebar_position: 2
+sidebar_position: 3
 keywords:
   - deposit
   - margin account
