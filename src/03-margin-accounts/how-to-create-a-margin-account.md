@@ -30,7 +30,7 @@ The rent fee does not cover SOL needed for transaction processing. Transaction f
 
 ## Key Visual Indicators
 
-- **Tooltips**: If no margin account exists, tooltips on actions like Long, Short, Deposit, or Borrow buttons will display "Create a margin account first."
+- **Tooltips**: If no margin account exists, tooltips on actions like Deposit, Withdraw, Borrow, or Repay buttons will display "Create a margin account first."
 - **Disabled Buttons**: If the wallet is not connected or has insufficient SOL, action buttons will be disabled. For instance, if your wallet balance is less than 0.072 SOL, the modal for creating a margin account will indicate that the required balance is insufficient, and you will need to top up your wallet to continue.
 
 ## Step 1: Connect Your Wallet
@@ -114,8 +114,6 @@ If you created your margin account before this step was available, you may see a
 
 - Click the button to approve a single wallet transaction. If the transaction fails, the modal will stay open so you can retry.
 - If you dismiss the modal, it will reappear once every 24 hours when you select that account on the Markets or Portfolio page.
-- Completing this step ensures your account can support the maximum number of positions by using a [lookup table](https://solana.com/developers/guides/advanced/lookup-tables) to compress transaction sizes.
-
 <img
 src="/img/create-finish-setup.png"
 style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
