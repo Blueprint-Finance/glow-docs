@@ -76,8 +76,6 @@ src="/img/create-5.png"
 style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
 
-<ins class="review-diff">Previously this was a separate "Step 4: Handle Insufficient SOL Balance" — now folded into Step 3 as a tip:</ins>
-
 :::tip Handle Insufficient SOL Balance
 If you don't have enough SOL, the **Create Margin Account** button will be disabled and an error message will prompt you to add more SOL. You'll need at least **0.072 SOL** <del class="review-diff">to cover the rent fees for both required transactions.</del><ins class="review-diff">plus a small amount for transaction fees.</ins>
 :::
@@ -124,7 +122,7 @@ If you created your margin account before this step was available, you may see a
 
 - Click the button to approve a single wallet transaction. If the transaction fails, the modal will stay open so you can retry.
 - If you dismiss the modal, it will reappear once every 24 hours when you select that account on the Markets or Portfolio page.
-- Completing this step is recommended for the best experience.
+- Completing this step ensures your account can support the maximum number of positions by using a [lookup table](https://solana.com/developers/guides/advanced/lookup-tables) to compress transaction sizes.
 
 <img
 src="/img/create-finish-setup.png"
