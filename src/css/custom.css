@@ -31,6 +31,16 @@
 .katex { font-size: 1.8em; }
 
 /* === REVIEW MODE — remove before merge === */
+/* Sidebar: highlight parent categories that contain changed pages */
+.menu__list-item:has(a[href*="how-to-create-a-margin-account"]) > .menu__link--sublist-caret {
+  color: #FFA500 !important;
+  font-weight: bold !important;
+}
+.menu__list-item:has(a[href*="how-to-create-a-margin-account"]) > .menu__link--sublist-caret::after {
+  content: " ●";
+  color: #FFA500;
+  font-size: 0.7em;
+}
 /* Sidebar: highlight changed pages */
 a[href*="how-to-create-a-margin-account"] {
   color: #FFA500 !important;
