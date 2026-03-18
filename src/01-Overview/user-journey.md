@@ -22,7 +22,7 @@ This journey showcases how a user can utilize Glow’s capabilities efficiently 
 
 ## 1. Connecting the Wallet and Setting Up a Margin Account
 
-The journey starts when the user connects their wallet to Glow. The user is prompted to create a margin account, a crucial step since this account enables access to various features like depositing assets and borrowing. To set up this account, the user must pay a small refundable rent fee of 0.072 SOL to cover on-chain storage costs on the Solana blockchain. Glow transparently displays this requirement to the user through a clear prompt.
+The journey starts when the user connects their wallet to Glow. The user is prompted to create a margin account, a crucial step since this account enables access to various features like depositing assets and borrowing. To set up this account, the user must pay a small refundable rent fee of 0.055 SOL to cover on-chain storage costs on the Solana blockchain. Glow transparently displays this requirement to the user through a clear prompt.
 
 Glow enables users to create and manage multiple margin accounts under a single wallet, providing an intuitive interface that allows seamless navigation, management, and transactions across all accounts.
 
