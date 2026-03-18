@@ -112,8 +112,8 @@ After successfully creating a margin account, the Markets page will update to re
 
 If you created your margin account before this step was available, you may see a **"Finish Margin Account Creation"** modal when selecting that account. This one-time step creates a [lookup table](https://solana.com/developers/guides/advanced/lookup-tables) for your account — a Solana optimization that reduces transaction sizes and allows your account to support more positions.
 
-- Click the button to approve a single wallet transaction.
-- If you dismiss the modal, it will reappear the next time you select that account.
+- Click the button to approve a single wallet transaction. If the transaction fails, the modal will stay open so you can retry.
+- If you dismiss the modal, it will reappear once every 24 hours when you select that account on the Markets or Portfolio page.
 - Completing this step is recommended for the best experience.
 
 <img
