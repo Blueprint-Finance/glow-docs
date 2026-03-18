@@ -114,6 +114,7 @@ If you created your margin account before this step was available, you may see a
 
 - Click the button to approve a single wallet transaction. If the transaction fails, the modal will stay open so you can retry.
 - If you dismiss the modal, it will reappear once every 24 hours when you select that account on the Markets or Portfolio page.
+
 <img
 src="/img/create-finish-setup.png"
 style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
