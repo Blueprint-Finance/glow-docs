@@ -61,8 +61,6 @@ Once your wallet is connected:
 - The top menu bar changes to show the connected wallet, and can be clicked to view app settings.
 - A banner at the top of the **Markets** page will prompt you to create a margin account. Click the **Create Margin Account** button. Alternatively, you may click the underlined text in the banner.
 
-![](/img/create-4.png)
-
 ## Step 3: Create Your Margin Account
 
 In the **New Margin Account** modal:
@@ -79,11 +77,6 @@ style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", mar
 :::tip Handle Insufficient SOL Balance
 If you don't have enough SOL, the **Create Margin Account** button will be disabled and an error message will prompt you to add more SOL. You'll need at least **0.072 SOL** plus a small amount for transaction fees.
 :::
-
-<img
-src="/img/create-6.png"
-style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
-/>
 
 ## Step 4: Confirmation
 
