@@ -30,7 +30,17 @@
 
 .katex { font-size: 1.8em; }
 
+@media (min-width: 997px) {
+  :root {
+    --docusaurus-announcement-bar-height: auto !important;
+  }
+}
+
 div[class*='announcementBar'] {
-  padding: 12px 24px !important;
+  height: auto !important;
+}
+
+div[class*='announcementBarContent'] > div {
+  padding: 10px 24px !important;
   font-size: 0.75rem !important;
 }
