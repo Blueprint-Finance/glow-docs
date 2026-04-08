@@ -41,7 +41,7 @@ div[class*='announcementBar'] {
 }
 
 div[class*='announcementBar'] div[class*='content'] {
-  padding: 10px 40px !important;
+  padding: 10px 9px !important;
   font-size: 0.75rem !important;
   text-align: left !important;
 }
