@@ -29,3 +29,10 @@
 }
 
 .katex { font-size: 1.8em; }
+
+div[class*='announcementBar'] {
+  padding: 10px 20px;
+  line-height: 1.5;
+  font-size: 0.75rem;
+  text-align: center;
+}
