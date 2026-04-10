@@ -21,7 +21,7 @@ Glow Finance leverages advanced DeFi mechanics to provide leveraged staking, bor
 
 ## Audits
 
-All core smart contracts in Glow Finance are [audited or reviewed by independent security firms](./audits.md). [FN4] However, even audited contracts carry residual risk.
+All core smart contracts in Glow Finance are [audited or reviewed by independent security firms](./audits.md).[FN4] However, even audited contracts carry residual risk.
 
 **Mitigation:**
 Always make sure you’re using the official app URL: [https://app.glowfinance.xyz/](https://app.glowfinance.xyz/), Interacting with lookalike or unofficial sites can put your funds at risk. Bookmark the official app link and double-check it before connecting your wallet.

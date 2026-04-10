@@ -49,7 +49,7 @@ The health level is a percentage that helps users visualize the risk associated 
 - **100.0%**: Indicates a stable, well-collateralized account with no borrowing positions (required collateral = 0).
 - **Below 20.0%**: Suggests that the user may soon need to add collateral or reduce borrowings to avoid liquidation.
 - **5.0% Warning Threshold**: At this level, the UI alerts the user with a warning banner, emphasizing the need for immediate action to prevent liquidation.
-- **Maximum Leverage Buffer**: The maximum borrowing allowed leaves the health level at **6.0%**, allowing users to approach the maximum leverage permitted under current protocol settings. [FN5]
+- **Maximum Leverage Buffer**: The maximum borrowing allowed leaves the health level at **6.0%**, allowing users to approach the maximum leverage permitted under current protocol settings.[FN5]
 - **0.0%:** When the health level reaches 0.0% the margin account is slated for partial liquidation - Glow’s liquidator will attempt to exchange only as much value in assets from a user’s margin account as is necessary to cover enough debt to return the health level to above 0%. This protects the rest of the users of the protocol. Read the [liquidations page](../03-margin-accounts/liquidation.md) to read more about liquidations on Glow.
 
 :::tip
@@ -75,7 +75,7 @@ Adapters enable the margin account to:
 
 - **Integrate Cross-Protocol Collateral**: Adapters could allow users to count deposits made on external protocols as collateral within their Glow margin account. This opens opportunities for advanced strategies such as arbitraging interest rates across lending protocols, or leveraging deposits in one platform while borrowing or trading in another.
 - **Enhance Cross-Platform Operations**: For example, users can route borrowed assets to external AMMs (Automated Market Makers) for trading or to external protocols for automated yield optimization. Future integrations may also include routing to Central Limit Order Books (CLOBs) for more sophisticated trading strategies.
-- **Optimize Trade Execution**: By leveraging adapters, users can access optimized routes through aggregators like Jupiter on Solana, seeking efficient trade routing across DEXs, subject to external routing logic and availability. [FN5]
+- **Optimize Trade Execution**: By leveraging adapters, users can access optimized routes through aggregators like Jupiter on Solana, seeking efficient trade routing across DEXs, subject to external routing logic and availability.[FN5]
 
 ## Multiple Margin Accounts for Segmented Strategies
 

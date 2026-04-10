@@ -49,7 +49,7 @@ Let’s break down each component and explain how they interact within Glow’s 
 
 The user/client is at the center of Glow’s functionality. Users interact with Glow primarily through **margin accounts**, which serve as the gateway for accessing various financial products within the ecosystem.
 
-**Permissioned bubbles** (optional) can be applied to segment specific user interactions or environments, may support segmented user environments or feature gating where needed. [FN5]
+**Permissioned bubbles** (optional) can be applied to segment specific user interactions or environments, may support segmented user environments or feature gating where needed.[FN5]
 
 ## 2. Margin Accounts
 
@@ -77,7 +77,7 @@ By using Strategy Vaults, Glow users—whether beginners or advanced traders—c
 
 ### Leveraged glowSOL Restaking Vault + Glow and Solayer Points
 
-The **Leveraged glowSOL Restaking Vault** is Glow's flagship vault, designed to give users leveraged exposure to glowSOL-related rewards while reducing the effect of SOL price movements on certain health calculations; it does not eliminate liquidation or other risks. [FN3] This strategy uses **glowSOL** and **sSOL (Solayer’s liquid restaking token)** to allow users to select a leverage level and earn multiplied SOL restaking yield and points within an **isolated margin account**.
+The **Leveraged glowSOL Restaking Vault** is Glow's flagship vault, designed to give users leveraged exposure to glowSOL-related rewards while reducing the effect of SOL price movements on certain health calculations; it does not eliminate liquidation or other risks.[FN3] This strategy uses **glowSOL** and **sSOL (Solayer’s liquid restaking token)** to allow users to select a leverage level and earn multiplied SOL restaking yield and points within an **isolated margin account**.
 
 While the USD value of the position still moves with SOL price, the vault is intended so that SOL price movements alone are not the sole driver of position health under the current design; depeg, borrow-rate, liquidity, oracle, smart contract, and other risks remain, as both collateral and debt are tied to SOL.
 
@@ -94,7 +94,7 @@ While the USD value of the position still moves with SOL price, the vault is int
 In addition to the Leveraged glowSOL Vault, Glow aims to introduce additional vaults to meet a variety of user goals. Potential future vaults include:
 
 - **Stablecoin Rate Arbitrage**: A strategy designed to take advantage of differing interest rates on stablecoins across various protocols. Users can borrow or deposit stablecoins in platforms where they offer the highest yield, seeking to capture rate differentials, subject to smart contract, liquidity, market, and execution risk.
-- **Leverage Long**: For users who want to amplify their exposure to price appreciation in specific assets, this strategy borrows additional assets to take long positions, potentially magnifying gains and losses in directional markets. [FN3]
+- **Leverage Long**: For users who want to amplify their exposure to price appreciation in specific assets, this strategy borrows additional assets to take long positions, potentially magnifying gains and losses in directional markets.[FN3]
 - **Leverage Short**: This strategy allows users to take short positions by borrowing and selling assets they believe will decline in value. It is a straightforward way to benefit from bearish trends.
 - **Pair Trade**: This strategy enables users to set up pair trades by simultaneously going long on one asset and short on another. Pair trading can be used for arbitrage or hedging purposes, offering a balanced risk approach to trading.
 - **LRT Leverage**: By leveraging specific tokens or liquidity pool assets (like sSOL in Solayer), this strategy aims to generate targeted yield from protocols offering liquid restaking or similar yield-generating mechanisms.
