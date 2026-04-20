@@ -89,7 +89,7 @@ While the USD value of the position still moves with SOL price, the vault is int
 2. The application UI walks them through the setup, in which the user may choose between depositing SOL from their wallet, from one of their margin accounts, and then deposit it to the vault
 3. The user holds glowSOL, which is designed to accrue value as staking rewards accumulate, targeting a delta-neutral position relative to SOL price.
 4. GlowSOL is also wrapped sSOL, meaning that users earn both Glow and Solayer points — with a multiplier depending on leverage selected!
-5. Since the user borrows SOL (but holds glowSOL), they are protected against price swings in SOL, maintaining a position that that will fluctuate in value alongside SOL price while benefiting from staking rewards. The primary liquidation risk arises if the SOL/sSOL peg deviates significantly. Prolonged periods where borrow APY exceeds restaking yield may also affect position health.
+5. Since the user borrows SOL (but holds glowSOL), they are protected against price swings in SOL, maintaining a position that will fluctuate in value alongside SOL price while benefiting from staking rewards. The primary liquidation risk arises if the SOL/sSOL peg deviates significantly. Prolonged periods where borrow APY exceeds restaking yield may also affect position health.
 
 ### Potential Future Strategy Vaults
 
