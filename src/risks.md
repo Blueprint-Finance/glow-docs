@@ -80,7 +80,7 @@ Vault liquidity depends on the availability of funds within integrated strategie
 **Mitigation**
 
 - Queued withdrawals are typically targeted for processing within 72 hours, but timing may vary during periods of market stress, operational delays, or third-party dependencies.
-- The Glow interface displays **real-time queue status** and ****countdown timers
+- The Glow interface displays **real-time queue status** and **countdown timers**.
 - Selected vaults may maintain **liquidity buffers** to improve redemption efficiency during volatile conditions.
 
 ### Market and Performance Risk
@@ -157,7 +157,7 @@ Initiating a glowSOL withdrawal starts a **7-day unstaking queue**, during which
   - During the queue period, users cannot access unstaked SOL to repay debt or adjust collateral.
   - SOL price changes during the 7-day unstaking queue do not impact your position’s Health Level. However, if glowSOL or its underlying asset sSOL depegs from SOL during that time, your position’s health could decline and lead to liquidation.
 - **Mitigation:**
-  - When you initiate unstaking, your glowSOL enters a 7-day illiquid period. During this time, it cannot be withdrawn or used in other strategies. You will still be able to manage your position (including borrow and repay actions) while unstaking is in progress — but the unstaking glowSOL itself remains locked until the 7-day queue completes. \*\*\*\*
+  - When you initiate unstaking, your glowSOL enters a 7-day illiquid period. During this time, it cannot be withdrawn or used in other strategies. You will still be able to manage your position (including borrow and repay actions) while unstaking is in progress — but the unstaking glowSOL itself remains locked until the 7-day queue completes.
   - Monitor the unstaking queue directly within the “Manage Vault” section of the Leveraged glowSOL Vault. It shows exactly when each unstaking request will complete and when your SOL will become available for withdrawal.
   - Consider initiating unstaking when SOL borrow APY is relatively low or stable, as this reduces the chance of your Health Level declining if interest costs temporarily exceed your leveraged restaking yield during the 7-day queue period. This can occur if borrow rates remain elevated during the queue period.
   - You may cancel a pending unstaking request during the 7-day queue if needed. However, this comes with a small cancellation fee. The performance fee (charged in glowSOL) is taken at the moment you initiate withdrawal. If you cancel the withdrawal during the queue, that fee will _not_ be refunded. This applies even if the glowSOL is never converted back to SOL.
