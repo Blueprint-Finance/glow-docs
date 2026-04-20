@@ -592,7 +592,7 @@ Depositing this amount would exceed the deposit limit for this pool. Currently, 
 - If a user attempts to withdraw more than the available balance, the transaction is blocked, and a message informs them of the maximum withdrawable amount.
 
 Example:
-Withdrawing this amount would exceed the amount of deposited liquidity currently available in this pool. Currently, this pool can only support withdrawing up to **remaining_token_liquidity_amount** tokens until more tokens are deposited."\*
+Withdrawing this amount would exceed the amount of deposited liquidity currently available in this pool. Currently, this pool can only support withdrawing up to **remaining_token_liquidity_amount** tokens until more tokens are deposited."
 
 ## **Fees & Costs**
 
