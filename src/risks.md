@@ -15,13 +15,15 @@ keywords:
   - SOL
 ---
 
+import Footnotes from '@site/src/components/Footnotes';
+
 Participation in Glow Vaults involves risk, including the potential loss of principal. Nothing in this article constitutes financial, investment, or legal advice. Please review the [Terms of Use](https://www.glowfinance.xyz/terms) and consider your individual risk tolerance before engaging with any vault.
 
 Glow Finance leverages advanced DeFi mechanics to provide leveraged staking, borrowing, and restaking opportunities. While these features offer potential for amplified yields, they also carry inherent risks. This article outlines the key risk categories associated with Glow Finance and provides actionable mitigation strategies for each.
 
 ## Audits
 
-All core smart contracts in Glow Finance are [audited or reviewed by independent security firms](./audits.md).[FN4] However, even audited contracts carry residual risk.
+All core smart contracts in Glow Finance are [audited or reviewed by independent security firms](./audits.md).<sup>4</sup> However, even audited contracts carry residual risk.
 
 **Mitigation:**
 Always make sure you’re using the official app URL: [https://app.glowfinance.xyz/](https://app.glowfinance.xyz/), Interacting with lookalike or unofficial sites can put your funds at risk. Bookmark the official app link and double-check it before connecting your wallet.
@@ -201,3 +203,5 @@ The **Leveraged glowSOL Vault** uses **glowSOL**, a wrapped version of **sSOL** 
 
 - Monitor the **sSOL/SOL peg** (and by extension the **glowSOL/SOL peg**) for signs of instability.
 - Stay informed via Glow Finance and Solayer announcements and status updates on supported assets.
+
+<Footnotes />
