@@ -10,6 +10,8 @@ keywords:
   - solana
 ---
 
+import Footnotes from '@site/src/components/Footnotes';
+
 Glow Finance integrates sophisticated tools to safeguard user portfolios from bad debt while maintaining the integrity of the lending ecosystem. Below is an in-depth explanation of how liquidation operates within the platform.
 
 ## Triggering Liquidation
@@ -67,3 +69,5 @@ To help prevent accounts from reaching this stage, Glow displays a **Health Leve
 ## Managing Risk with Health Levels
 
 Glow Finance equips users with tools to manage their portfolio risk effectively by monitoring and improving their Health Level. A higher Health Level indicates a more stable account, reducing the likelihood of liquidation. For users seeking detailed guidance on strategies to maintain a healthy account, including depositing collateral, repaying borrowed assets, or adjusting leverage. For more information, you can check the [Health Level](../03-margin-accounts/health-level.md) article.
+
+<Footnotes />

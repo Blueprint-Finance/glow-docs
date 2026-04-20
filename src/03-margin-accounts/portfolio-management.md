@@ -11,6 +11,8 @@ keywords:
   - solana
 ---
 
+import Footnotes from '@site/src/components/Footnotes';
+
 ## Margin Account Panel Explainer
 
 The **Margin Account Panel** is the hub for managing your margin accounts on Glow Finance. It provides detailed insights into your active margin account and allows you to easily switch between accounts, create new ones, and perform transactions.
@@ -154,3 +156,5 @@ When a margin account row is expanded, users can view all positions within that 
 These alerts ensure users remain fully informed about their account status, enhancing transparency and enabling prompt follow-up actions.
 
 ![](/img/portfolio-7.png)
+
+<Footnotes />

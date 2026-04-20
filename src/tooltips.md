@@ -11,6 +11,8 @@ keywords:
   - margin accounts
 ---
 
+import Footnotes from '@site/src/components/Footnotes';
+
 Tooltips are small informational pop-ups that appear when users hover over an element in the UI. They provide contextual insights, helping users understand financial metrics, lending and borrowing mechanics, and other core functionalities of Glow Finance.
 
 Each tooltip is strategically placed to assist users in making informed decisions while interacting with the Glow application.
@@ -88,3 +90,5 @@ Each tooltip is strategically placed to assist users in making informed decision
 | **Utilization**                | The percentage of the deposited assets that are currently borrowed.                                                                                                    |
 | **Collateral Weight**          | The risk-adjusted multiplier for an asset when used as collateral.                                                                                                     |
 | **Token Address**              | The on-chain address of the asset, useful for external integrations.                                                                                                   |
+
+<Footnotes />

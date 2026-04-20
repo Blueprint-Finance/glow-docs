@@ -10,6 +10,8 @@ keywords:
   - collateral
 ---
 
+import Footnotes from '@site/src/components/Footnotes';
+
 The Health Level is a crucial indicator of a margin account's risk exposure. It represents the amount of effective collateral remaining proportionally to the required collateral, normalized to a 100% scale, providing users with a clear assessment of how close their account is to liquidation.
 
 The **Health Level (HL)** is calculated based on **required collateral**, **weighted collateral**, and **liabilities.** If the **weighted collateral > 0**:
@@ -106,3 +108,5 @@ style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", mar
 ### 3. Informed Decision-Making
 
 By providing users a clear metric to gauge account health, one can decide more easily whether to adjust their leverage, deposit more collateral, or reduce liabilities.
+
+<Footnotes />

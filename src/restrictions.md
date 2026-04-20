@@ -9,6 +9,8 @@ keywords:
   - sanctions
 ---
 
+import Footnotes from '@site/src/components/Footnotes';
+
 At Glow Finance, we prioritize compliance with international laws and regulations. As part of this commitment, access to our services is restricted in certain jurisdictions, including:
 
 - **United States**: Restricted due to regulatory compliance requirements.
@@ -25,3 +27,5 @@ These restrictions are in place to comply with sanctions that limit access to fi
 :::note
 This list is subject to updates based on changes in international regulatory and sanction frameworks. Please check this page regularly for the latest information.
 :::
+
+<Footnotes />

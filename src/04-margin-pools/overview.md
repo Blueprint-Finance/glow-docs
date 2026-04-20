@@ -11,6 +11,8 @@ keywords:
   - borrowers
 ---
 
+import Footnotes from '@site/src/components/Footnotes';
+
 Glow Finance’s **Margin Pools** serve as the backbone for managing liquidity within margin accounts. These pools provide a dynamic framework that adjusts interest rates based on utilization, ensuring an optimized environment for both lenders and borrowers.
 
 :::tip
@@ -60,3 +62,5 @@ Glow Finance simplifies and optimizes the traditional lending pool model:
 - **Efficient Liquidity Management**: Glow's system dynamically adjusts to user behavior, maintaining liquidity availability for both deposits and withdrawals.
 - **Enhanced User Control**: Users can monitor their positions and risks with real-time metrics and alerts.
 - **Simplified Access**: No need for complex configurations—users deposit, borrow, and leverage seamlessly within the platform.
+
+<Footnotes />

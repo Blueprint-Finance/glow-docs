@@ -16,6 +16,8 @@ keywords:
   - borrowing
 ---
 
+import Footnotes from '@site/src/components/Footnotes';
+
 - [General Questions](#general-questions)
 - [Portfolio Management](#portfolio-management)
 - [Handling Positions](#handling-positions)
@@ -632,3 +634,5 @@ Yes! Based on user feedback, Glow Finance is working on:
   - Borrowable Amount
 - Slider improvements → A mark will be added to indicate the true max amount users can withdraw/borrow safely.
 - More visible warnings when an action could lower Health Level too much.
+
+<Footnotes />

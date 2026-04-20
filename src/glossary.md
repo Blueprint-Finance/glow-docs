@@ -16,6 +16,8 @@ keywords:
   - SOL
 ---
 
+import Footnotes from '@site/src/components/Footnotes';
+
 ## **A**
 
 ### (Margin) Account
@@ -361,3 +363,5 @@ Unlike most DeFi protocols that require full overcollateralization, Glow Finance
 - Assets aren’t locked up unnecessarily, enabling more productive use of funds.
 - Users can borrow against future yield and strategic positions without excessive collateral.
 - Facilitates leveraged staking, recursive borrowing, and restaking strategies.
+
+<Footnotes />

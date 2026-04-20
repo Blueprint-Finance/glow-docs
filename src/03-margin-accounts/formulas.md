@@ -11,6 +11,8 @@ keywords:
   - risk metrics
 ---
 
+import Footnotes from '@site/src/components/Footnotes';
+
 A **margin account** keeps track of assets and liabilities that the user has accrued through their interaction with integrated products. It is through the **margin account** that a user's **deposits are used as collateral**, allowing them to borrow assets or take other risk positions.
 
 Margin accounts also serve a **critical role in risk management**, ensuring **Glow Finance remains solvent** by triggering liquidations when an account becomes unhealthy.
@@ -134,3 +136,5 @@ This represents the **buffer** before liquidation occurs.
 **Liquidation occurs when available collateral reaches zero.**
 
 For further details, refer to the [Liquidation](../03-margin-accounts/liquidation.md) page.
+
+<Footnotes />
