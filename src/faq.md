@@ -119,7 +119,7 @@ For deposits, you'll still see your wallet balance (shown as “Held in Wallet�
 
 ### Why doesn’t the Max button use my full balance?
 
-Because it prioritizes **safety and success**.
+Because it applies protocol constraints and transaction buffers.
 
 For example:
 
@@ -473,7 +473,7 @@ The Pool Deposit Limit Violation error appears when your deposit exceeds the max
 - The limit may increase over time or if other users withdraw from the pool.
 - Clicking the underlined amount in the error message will auto-fill the maximum allowed deposit amount.
 
-This safeguard is intended to help maintain liquidity balance and prevents overloading the pool. Clicking the underlined link in the error messaging will input the maximum allowable amount of tokens to deposit without violating the limit.
+This safeguard is intended to help maintain liquidity balance and limit overloading of the pool. Clicking the underlined link in the error messaging will input the maximum allowable amount of tokens to deposit without violating the limit.
 
 <img
 src="/img/faq-6.png"
