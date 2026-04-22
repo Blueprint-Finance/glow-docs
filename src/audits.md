@@ -9,13 +9,13 @@ Glow Finance values **security and transparency**. To protect users and ensure t
 
 Below, you can find the latest Glow Audit Reports from industry-leading Web3 security firms (Zellic, Certora and Halborn), which details our security assessment.
 
-## Glow Vault: Transferrable Tokens & Epoch Withdrawal
+## Glow Vault: Epoch Withdrawal
 
 - **Auditor:** Halborn
 - **Date:** April 20, 2026
 - [View Full Audit Report](/files/Glow-Vault-Transferrable-Tokens-Epoch-Withdrawal.pdf)
 
-## Glow Vault Transferrable Shares: Locked Withdrawal
+## Glow Vault: Locked Withdrawal
 
 - **Auditor:** Halborn
 - **Date:** April 17, 2026
