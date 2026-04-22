@@ -6,7 +6,6 @@ const FOOTNOTES = [
   'Leverage magnifies gains and losses and may result in liquidation, forced deleveraging, or loss of assets.',
   'Audits and security reviews do not eliminate risk and are not a guarantee that the protocol is free from bugs, exploits, or losses.',
   'Features, supported assets, third-party integrations, routing, and thresholds are subject to availability, protocol parameters, and change.',
-  'Displayed logos identify investors, partners, or ecosystem relationships, as applicable, and do not constitute an endorsement, recommendation, or guarantee of future performance.',
 ];
 
 export default function Footnotes() {
