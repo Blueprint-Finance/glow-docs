@@ -15,11 +15,15 @@ keywords:
   - SOL
 ---
 
+import Footnotes from '@site/src/components/Footnotes';
+
+Participation in Glow Vaults involves risk, including the potential loss of principal. Nothing in this article constitutes financial, investment, or legal advice. Please review the [Terms of Use](https://www.glowfinance.xyz/terms) and consider your individual risk tolerance before engaging with any vault.
+
 Glow Finance leverages advanced DeFi mechanics to provide leveraged staking, borrowing, and restaking opportunities. While these features offer potential for amplified yields, they also carry inherent risks. This article outlines the key risk categories associated with Glow Finance and provides actionable mitigation strategies for each.
 
 ## Audits
 
-All core smart contracts in Glow Finance are periodically [audited by leading security firms](./audits.md). However, even audited contracts carry residual risk.
+All core smart contracts in Glow Finance are [audited or reviewed by independent security firms](./audits.md).<sup>4</sup> However, even audited contracts carry residual risk.
 
 **Mitigation:**
 Always make sure you’re using the official app URL: [https://app.glowfinance.xyz/](https://app.glowfinance.xyz/), Interacting with lookalike or unofficial sites can put your funds at risk. Bookmark the official app link and double-check it before connecting your wallet.
@@ -44,7 +48,7 @@ If liquidity in the pool drops significantly, users may face borrowing or withdr
 
   **Why This Is Temporary:**
 
-  When utilization spikes, Glow’s dynamic interest rate model raises the borrow APY. This incentivizes new lenders to supply liquidity, helping to restore balance naturally. As a result, high-utilization periods tend to self-correct over time.
+  When utilization spikes, Glow’s dynamic interest rate model raises the borrow APY. This incentivizes new lenders to supply liquidity, helping to restore balance naturally. As a result, high-utilization periods may normalize over time, but timing and outcome are not guaranteed.
 
 - **Mitigation:**
   - Monitor pool utilization metrics before initiating large transactions.
@@ -57,9 +61,7 @@ Learn more in our [Margin Pools Overview](../src/04-margin-pools/overview.md) an
 
 ## Vault Risks
 
-Glow Vaults pool user assets and deploy them across integrated DeFi protocols to optimize yield. While vaults are engineered for security, diversification, and risk-managed performance, they introduce several inherent risks that users should understand before depositing.
-
-Participation in Glow Vaults involves risk, including the potential loss of principal. Nothing in this article constitutes financial, investment, or legal advice. Please review the [Terms of Use](https://www.glowfinance.xyz/terms) and consider your individual risk tolerance before engaging with any vault.
+Glow Vaults pool user assets and deploy them across integrated DeFi protocols to optimize yield. While vaults are structured with security reviews, diversification, and risk controls, they introduce several inherent risks that users should understand before depositing.
 
 ### Smart Contract and Protocol Risk
 
@@ -77,8 +79,8 @@ Vault liquidity depends on the availability of funds within integrated strategie
 
 **Mitigation**
 
-- Queued withdrawals are **automatically processed** within 72 hours.
-- The Glow interface displays **real-time queue status** and ****countdown timers
+- Queued withdrawals are typically targeted for processing within 72 hours, but timing may vary during periods of market stress, operational delays, or third-party dependencies.
+- The Glow interface displays **real-time queue status** and **countdown timers**.
 - Selected vaults may maintain **liquidity buffers** to improve redemption efficiency during volatile conditions.
 
 ### Market and Performance Risk
@@ -88,7 +90,7 @@ Vault yields are **variable** and depend on market conditions, interest rate cha
 **Mitigation**
 
 - Displayed APYs are **dynamically calculated** based on recent share-price performance and updated whenever the vault operator reports a valuation update.
-- The Glow team actively **rebalances allocations** to maintain stable, risk-adjusted returns.
+- The Glow team may rebalance allocations to manage risk and pursue risk-adjusted returns.
 - The app shows the **“Last updated” timestamp** under each vault’s APY/Rewards field for full transparency.
 
 ### Collateral and Liquidation Risk
@@ -99,7 +101,7 @@ Some vault strategies use **collateralized borrowing**. Sudden price swings or o
 
 - Glow enforces **conservative loan-to-value (LTV) limits**.
 - Vault operators continuously monitor **collateral health** and can rebalance or unwind positions proactively.
-- Liquidation management is **automated at the vault level** — individual users are never margin-called or required to take action.
+- Liquidation management is **automated at the vault level** — individual users are generally not expected to receive margin calls, though losses and liquidations may still occur.
 
 ### Operator and Administrative Risk
 
@@ -126,7 +128,7 @@ Liquidation occurs when the **Health Level** of a margin account drops below zer
 
 If you're using the Leveraged glowSOL Vault, it's important to understand:
 
-SOL price drops do _not_ affect your Health Level or trigger liquidations. This strategy is designed with no SOL market price exposure. Your position health is only impacted by:
+Under the current design, SOL price movements alone are not expected to be the sole driver of Health Level changes; however, depeg, borrow-rate, liquidity, oracle, smart contract, and other risks may still affect position health and liquidation risk. Your position health is only impacted by:
 
 - A glowSOL or sSOL depeg (i.e. if glowSOL trades significantly below SOL).
 - Prolonged periods where borrow APY exceeds leveraged yield, causing slow Health Level decline. For example: At 2× leverage, if glowSOL earns 6% and your SOL borrow rate is 3%, you break even. But if the borrow rate goes up to 4%, you start losing yield — and over time, your Health Level will go down.
@@ -155,9 +157,9 @@ Initiating a glowSOL withdrawal starts a **7-day unstaking queue**, during which
   - During the queue period, users cannot access unstaked SOL to repay debt or adjust collateral.
   - SOL price changes during the 7-day unstaking queue do not impact your position’s Health Level. However, if glowSOL or its underlying asset sSOL depegs from SOL during that time, your position’s health could decline and lead to liquidation.
 - **Mitigation:**
-  - When you initiate unstaking, your glowSOL enters a 7-day illiquid period. During this time, it cannot be withdrawn or used in other strategies. You will still be able to manage your position (including borrow and repay actions) while unstaking is in progress — but the unstaking glowSOL itself remains locked until the 7-day queue completes. \*\*\*\*
+  - When you initiate unstaking, your glowSOL enters a 7-day illiquid period. During this time, it cannot be withdrawn or used in other strategies. You will still be able to manage your position (including borrow and repay actions) while unstaking is in progress — but the unstaking glowSOL itself remains locked until the 7-day queue completes.
   - Monitor the unstaking queue directly within the “Manage Vault” section of the Leveraged glowSOL Vault. It shows exactly when each unstaking request will complete and when your SOL will become available for withdrawal.
-  - Consider initiating unstaking when SOL borrow APY is relatively low or stable, as this reduces the chance of your Health Level declining if interest costs temporarily exceed your leveraged restaking yield during the 7-day queue period. This risk is uncommon — SOL borrow rates tend to revert quickly, and prolonged high-rate periods have historically been rare.
+  - Consider initiating unstaking when SOL borrow APY is relatively low or stable, as this reduces the chance of your Health Level declining if interest costs temporarily exceed your leveraged restaking yield during the 7-day queue period. This can occur if borrow rates remain elevated during the queue period.
   - You may cancel a pending unstaking request during the 7-day queue if needed. However, this comes with a small cancellation fee. The performance fee (charged in glowSOL) is taken at the moment you initiate withdrawal. If you cancel the withdrawal during the queue, that fee will _not_ be refunded. This applies even if the glowSOL is never converted back to SOL.
 
 ## Interest Rate Spikes
@@ -191,7 +193,7 @@ Margin accounts in Glow Finance are limited to **24 user-managed positions**, wi
 
 ## Third-Party Integration Risks
 
-The **Leveraged glowSOL Vault** uses **glowSOL**, a wrapped version of **sSOL** — issued by Solayer, a leading staking protocol that Glow integrates with. This means the value and behavior of your position is indirectly tied to the stability of sSOL.
+The **Leveraged glowSOL Vault** uses **glowSOL**, a wrapped version of **sSOL** — issued by Solayer, a third-party staking protocol that Glow integrates with. This means the value and behavior of your position is indirectly tied to the stability of sSOL.
 
 - Any technical, governance, or security issues affecting the sSOL protocol may indirectly impact your position in the vault.
 - While glowSOL itself does **not currently carry collateral weight**, leveraged users still depend on the **glowSOL/SOL peg** to maintain a healthy margin account.
@@ -201,3 +203,5 @@ The **Leveraged glowSOL Vault** uses **glowSOL**, a wrapped version of **sSOL** 
 
 - Monitor the **sSOL/SOL peg** (and by extension the **glowSOL/SOL peg**) for signs of instability.
 - Stay informed via Glow Finance and Solayer announcements and status updates on supported assets.
+
+<Footnotes />

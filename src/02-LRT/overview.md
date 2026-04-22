@@ -13,6 +13,8 @@ keywords:
   - SOL
 ---
 
+import Footnotes from '@site/src/components/Footnotes';
+
 **Restaking** is an innovative concept in blockchain security that allows users to leverage their staked tokens multiple times to secure not just the underlying blockchain but also additional applications and protocols. Unlike traditional staking, where assets are locked and serve a single purpose—validating transactions and maintaining network integrity—restaking enables those same assets to provide security guarantees to other mechanisms, such as decentralized services, middleware, or alternative consensus layers.
 
 **Liquid Restaking** is a DeFi mechanism that allows users to stake their assets (e.g., SOL) in a blockchain protocol or validator network to earn staking rewards, while simultaneously unlocking the liquidity of those staked assets. Instead of being locked up, the value of the staked assets can be utilized elsewhere in DeFi, creating more opportunities for capital efficiency.
@@ -83,3 +85,5 @@ An essential value proposition of liquid restaking tokens (LRTs) is their abilit
    - Users deposit SOL and receive Glow’s LRT (glowSOL).
    - Glow’s system atomically restakes the SOL with Solayer to earn restaking yield and Solayer Points.
    - A comprehensive risk-adjusted strategy ensures minimal slashing risks while optimizing returns.
+
+<Footnotes />

@@ -10,6 +10,8 @@ keywords:
   - glow finance
 ---
 
+import Footnotes from '@site/src/components/Footnotes';
+
 At Glow Finance, we are committed to providing timely assistance for all user inquiries. Whether you have technical questions, need help with borrowing, or have concerns about your account, our support team is here to help.
 
 ## How to Contact Support
@@ -36,3 +38,5 @@ For urgent issues related to **security or account access**, please mark your em
 ## Future Support Enhancements
 
 We are working on expanding our support channels. Stay tuned for updates! 🚀
+
+<Footnotes />

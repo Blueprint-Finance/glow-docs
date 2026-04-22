@@ -10,6 +10,8 @@ keywords:
   - performance
 ---
 
+import Footnotes from '@site/src/components/Footnotes';
+
 Glow Finance provides a robust set of configurable options to enhance user experience, including operational preferences and the ability to connect to custom RPC nodes for improved performance and reliability.
 
 ### 1. Accessing the Settings Modal
@@ -38,7 +40,7 @@ RPC nodes facilitate the communication between the application and the blockchai
 ### **Default RPC Nodes**
 
 - Pre-configured options, such as **Helius RPC - Mainnet** and **Helius RPC - Devnet**, are available to users. The Devnet option allows users to experiment with the application in a risk-free environment, enabling them to test features and workflows without using real money.
-- Helius RPC - Mainnet, \*\*\*\*Automatically selected to ensure seamless blockchain interaction.
+- Helius RPC - Mainnet, automatically selected to ensure seamless blockchain interaction.
 
 ### **Custom RPC Nodes**
 
@@ -113,3 +115,5 @@ The orange banner signifies "severe performance issues," warning users that the 
 
 - **Issue**: Node mismatch (Mainnet vs Devnet).
 - **Solution**: Select the correct network in Node Selection.
+
+<Footnotes />

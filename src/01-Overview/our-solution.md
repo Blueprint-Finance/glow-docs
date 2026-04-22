@@ -11,6 +11,8 @@ keywords:
   - glow finance
 ---
 
+import Footnotes from '@site/src/components/Footnotes';
+
 :::info
 This section of the documentation outlines features of the upcoming **Glow Finance V1** application, currently in development. While we finalize this exciting update, you can already take advantage of Glow Restaking, which is live and available today.
 
@@ -28,3 +30,5 @@ By harnessing the speed, scalability, and security of the Solana blockchain and 
 Glow unlocks a new level of composability that has been missing from traditional DeFi models and opens up possibilities for limitless composable integrations with other SVM protocols, cementing Glow as a critical DeFi lego.
 
 Glow’s approach is not just incremental but transformative. By offering tools that allow for seamless integration and utilization of borrowed funds, Glow paves the way for more sophisticated and efficient strategies. This adaptability is what sets Glow apart and positions it as a key player in the evolving DeFi ecosystem.
+
+<Footnotes />

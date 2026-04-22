@@ -18,7 +18,11 @@ keywords:
   - SOL
 ---
 
-**Glow Vaults** are on-chain containers that manage deposited assets using predefined strategies, allocating and deploying capital across integrated DeFi protocols to maximize returns while managing risk.
+import Footnotes from '@site/src/components/Footnotes';
+
+Participation in Glow Vaults involves risk, including the potential loss of principal. Nothing in this article constitutes financial, investment, or legal advice. Please review the [Terms of Use](https://www.glowfinance.xyz/terms) and consider your individual risk tolerance before engaging with any vault.
+
+**Glow Vaults** are on-chain containers that manage deposited assets using predefined strategies, allocating and deploying capital across integrated DeFi protocols to maximize returns while managing risk.<sup>2,5</sup>
 
 Each Vault represents a curated investment approach, balancing **liquidity, security, and yield optimization** through smart contract automation.
 
@@ -79,3 +83,5 @@ Future vaults may include additional partner reward programs.
 Risk profiles may differ between vaults, especially for vaults running advanced or leveraged strategies.
 
 Before depositing, review the full [Vault Risk Disclosure](../../risks/#vault-risks) for details on risk mitigation, collateral safeguards, and underlying protocol integrations.
+
+<Footnotes />

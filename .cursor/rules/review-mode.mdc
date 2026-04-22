@@ -1,0 +1,81 @@
+---
+description: Review-mode CSS overlay for Vercel preview deployments — use when preparing doc PRs for visual review
+alwaysApply: false
+---
+
+# Vercel Preview Review Mode
+
+When preparing a docs PR for visual review on Vercel preview deploys, add temporary CSS to `src/css/custom.css` to highlight changes directly in the rendered site.
+
+Add the CSS block below **before pushing for review**, and **remove it before merging**.
+
+## CSS to add to `src/css/custom.css`
+
+```css
+/* === REVIEW MODE — remove before merge === */
+
+/* Sidebar: highlight parent category when it contains a changed child page */
+.theme-doc-sidebar-item-category-level-1:has(a[href*="TARGET_PAGE_SLUG"]) > .menu__list-item-collapsible > .menu__link--sublist {
+  color: #FFA500 !important;
+  font-weight: bold !important;
+}
+.theme-doc-sidebar-item-category-level-1:has(a[href*="TARGET_PAGE_SLUG"]) > .menu__list-item-collapsible > .menu__link--sublist::after {
+  content: " ●";
+  color: #FFA500;
+  font-size: 0.7em;
+}
+
+/* Sidebar: highlight changed page links */
+a[href*="TARGET_PAGE_SLUG"] {
+  color: #FFA500 !important;
+  font-weight: bold !important;
+}
+a[href*="TARGET_PAGE_SLUG"]::after {
+  content: " ●";
+  color: #FFA500;
+  font-size: 0.7em;
+}
+
+/* Inline diff: deleted text (red strikethrough) */
+del.review-diff {
+  color: #ff6b6b;
+  text-decoration: line-through;
+  background: rgba(255, 107, 107, 0.1);
+  padding: 1px 3px;
+  border-radius: 2px;
+}
+
+/* Inline diff: inserted text (green highlight) */
+ins.review-diff {
+  color: #51cf66;
+  text-decoration: none;
+  background: rgba(81, 207, 102, 0.1);
+  padding: 1px 3px;
+  border-radius: 2px;
+}
+
+/* Section-level: new section (green left border) */
+.review-new-section {
+  border-left: 3px solid #51cf66;
+  padding-left: 12px;
+  margin-left: -15px;
+}
+
+/* Section-level: removed section (red left border) */
+.review-removed-section {
+  border-left: 3px solid #ff6b6b;
+  padding-left: 12px;
+  margin-left: -15px;
+  opacity: 0.7;
+}
+
+/* === END REVIEW MODE === */
+```
+
+## Markdown usage in doc files
+
+- Inline changes: `<del class="review-diff">old text</del><ins class="review-diff">new text</ins>`
+- New sections: wrap in `<div class="review-new-section">...</div>`
+- Removed sections: wrap in `<div class="review-removed-section">...</div>`
+
+Replace `TARGET_PAGE_SLUG` with the actual page slug (e.g., `how-to-create-a-margin-account`). Duplicate the sidebar CSS blocks for each changed page.

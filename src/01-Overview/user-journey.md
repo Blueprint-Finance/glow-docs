@@ -12,6 +12,8 @@ keywords:
   - health level
 ---
 
+import Footnotes from '@site/src/components/Footnotes';
+
 :::info
 This section of the documentation outlines features of the upcoming **Glow Finance V1** application, currently in development. While we finalize this exciting update, you can already take advantage of Glow Restaking, which is live and available today.
 
@@ -67,3 +69,5 @@ Strategy Vaults focus on advanced strategies—such as automated borrowing, rest
 In the future, Glow may introduce Strategy Vaults that leverage adapters to interact with external protocols, enabling automated strategies such as cross-protocol rate arbitrage. For example, a vault could borrow stablecoins at a lower rate from one protocol and deploy them into higher-yield opportunities elsewhere, with all activity managed cohesively through Glow’s margin account framework.
 
 ![](/img/user.png)
+
+<Footnotes />

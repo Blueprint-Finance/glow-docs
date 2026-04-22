@@ -16,6 +16,8 @@ keywords:
   - borrowing
 ---
 
+import Footnotes from '@site/src/components/Footnotes';
+
 - [General Questions](#general-questions)
 - [Portfolio Management](#portfolio-management)
 - [Handling Positions](#handling-positions)
@@ -29,12 +31,12 @@ keywords:
 
 ### What is Glow Finance?
 
-Glow Finance is a DeFi protocol on Solana offering margin accounts, lending pools, and automated trading strategies to maximize capital efficiency.
+Glow Finance is a DeFi protocol on Solana offering margin accounts, lending pools, and automated strategies intended to help users deploy capital across supported strategies.
 
 ### How does Glow Finance benefit users?
 
 - One account for everything → Deposit, borrow, and trade from a single margin account.
-- Capital Efficiency → Maximize your deposited capital through strategic leverage and pooled lending.
+- Capital Deployment → Use deposited assets across supported leverage and pooled lending functions.
 - Automated Strategies → Glow Vaults allow users to execute multi-step DeFi operations automatically.
 
 ### Is Glow Finance non-custodial?
@@ -80,7 +82,7 @@ This can happen in quick succession if your position remains undercollateralized
 
 ### What is the transaction panel?
 
-The **transaction panel** is the interface where you enter amounts to deposit, borrow, or withdraw. It ensures you’ll never input a value that triggers an error or warning, keeping your account safe without needing to guess or adjust values manually.
+The **transaction panel** is the interface where you enter amounts to deposit, borrow, or withdraw. It is designed to reduce invalid inputs by applying current protocol constraints and warnings before submission.
 
 ![](/img/faq-0.png)
 
@@ -119,7 +121,7 @@ For deposits, you'll still see your wallet balance (shown as “Held in Wallet�
 
 ### Why doesn’t the Max button use my full balance?
 
-Because it prioritizes **safety and success**.
+Because it applies protocol constraints and transaction buffers.
 
 For example:
 
@@ -307,7 +309,7 @@ _In the future releases, users will also be able to restake directly from within
 
 Health Level = (Effective Collateral / Required Collateral) x 100
 
-- 100% = No risk (No debt).
+- 100% = No current borrow exposure (required collateral = 0).
 - Below 20% = High risk (Liquidation possible).
 - 0% = Liquidation begins.
   - Note that this is equivalent to when the effective collateral of an account goes below the required collateral.
@@ -349,7 +351,7 @@ The Glow UI provides a real-time projection of your Health Level before executin
 - Glow Finance enforces a minimum Health Level (HL) of 10% to prevent users from entering an extremely risky position that could result in liquidation.
 - If a withdrawal or borrow action would bring the HL below 10%, the button to continue submitting the transaction is disabled and an error message is displayed.
 
-Example:_"This transaction would bring your Health Level below the minimum required (10%). Please adjust your withdrawal/borrow amount to keep your account safe."_
+Example:_"This transaction would bring your Health Level below the minimum required (10%). Please adjust your withdrawal/borrow amount to remain above the current minimum health threshold."_
 
 ### Why is my Health Level stuck at 0%?
 
@@ -473,7 +475,7 @@ The Pool Deposit Limit Violation error appears when your deposit exceeds the max
 - The limit may increase over time or if other users withdraw from the pool.
 - Clicking the underlined amount in the error message will auto-fill the maximum allowed deposit amount.
 
-This safeguard ensures liquidity balance and prevents overloading the pool. Clicking the underlined link in the error messaging will input the maximum allowable amount of tokens to deposit without violating the limit.
+This safeguard is intended to help maintain liquidity balance and limit overloading of the pool. Clicking the underlined link in the error messaging will input the maximum allowable amount of tokens to deposit without violating the limit.
 
 <img
 src="/img/faq-6.png"
@@ -496,7 +498,7 @@ If you encounter this error:
 - The limit may increase over time or as other users repay their loans.
 - Clicking the underlined amount in the error message will auto-fill the maximum allowed borrow amount (note that this has the same functionality as clicking the “Borrowable” field above the leverage slider).
 
-This safeguard ensures that the protocol remains liquid and prevents excessive borrowing.
+This safeguard is intended to help preserve liquidity and limit excessive borrowing.
 
 Clicking the underlined link in the error messaging will input the maximum borrowawble amount of tokens without violating the limit, just as clicking the “borrowable” field towards the top of the panel would do.
 
@@ -559,7 +561,7 @@ This error means that your **margin account is currently undergoing liquidation*
 
 During liquidation, all actions—like deposits, borrows, and withdrawals—are temporarily blocked until the process completes.
 
-Since the liquidation process typically completes within a few seconds, it’s rare to encounter this message unless your account is critically unhealthy and you are online during a volatile market swing.
+The liquidation process may complete quickly under normal conditions, but timing can vary based on network, market, and system conditions.
 
 Glow’s protocol uses **partial liquidations** to preserve as much of your position as possible. However, in exceptional cases where prices move rapidly, multiple minimal liquidations may occur in quick succession. For full details, refer to the [Liquidation article](../src/03-margin-accounts/liquidation.md).
 
@@ -592,7 +594,7 @@ Depositing this amount would exceed the deposit limit for this pool. Currently, 
 - If a user attempts to withdraw more than the available balance, the transaction is blocked, and a message informs them of the maximum withdrawable amount.
 
 Example:
-Withdrawing this amount would exceed the amount of deposited liquidity currently available in this pool. Currently, this pool can only support withdrawing up to **remaining_token_liquidity_amount** tokens until more tokens are deposited."\*
+"Withdrawing this amount would exceed the amount of deposited liquidity currently available in this pool. Currently, this pool can only support withdrawing up to **remaining_token_liquidity_amount** tokens until more tokens are deposited."
 
 ## **Fees & Costs**
 
@@ -600,7 +602,7 @@ Withdrawing this amount would exceed the amount of deposited liquidity currently
 
 - Borrowing Fee: 20% of interest paid by borrowers.
 - Liquidation Fee: 5% of liquidated amount.
-- glowSOL Restaking Fee: 0% (No staking fees!).
+- Current glowSOL restaking fee: 0% (subject to change).
 
 🔗 [Fee Structure](../src/fees.md)
 
@@ -632,3 +634,5 @@ Yes! Based on user feedback, Glow Finance is working on:
   - Borrowable Amount
 - Slider improvements → A mark will be added to indicate the true max amount users can withdraw/borrow safely.
 - More visible warnings when an action could lower Health Level too much.
+
+<Footnotes />

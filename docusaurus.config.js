@@ -94,6 +94,14 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      announcementBar: {
+        id: 'legal_disclaimer',
+        content:
+          'Nothing on Glow constitutes investment, legal, or tax advice. Digital assets and DeFi strategies involve risk, including possible loss of principal. APYs, rewards, points, and incentives are variable and not guaranteed. Leverage and restaking can increase risk. Third-party integrations and supported features are subject to change.',
+        backgroundColor: '#1a1a1a',
+        textColor: '#cccccc',
+        isCloseable: false,
+      },
       // Replace with your project's social card
       image: "img/mark.svg",
       metadata: [{ name: "twitter:card", content: "summary_large_image" }],

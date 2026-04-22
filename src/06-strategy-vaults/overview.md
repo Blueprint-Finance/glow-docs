@@ -19,6 +19,8 @@ keywords:
   - SOL
 ---
 
+import Footnotes from '@site/src/components/Footnotes';
+
 All Glow Vaults are vaults — the difference lies in the **strategy they run**.
 
 - **Vaults** may run simple strategies, such as earning yield on a single asset without leverage.
@@ -56,3 +58,5 @@ The exact components and flow vary per Strategy Vault to ensure each strategy is
 ### Built for Modularity
 
 Glow Strategy Vaults are modular and designed to evolve. New strategies — and new assets — can be added over time. Each Strategy Vault has its own page with specific instructions, risks, and FAQs.
+
+<Footnotes />

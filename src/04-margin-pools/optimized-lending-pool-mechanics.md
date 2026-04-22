@@ -11,6 +11,8 @@ keywords:
   - solana
 ---
 
+import Footnotes from '@site/src/components/Footnotes';
+
 The interest rate in Glow Finance’s lending pools is **dynamic**, adjusting in real-time based on the **utilization rate**—the percentage of supplied assets currently being borrowed. This mechanism ensures that rates naturally respond to market demand, balancing incentives for both borrowers and lenders.
 
 Glow Finance’s lending pool design was carefully structured to optimize the experience for both borrowers and lenders by improving upon traditional lending models.
@@ -85,3 +87,5 @@ Glow Finance’s lending pools are designed to optimize both borrower and lender
 | Interest Rate Spread           | **Wider (lenders earn less, borrowers pay more)**       | **Tighter (lenders earn more, borrowers pay less)**        |
 
 **Coming Soon**: More details on Glow's **borrowing mechanics, interest rate optimizations, and capital efficiency models**. Stay tuned!
+
+<Footnotes />

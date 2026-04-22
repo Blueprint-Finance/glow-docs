@@ -5,6 +5,8 @@ sidebar_label: "Audits"
 sidebar_position: 7
 ---
 
+import Footnotes from '@site/src/components/Footnotes';
+
 Glow Finance values **security and transparency**. To protect users and ensure the reliability of our protocol, we have our smart contracts reviewed by independent security experts.
 
 Below, you can find the latest Glow Audit Reports from industry-leading Web3 security firms (Zellic, Certora and Halborn), which details our security assessment.
@@ -75,3 +77,5 @@ Below, you can find the latest Glow Audit Reports from industry-leading Web3 sec
 
 
 📢 Glow Finance remains dedicated to **continuous security improvements** and will continue to review and enhance our protocol’s safety.
+
+<Footnotes />

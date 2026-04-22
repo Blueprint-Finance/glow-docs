@@ -10,6 +10,8 @@ keywords:
   - setup
 ---
 
+import Footnotes from '@site/src/components/Footnotes';
+
 This guide explains the steps involved in creating a margin account, the Solana blockchain requirements, and the visual indicators Glow uses to help users through the process.
 
 A margin account is a necessary prerequisite for interacting with the Glow Finance application, enabling access to its full range of features and functionalities. Glow margin accounts underpin the interaction between a user's wallet and the Glow Protocol on-chain programs. With just a few clicks, you can create your margin account and unlock the full potential of Glow's innovative DeFi products.
@@ -112,3 +114,5 @@ If you created your margin account before this step was available, you may see a
 src="/img/create-finish-setup.png"
 style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", margin: "0 auto" }}
 />
+
+<Footnotes />

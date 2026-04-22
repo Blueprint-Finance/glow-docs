@@ -1,0 +1,41 @@
+.footnotes {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.label {
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-800);
+  letter-spacing: 0.02em;
+}
+
+.list {
+  padding-left: 1.25rem;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 2rem;
+  row-gap: 1.5rem;
+}
+
+.item {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  color: var(--ifm-color-emphasis-600);
+  margin: 0;
+  padding-left: 0.25rem;
+}
+
+.item::marker {
+  color: var(--ifm-color-emphasis-800);
+}
+
+@media (max-width: 996px) {
+  .list {
+    grid-template-columns: 1fr;
+    row-gap: 1.25rem;
+  }
+}

@@ -29,3 +29,19 @@
 }
 
 .katex { font-size: 1.8em; }
+
+@media (min-width: 997px) {
+  :root {
+    --docusaurus-announcement-bar-height: auto !important;
+  }
+}
+
+div[class*='announcementBar'] {
+  height: auto !important;
+}
+
+div[class*='announcementBar'] div[class*='content'] {
+  padding: 10px 9px !important;
+  font-size: 0.75rem !important;
+  text-align: left !important;
+}

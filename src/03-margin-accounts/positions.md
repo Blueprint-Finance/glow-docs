@@ -9,6 +9,8 @@ keywords:
   - manage positions
 ---
 
+import Footnotes from '@site/src/components/Footnotes';
+
 This article explains what **margin account positions** are, how they are counted, and what users should be aware of when managing many tokens within a single margin account.
 
 ## What is a “Position”?
@@ -90,3 +92,5 @@ This will open the **Manage Positions Popup**, where you can:
 Each entry in the popup represents an asset, with a clear description of its position usage and an action button (e.g. **Withdraw Fully**, **Repay Loan Fully**) to close that position if needed. A single asset can contain more than one row if it is taking more than one position.
 
 ![](/img/position-3.png)
+
+<Footnotes />

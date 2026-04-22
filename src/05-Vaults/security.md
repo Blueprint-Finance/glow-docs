@@ -18,6 +18,8 @@ keywords:
   - SOL
 ---
 
+import Footnotes from '@site/src/components/Footnotes';
+
 :::tip
 This document outlines the security considerations, design principles, and mitigations applied to the protocols of Glow Finance, ensuring depositors’ funds stay safe at all times.
 :::
@@ -116,3 +118,5 @@ We maintain proactive visibility over frontend security through continuous monit
 ## Audits
 
 [Glow Margin Vaults](../../audits/#glow-margin-vaults)
+
+<Footnotes />

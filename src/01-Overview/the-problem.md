@@ -11,6 +11,8 @@ keywords:
   - solana
 ---
 
+import Footnotes from '@site/src/components/Footnotes';
+
 :::info
 This section of the documentation outlines features of the upcoming **Glow Finance V1** application, currently in development. While we finalize this exciting update, you can already take advantage of Glow Restaking, which is live and available today.
 
@@ -36,3 +38,5 @@ Glow Finance is purpose-built to break down these barriers and empower users wit
 - **Optimize Capital Deployment**: Leverage integrated features like **margin accounts** and **restaking** to diversify and amplify returns across strategies.
 - **Stay Within the App**: Execute advanced trading, borrowing, and yield-generating strategies, all without the need to interact with external platforms.
 - **Seamless Ecosystem Integration**: Glow integrates directly with DeFi protocols on Solana, making it easier to deploy capital efficiently across multiple opportunities.
+
+<Footnotes />

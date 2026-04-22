@@ -10,6 +10,8 @@ keywords:
   - incentives
 ---
 
+import Footnotes from '@site/src/components/Footnotes';
+
 Exciting rewards are on the way! Glow Finance will soon introduce its **Points Program**, offering users a unique opportunity to earn and benefit from their engagement with our platform.
 
 ## **Points Program**
@@ -27,3 +29,5 @@ Stay tuned for more details about how you can earn, track, and redeem your point
 
 Keep an eye out for updates!
 :::
+
+<Footnotes />

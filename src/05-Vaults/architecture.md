@@ -18,6 +18,7 @@ keywords:
   - SOL
 ---
 
+import Footnotes from '@site/src/components/Footnotes';
 
 Glow Vaults accept deposits of a single supported asset and allocate that capital into curated yield strategies managed by a designated Strategy Operator. Depositor balances are tracked through **program-derived claim accounts (non-transferable PDAs)** that represent each user’s proportional claim on vault assets. These claim accounts behave as **yield-bearing share records**, increasing in value as the vault accrues performance.
 
@@ -172,3 +173,5 @@ When a valuation update is submitted:
 ## Fees
 
 Vaults may include configurable fee parameters, which are applied through valuation updates and reflected in user claim amounts. Fee structures are documented per vault in the Glow app and [Fees documentation](../../fees).
+
+<Footnotes />

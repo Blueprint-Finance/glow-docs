@@ -10,6 +10,8 @@ keywords:
   - collateral
 ---
 
+import Footnotes from '@site/src/components/Footnotes';
+
 Glow makes it easy to earn interest on your assets. Instead of letting them sit idly in a wallet, you can deposit your assets with just a couple clicks to immediately begin lending to borrowers and earn the displayed APY for that asset!
 
 Glow Finance offers multiple easy ways to deposit assets into their margin accounts, as long as you have already [created a margin account](../03-margin-accounts/how-to-create-a-margin-account.md).
@@ -111,3 +113,5 @@ Note that Any asset row in the **Markets** or **Portfolio** pages is clickable, 
 - **Step 3:** Select the asset row, which works similarly to the **Markets Page**, and proceed to the **Asset Details Page** with the deposit action pre-selected.
 
 ![](/img/deposit-11.png)
+
+<Footnotes />

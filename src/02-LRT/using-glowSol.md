@@ -14,6 +14,8 @@ keywords:
   - redemption
 ---
 
+import Footnotes from '@site/src/components/Footnotes';
+
 Users can stake SOL through Glow Finance to mint glowSOL. This process ensures users benefit from [Solayer’s staking infrastructure](https://docs.solayer.org/getting-started/introduction) while receiving a liquid, tradable token.
 
 The redemption process converts the staked assets (sSOL) back to SOL, ensuring users can always redeem an amount equal to or greater than their initial deposit, depending on the time invested. This guarantees a monotonically increasing value, reflecting accrued staking rewards over time.
@@ -85,3 +87,5 @@ glowSOL isn’t just a staking token; it’s a gateway to advanced DeFi opportun
 2. **Redeeming glowSOL for SOL:**
 
 - The user redeems 5 glowSOL, initiating a 7-day withdrawal process. After the waiting period, the equivalent value in SOL (including rewards) is transferred to the user’s wallet.
+
+<Footnotes />
