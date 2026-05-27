@@ -32,6 +32,7 @@ const sidebars = {
       items: [
         'margin-accounts/overview',
         'margin-accounts/how-to-create-a-margin-account',
+        'margin-accounts/how-to-close-a-margin-account',
         'margin-accounts/how-to-deposit',
         'margin-accounts/positions',
         'margin-accounts/portfolio-management',
