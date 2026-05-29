@@ -12,7 +12,7 @@ keywords:
 
 import Footnotes from '@site/src/components/Footnotes';
 
-Glow Finance integrates sophisticated tools to safeguard user portfolios from bad debt while maintaining the integrity of the lending ecosystem. Below is an in-depth explanation of how liquidation operates within the platform.
+Glow Finance uses liquidation and risk controls designed to reduce bad-debt risk and support lending pool solvency. Below is an in-depth explanation of how liquidation operates within the platform.
 
 ## Triggering Liquidation
 
@@ -27,6 +27,14 @@ Liquidation is initiated when the **Health Level** of a margin account drops to 
 - **Fee Deduction**: Any fees associated with the liquidation process are subtracted.
 
 This ensures systemic stability and safety for all users by preventing bad debt accumulation in the protocol.
+
+## When Liquidation Is Not Sufficient
+
+Liquidation is the primary mechanism for repaying debt from account collateral. In some cases, liquidation may not fully cover outstanding debt.
+
+Where residual debt remains after collateral is exhausted, a governance-controlled bad-debt socialization flow may be used. This flow is invoked by authorized airspace governance and is subject to protocol checks.
+
+Socialization is not an automatic result of every unhealthy account and is not guaranteed to occur in every case.
 
 ## Early Alerts and Notifications
 
@@ -65,6 +73,8 @@ To help prevent accounts from reaching this stage, Glow displays a **Health Leve
 - **Asset Breakdown:** When a user clicks on one of the liquidated account rows in the initial modal, they are directed to a detailed view modal. This second modal provides a comprehensive breakdown of the liquidation, liquidation fees, timestamps, and a link to the corresponding blockchain transaction on SolScan’s block explorer for full transparency.
 
 ![](/img/liq-4.png)
+
+If bad debt is socialized for a margin account, that account is marked as frozen for owner-initiated actions under protocol rules. This is an account-level control and does not by itself imply a global wallet ban across all accounts.
 
 ## Managing Risk with Health Levels
 
