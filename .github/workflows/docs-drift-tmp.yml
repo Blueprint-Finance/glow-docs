@@ -1,0 +1,32 @@
+# TEMPORARY workflow for incrementally testing docs-drift.yml.
+# Runs only on pushes to the dev branch and exercises one step at a time.
+# Delete this file before merging docs-drift.yml.
+
+name: Docs drift detection (TMP)
+
+on:
+  push:
+    branches: [feat/docs-drift-ai]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  draft-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout docs repo
+        uses: actions/checkout@v6
+
+      # Source repos are internal/private, so the workflow's GITHUB_TOKEN (scoped
+      # to glow-docs only) can't read them. Mint a short-lived token from an
+      # org-wide GitHub App install instead — one app covers every sender repo,
+      # present and future, and the token expires in ~1h.
+      - name: Mint a token to read source repos
+        id: src-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.DOCS_BOT_APP_ID }}
+          private-key: ${{ secrets.DOCS_BOT_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
