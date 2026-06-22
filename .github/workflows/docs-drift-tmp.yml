@@ -30,4 +30,6 @@ jobs:
           app-id: ${{ secrets.DOCS_BOT_APP_ID }}
           private-key: ${{ secrets.DOCS_BOT_PRIVATE_KEY }}
           owner: helciofranco
+          repositories: |
+            Blueprint-Finance/glow-v1
           # owner: ${{ github.repository_owner }}
