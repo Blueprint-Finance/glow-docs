@@ -1,0 +1,122 @@
+# Triggered by external repo. Fetches the merged PR's diff, lets Claude
+# update the relevant Docusaurus pages, then opens a DRAFT PR for a
+# human to review. Claude is intentionally restricted to editing files only
+# (no shell, no git, no network) — the draft PR is opened by a separate
+# deterministic step.
+
+name: Docs drift detection
+
+on:
+  # Each sender repo fires this on PR-merge with the payload contract documented
+  # in the README (pr_number, source_repo, pr_title, pr_url).
+  repository_dispatch:
+    types: [source-merged]
+  # @TODO: While we're developing
+  push:
+    branches: [main]
+  # Manual trigger for testing without a real merge.
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: "Source PR number"
+        required: true
+      source_repo:
+        description: "Source repo, e.g. Blueprint-Finance/glow-v1"
+        required: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+# Keyed by source repo + PR so two senders can't collide on one run.
+concurrency:
+  group: ai-docs-${{ github.event.client_payload.source_repo || github.event.inputs.source_repo }}-${{ github.event.client_payload.pr_number || github.event.inputs.pr_number }}
+  cancel-in-progress: true
+
+jobs:
+  draft-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout docs repo
+        uses: actions/checkout@v6
+
+      # Source repos are internal/private, so the workflow's GITHUB_TOKEN (scoped
+      # to glow-docs only) can't read them. Mint a short-lived token from an
+      # org-wide GitHub App install instead — one app covers every sender repo,
+      # present and future, and the token expires in ~1h.
+      - name: Mint a token to read source repos
+        id: src-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.DOCS_BOT_APP_ID }}
+          private-key: ${{ secrets.DOCS_BOT_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+
+      - name: Fetch the source PR diff
+        env:
+          PR_NUMBER: ${{ github.event.client_payload.pr_number || github.event.inputs.pr_number }}
+          SOURCE_REPO: ${{ github.event.client_payload.source_repo || github.event.inputs.source_repo }}
+          GH_TOKEN: ${{ steps.src-token.outputs.token }}
+        run: |
+          gh pr diff "$PR_NUMBER" --repo "$SOURCE_REPO" > source-pr.diff
+          # Cap the size so the prompt stays sane on huge PRs.
+          head -c 80000 source-pr.diff > source-pr.trunc.diff
+          mv source-pr.trunc.diff source-pr.diff
+          echo "Diff size: $(wc -c < source-pr.diff) bytes"
+
+      - name: Draft doc updates with Claude
+        uses: anthropics/claude-code-action@v1
+        env:
+          PR_NUMBER: ${{ github.event.client_payload.pr_number || github.event.inputs.pr_number }}
+          PR_TITLE: ${{ github.event.client_payload.pr_title || 'manual run' }}
+          SOURCE_REPO: ${{ github.event.client_payload.source_repo || github.event.inputs.source_repo }}
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            A PR just merged in a source repo and the docs in THIS repo may
+            be out of date. The unified diff for that PR is saved at the repo
+            root in the file `source-pr.diff` — read it first.
+
+            Source: ${{ env.SOURCE_REPO }} PR #${{ env.PR_NUMBER }} ("${{ env.PR_TITLE }}").
+
+            Your task:
+            1. Read `source-pr.diff` and work out what user-facing behaviour,
+               API surface, props, config, or UI changed.
+            2. Explore this Docusaurus site to find the page(s) that describe
+               those things. Match the existing structure, frontmatter, MDX
+               components, `sidebars.js`/category config, and the writing tone
+               of neighbouring docs.
+            3. Update those pages so they reflect the new behaviour. If a brand
+               new page is genuinely warranted, create it AND wire it into the
+               sidebar/category config.
+            4. If the diff has NO documentation impact, make no edits at all.
+
+            Only edit documentation content. Do not touch `source-pr.diff`,
+            CI config, or anything outside the docs.
+          claude_args: |
+            --model claude-sonnet-4-6
+            --allowedTools Read,Edit,Write,Glob,Grep
+            --max-turns 30
+
+      - name: Remove the scratch diff before opening the PR
+        run: rm -f source-pr.diff
+
+      - name: Open draft PR
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: docs/sync-source-pr-${{ github.event.client_payload.source_repo || github.event.inputs.source_repo }}-${{ github.event.client_payload.pr_number || github.event.inputs.pr_number }}
+          draft: true
+          title: "docs: sync with ${{ github.event.client_payload.source_repo || github.event.inputs.source_repo }} PR #${{ github.event.client_payload.pr_number || github.event.inputs.pr_number }}"
+          commit-message: "docs: AI draft from ${{ github.event.client_payload.source_repo || github.event.inputs.source_repo }} PR #${{ github.event.client_payload.pr_number || github.event.inputs.pr_number }}"
+          body: |
+            🤖 **AI-drafted** from ${{ github.event.client_payload.source_repo || github.event.inputs.source_repo }} PR #${{ github.event.client_payload.pr_number || github.event.inputs.pr_number }}.
+
+            Source PR: ${{ github.event.client_payload.pr_url }}
+
+            > This is a first draft written by Claude from the code diff.
+            > **Review it properly** before merging — treat it like a junior's PR,
+            > not a finished edit.
+          labels: |
+            documentation
+            ai-draft
+          delete-branch: true
