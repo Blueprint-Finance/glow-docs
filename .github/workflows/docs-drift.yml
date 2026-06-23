@@ -7,13 +7,11 @@
 name: Docs drift detection
 
 on:
-  # Each sender repo fires this on PR-merge with the payload contract documented
-  # in the README (pr_number, source_repo, pr_title, pr_url).
-  repository_dispatch:
-    types: [source-merged]
-  # @TODO: While we're developing
-  push:
-    branches: [main]
+  # DISABLED for now while we develop — re-enable before merging.
+  # # Each sender repo fires this on PR-merge with the payload contract documented
+  # # in the README (pr_number, source_repo, pr_title, pr_url).
+  # repository_dispatch:
+  #   types: [source-merged]
   # Manual trigger for testing without a real merge.
   workflow_dispatch:
     inputs:
@@ -21,7 +19,7 @@ on:
         description: "Source PR number"
         required: true
       source_repo:
-        description: "Source repo, e.g. Blueprint-Finance/glow-v1"
+        description: "Source repo, e.g. glow-v1 or glow-flight-logs"
         required: true
 
 permissions:
@@ -45,18 +43,20 @@ jobs:
       # org-wide GitHub App install instead — one app covers every sender repo,
       # present and future, and the token expires in ~1h.
       - name: Mint a token to read source repos
-        id: src-token
+        id: token
         uses: actions/create-github-app-token@v1
         with:
           app-id: ${{ secrets.DOCS_BOT_APP_ID }}
           private-key: ${{ secrets.DOCS_BOT_PRIVATE_KEY }}
           owner: ${{ github.repository_owner }}
+          repositories: |
+            ${{ github.event.client_payload.source_repo || github.event.inputs.source_repo }}
 
       - name: Fetch the source PR diff
         env:
           PR_NUMBER: ${{ github.event.client_payload.pr_number || github.event.inputs.pr_number }}
           SOURCE_REPO: ${{ github.event.client_payload.source_repo || github.event.inputs.source_repo }}
-          GH_TOKEN: ${{ steps.src-token.outputs.token }}
+          GH_TOKEN: ${{ steps.token.outputs.token }}
         run: |
           gh pr diff "$PR_NUMBER" --repo "$SOURCE_REPO" > source-pr.diff
           # Cap the size so the prompt stays sane on huge PRs.

@@ -5,8 +5,11 @@
 name: Docs drift detection (TMP)
 
 on:
-  push:
-    branches: [feat/docs-drift-ai]
+  # DISABLED for now — only the Claude smoke test runs on push.
+  # Re-enable by uncommenting the push trigger below.
+  # push:
+  #   branches: [feat/docs-drift-ai]
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -24,12 +27,11 @@ jobs:
       # org-wide GitHub App install instead — one app covers every sender repo,
       # present and future, and the token expires in ~1h.
       - name: Mint a token to read source repos
-        id: src-token
+        id: token
         uses: actions/create-github-app-token@v1
         with:
           app-id: ${{ secrets.DOCS_BOT_APP_ID }}
           private-key: ${{ secrets.DOCS_BOT_PRIVATE_KEY }}
-          owner: helciofranco
+          owner: ${{ github.repository_owner }}
           repositories: |
-            Blueprint-Finance/glow-v1
-          # owner: ${{ github.repository_owner }}
+            glow-v1
