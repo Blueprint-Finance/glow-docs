@@ -1,8 +1,8 @@
 # Triggered by external repo. Clones the source repo, builds a per-file patch for
 # everything the merged PR changed, lets Claude read those patches (and the merged
-# files) and update the relevant Docusaurus pages, then opens a DRAFT PR for a
-# human to review. Claude is intentionally restricted to editing files only
-# (no shell, no git, no network) — the draft PR is opened by a separate
+# files) and update the relevant Docusaurus pages, then opens a PR for a human to
+# review. Claude is intentionally restricted to editing files only
+# (no shell, no git, no network) — the PR is opened by a separate
 # deterministic step.
 
 name: Docs drift detection
@@ -37,7 +37,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  draft-docs:
+  sync-docs:
     runs-on: ubuntu-latest
     # Resolve the source PR once for every step below. The repository_dispatch
     # payload wins, then the workflow_dispatch inputs.
@@ -118,7 +118,7 @@ jobs:
           fi
 
       # Run the Claude Code CLI directly
-      - name: Draft doc updates with Claude
+      - name: Generate doc updates with Claude
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
@@ -174,7 +174,7 @@ jobs:
           fi
 
       # create-pull-request stages everything, so anything left here lands in the
-      # draft PR. Remove all of it — the patches, the heavy clone, and the summary.
+      # PR. Remove all of it — the patches, the heavy clone, and the summary.
       - name: Remove scratch files before opening the PR
         run: rm -rf source-pr-patches source-repo pr-summary.md
 
@@ -182,26 +182,26 @@ jobs:
       # lowercase, and collapse anything that isn't [a-z0-9] into single dashes.
       # "Blueprint-Finance/glow-v1" -> "glow-v1", so the branch can't turn into a
       # nested ref (the slash) or hit casing inconsistencies.
-      - name: Compute the draft branch name
+      - name: Compute the branch name
         id: branch
         run: |
           repo="${SOURCE_REPO##*/}"
           slug=$(printf '%s' "$repo" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+//; s/-+$//')
           echo "name=docs/sync-source-pr-${slug}-${PR_NUMBER}" >> "$GITHUB_OUTPUT"
-          echo "Draft branch: docs/sync-source-pr-${slug}-${PR_NUMBER}"
+          echo "Branch: docs/sync-source-pr-${slug}-${PR_NUMBER}"
 
-      - name: Open draft PR
+      - name: Open the PR
         id: cpr
         uses: peter-evans/create-pull-request@v6
         with:
           author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
           committer: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
           branch: ${{ steps.branch.outputs.name }}
-          draft: true
+          reviewers: helciofranco
           title: "docs: sync with ${{ env.SOURCE_REPO }} PR #${{ env.PR_NUMBER }}"
-          commit-message: "docs: AI draft from ${{ env.SOURCE_REPO }} PR #${{ env.PR_NUMBER }}"
+          commit-message: "docs: AI sync from ${{ env.SOURCE_REPO }} PR #${{ env.PR_NUMBER }}"
           body: |
-            🤖 **AI-drafted** from [${{ env.SOURCE_REPO }} PR #${{ env.PR_NUMBER }}](https://github.com/${{ env.SOURCE_REPO }}/pull/${{ env.PR_NUMBER }})
+            🤖 **AI-generated** from [${{ env.SOURCE_REPO }} PR #${{ env.PR_NUMBER }}](https://github.com/${{ env.SOURCE_REPO }}/pull/${{ env.PR_NUMBER }})
 
             ${{ steps.summary.outputs.text }}
           labels: |
