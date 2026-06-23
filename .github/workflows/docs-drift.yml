@@ -1,8 +1,9 @@
-# Triggered by external repo. Clones the source repo, lists the files the merged
-# PR changed, lets Claude read those files and update the relevant Docusaurus
-# pages, then opens a DRAFT PR for a human to review. Claude is intentionally
-# restricted to editing files only (no shell, no git, no network) — the draft PR
-# is opened by a separate deterministic step.
+# Triggered by external repo. Clones the source repo, builds a per-file patch for
+# everything the merged PR changed, lets Claude read those patches (and the merged
+# files) and update the relevant Docusaurus pages, then opens a DRAFT PR for a
+# human to review. Claude is intentionally restricted to editing files only
+# (no shell, no git, no network) — the draft PR is opened by a separate
+# deterministic step.
 
 name: Docs drift detection
 
@@ -71,19 +72,47 @@ jobs:
           path: source-repo
           fetch-depth: 0
 
-      # List the files the PR changed: fetch the PR head ref and diff --name-status
-      # against its merge base with the default branch. We hand Claude this list
-      # (bounded by file count, never truncated) rather than a patch, and let it
-      # read the actual files from the source-repo/ checkout for the details.
-      - name: List the files changed by the PR
+      # Produce one patch per changed file, plus a Markdown index, under
+      # source-pr-patches/. This gives Claude the exact before/after for each file
+      # with no single giant (truncation-prone) diff. Rename detection is off so
+      # every index row maps to exactly one path -> one patch at <path>.patch.
+      - name: Build per-file patches for the PR
         run: |
           git -C source-repo fetch --no-tags origin "pull/${PR_NUMBER}/head"
           PR_HEAD=$(git -C source-repo rev-parse FETCH_HEAD)
           BASE=$(git -C source-repo merge-base HEAD "$PR_HEAD")
-          git -C source-repo diff --name-status "$BASE" "$PR_HEAD" > source-pr.files
+
+          mkdir -p source-pr-patches
+          nstmp=$(mktemp)
+          git -C source-repo diff --no-renames --name-status "$BASE" "$PR_HEAD" > "$nstmp"
+
+          # index.md: a rendered table linking each changed file to its patch.
+          {
+            echo "# Files changed by ${SOURCE_REPO} PR #${PR_NUMBER}"
+            echo
+            echo "| Status | File |"
+            echo "| --- | --- |"
+          } > source-pr-patches/index.md
+
+          # One patch per file (mirroring the repo layout) + one index row per file.
+          while IFS=$'\t' read -r status path; do
+            [ -z "$path" ] && continue
+            mkdir -p "source-pr-patches/$(dirname "$path")"
+            git -C source-repo diff --no-renames "$BASE" "$PR_HEAD" -- "$path" \
+              > "source-pr-patches/${path}.patch"
+            case "$status" in
+              A*) label=Added ;;
+              D*) label=Deleted ;;
+              M*) label=Modified ;;
+              *)  label="$status" ;;
+            esac
+            echo "| $label | [$path](${path}.patch) |" >> source-pr-patches/index.md
+          done < "$nstmp"
+
           echo "PR #${PR_NUMBER} head: $PR_HEAD"
-          echo "Changed files: $(wc -l < source-pr.files)"
-          if [ ! -s source-pr.files ]; then
+          echo "Changed files: $(wc -l < "$nstmp")"
+          if [ ! -s "$nstmp" ]; then
+            echo "_No files changed._" >> source-pr-patches/index.md
             echo "⚠️ No changed files — the PR's commits may already be in the" \
                  "default branch (e.g. a merge-commit merge). Claude can still" \
                  "investigate source-repo/ directly."
@@ -95,19 +124,20 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           claude -p "A PR just merged in a source repo and the docs in THIS repo may
-          be out of date. The list of files that PR changed is saved at the repo
-          root in \`source-pr.files\` (git --name-status format: M/A/D/R followed
-          by the path) — read it first. The full source repo, with those changes
-          already merged in, is checked out at \`source-repo/\`; open the changed
-          files there to see what they now contain and to investigate the
-          surrounding code (callers, types, config, neighbouring files).
+          be out of date. What that PR changed is under \`source-pr-patches/\`:
+          \`source-pr-patches/index.md\` is a table of every changed file (status +
+          path), and the exact diff for each one is at
+          \`source-pr-patches/<path>.patch\`. The full source repo, with those
+          changes already merged in, is also checked out at \`source-repo/\`.
 
           Source: ${SOURCE_REPO} PR #${PR_NUMBER} (\"${PR_TITLE}\").
 
           Your task:
-          1. Read \`source-pr.files\`, then open the relevant changed files in
-             \`source-repo/\` to work out what user-facing behaviour, API surface,
-             props, config, or UI changed.
+          1. Read \`source-pr-patches/index.md\` to see what changed. For each
+             file that looks documentation-relevant, read its
+             \`source-pr-patches/<path>.patch\` for the exact change, and open the
+             file in \`source-repo/\` for fuller context (callers, types, config,
+             neighbouring code) when you need it.
           2. Explore this Docusaurus site to find the page(s) that describe
              those things. Match the existing structure, frontmatter, MDX
              components, \`sidebars.js\`/category config, and the writing tone
@@ -122,7 +152,7 @@ jobs:
              changes, write exactly: \`No documentation changes were needed.\`
 
           Only edit documentation content in THIS repo, plus the \`pr-summary.md\`
-          scratch file. Do not modify \`source-repo/\`, \`source-pr.files\`, CI
+          scratch file. Do not modify \`source-repo/\`, \`source-pr-patches/\`, CI
           config, or anything else outside the docs." \
             --model claude-opus-4-8 \
             --allowedTools Read,Edit,Write,Glob,Grep \
@@ -144,10 +174,12 @@ jobs:
             echo "text=_Claude did not produce a summary._" >> "$GITHUB_OUTPUT"
           fi
 
-      # All scratch/untracked; remove them so create-pull-request (which stages
-      # everything) doesn't commit the file list, the cloned source repo, or the summary.
+      # create-pull-request stages everything, so anything left here lands in the
+      # draft PR. Drop the heavy clone and the summary file.
+      # @TODO: temporarily keeping source-pr-patches/ so it shows up in the draft
+      # PR for inspection — add it back to this rm before merging.
       - name: Remove scratch files before opening the PR
-        run: rm -rf source-pr.files source-repo pr-summary.md
+        run: rm -rf source-repo pr-summary.md
 
       # Normalize the repo into a clean branch slug: drop the constant owner,
       # lowercase, and collapse anything that isn't [a-z0-9] into single dashes.
