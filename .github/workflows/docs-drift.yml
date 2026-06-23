@@ -123,7 +123,7 @@ jobs:
           Only edit documentation content in THIS repo, plus the \`pr-summary.md\`
           scratch file. Do not modify \`source-repo/\`, \`source-pr.diff\`, CI
           config, or anything else outside the docs." \
-            --model claude-sonnet-4-6 \
+            --model claude-opus-4-8 \
             --allowedTools Read,Edit,Write,Glob,Grep \
             --permission-mode acceptEdits \
             --max-turns 30
@@ -163,18 +163,16 @@ jobs:
       - name: Open draft PR
         uses: peter-evans/create-pull-request@v6
         with:
+          author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
+          committer: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
           branch: ${{ steps.branch.outputs.name }}
           draft: true
           title: "docs: sync with ${{ env.SOURCE_REPO }} PR #${{ env.PR_NUMBER }}"
           commit-message: "docs: AI draft from ${{ env.SOURCE_REPO }} PR #${{ env.PR_NUMBER }}"
           body: |
-            🤖 **AI-drafted** from [${{ env.SOURCE_REPO }} PR #${{ env.PR_NUMBER }}](https://github.com/${{ env.SOURCE_REPO }}/pull/${{ env.PR_NUMBER }}).
+            🤖 **AI-drafted** from [${{ env.SOURCE_REPO }} PR #${{ env.PR_NUMBER }}](https://github.com/${{ env.SOURCE_REPO }}/pull/${{ env.PR_NUMBER }})
 
             ${{ steps.summary.outputs.text }}
-
-            > This is a first draft written by Claude from the code diff.
-            > **Review it properly** before merging — treat it like a junior's PR,
-            > not a finished edit.
           labels: |
             documentation
           delete-branch: true
