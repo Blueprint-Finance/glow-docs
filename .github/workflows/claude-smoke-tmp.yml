@@ -6,8 +6,9 @@
 name: Claude smoke test (TMP)
 
 on:
-  push:
-    branches: [feat/docs-drift-ai]
+  # push:
+  #   branches: [feat/docs-drift-ai]
+  workflow_dispatch:
 
 permissions:
   contents: read

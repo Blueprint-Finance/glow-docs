@@ -5,15 +5,12 @@
 name: Docs drift detection (TMP)
 
 on:
-  # DISABLED for now — only the Claude smoke test runs on push.
-  # Re-enable by uncommenting the push trigger below.
-  # push:
-  #   branches: [feat/docs-drift-ai]
+  push:
+    branches: [feat/docs-drift-ai]
   workflow_dispatch:
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
 
 jobs:
   draft-docs:
@@ -23,15 +20,25 @@ jobs:
         uses: actions/checkout@v6
 
       # Source repos are internal/private, so the workflow's GITHUB_TOKEN (scoped
-      # to glow-docs only) can't read them. Mint a short-lived token from an
-      # org-wide GitHub App install instead — one app covers every sender repo,
-      # present and future, and the token expires in ~1h.
-      - name: Mint a token to read source repos
-        id: token
-        uses: actions/create-github-app-token@v1
+      # to glow-docs only) can't read them. For this smoke test we use a PAT with
+      # read access instead of the GitHub App token. checkout injects the token
+      # via the git credential store, so the PAT never appears in the logs.
+      - name: Clone an internal source repo with the PAT
+        uses: actions/checkout@v6
         with:
-          app-id: ${{ secrets.DOCS_BOT_APP_ID }}
-          private-key: ${{ secrets.DOCS_BOT_PRIVATE_KEY }}
-          owner: ${{ github.repository_owner }}
-          repositories: |
-            glow-v1
+          repository: Blueprint-Finance/glow-v1
+          token: ${{ secrets.SOURCE_REPO_PAT }}
+          path: source-repo
+
+      # Prove the clone actually worked: the directory exists, has a .git, has
+      # tracked files, and we can read the latest commit.
+      - name: Verify the clone
+        run: |
+          if [ ! -d source-repo/.git ]; then
+            echo "❌ source-repo was not cloned (no .git directory)"
+            exit 1
+          fi
+          file_count=$(git -C source-repo ls-files | wc -l)
+          echo "✅ Cloned source-repo with $file_count tracked files"
+          echo "Latest commit:"
+          git -C source-repo log -1 --oneline
