@@ -5,8 +5,9 @@
 name: Docs drift detection (TMP)
 
 on:
-  push:
-    branches: [feat/docs-drift-ai]
+  # DISABLED: docs-drift.yml now runs on push to the dev branch instead.
+  # push:
+  #   branches: [feat/docs-drift-ai]
   workflow_dispatch:
 
 permissions:

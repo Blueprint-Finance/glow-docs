@@ -7,20 +7,23 @@
 name: Docs drift detection
 
 on:
+  # The real trigger: each sender repo fires this on PR-merge with the payload
+  # contract documented in the README (pr_number, source_repo, pr_title, pr_url).
   # DISABLED for now while we develop — re-enable before merging.
-  # # Each sender repo fires this on PR-merge with the payload contract documented
-  # # in the README (pr_number, source_repo, pr_title, pr_url).
   # repository_dispatch:
   #   types: [source-merged]
+  # @TODO: remove this push trigger before merging — for testing on the dev branch only.
+  push:
+    branches: [feat/docs-drift-ai]
   # Manual trigger for testing without a real merge.
   workflow_dispatch:
     inputs:
       pr_number:
         description: "Source PR number"
-        required: true
+        required: false
       source_repo:
-        description: "Source repo, e.g. glow-v1 or glow-flight-logs"
-        required: true
+        description: "Source repo, e.g. Blueprint-Finance/glow-v1"
+        required: false
 
 permissions:
   contents: write
@@ -28,35 +31,39 @@ permissions:
 
 # Keyed by source repo + PR so two senders can't collide on one run.
 concurrency:
-  group: ai-docs-${{ github.event.client_payload.source_repo || github.event.inputs.source_repo }}-${{ github.event.client_payload.pr_number || github.event.inputs.pr_number }}
+  group: ai-docs-${{ github.event.client_payload.source_repo || github.event.inputs.source_repo || 'Blueprint-Finance/glow-v1' }}-${{ github.event.client_payload.pr_number || github.event.inputs.pr_number || '3670' }}
   cancel-in-progress: true
 
 jobs:
   draft-docs:
     runs-on: ubuntu-latest
+    # Resolve the source PR once for every step below. The repository_dispatch
+    # payload wins, then the workflow_dispatch inputs.
+    # @TODO: drop the hardcoded fallbacks (3670 / Blueprint-Finance/glow-v1) before
+    # merging — they only exist so the push trigger has something to run against.
+    env:
+      PR_NUMBER: ${{ github.event.client_payload.pr_number || github.event.inputs.pr_number || '3670' }}
+      SOURCE_REPO: ${{ github.event.client_payload.source_repo || github.event.inputs.source_repo || 'Blueprint-Finance/glow-v1' }}
+      PR_TITLE: ${{ github.event.client_payload.pr_title || 'manual run' }}
     steps:
       - name: Checkout docs repo
         uses: actions/checkout@v6
 
-      # Source repos are internal/private, so the workflow's GITHUB_TOKEN (scoped
-      # to glow-docs only) can't read them. Mint a short-lived token from an
-      # org-wide GitHub App install instead — one app covers every sender repo,
-      # present and future, and the token expires in ~1h.
-      - name: Mint a token to read source repos
-        id: token
-        uses: actions/create-github-app-token@v1
+      - name: Set up Node
+        uses: actions/setup-node@v6
         with:
-          app-id: ${{ secrets.DOCS_BOT_APP_ID }}
-          private-key: ${{ secrets.DOCS_BOT_PRIVATE_KEY }}
-          owner: ${{ github.repository_owner }}
-          repositories: |
-            ${{ github.event.client_payload.source_repo || github.event.inputs.source_repo }}
+          node-version: 22
 
+      - name: Install Claude Code CLI
+        run: npm install -g @anthropic-ai/claude-code@2.1.186
+
+      # Source repos are internal/private, so the workflow's GITHUB_TOKEN (scoped
+      # to glow-docs only) can't read them. Authenticate gh with a PAT that has
+      # read access to the source repos instead. The PAT is passed via GH_TOKEN
+      # and never appears in the logs.
       - name: Fetch the source PR diff
         env:
-          PR_NUMBER: ${{ github.event.client_payload.pr_number || github.event.inputs.pr_number }}
-          SOURCE_REPO: ${{ github.event.client_payload.source_repo || github.event.inputs.source_repo }}
-          GH_TOKEN: ${{ steps.token.outputs.token }}
+          GH_TOKEN: ${{ secrets.SOURCE_REPO_PAT }}
         run: |
           gh pr diff "$PR_NUMBER" --repo "$SOURCE_REPO" > source-pr.diff
           # Cap the size so the prompt stays sane on huge PRs.
@@ -64,38 +71,37 @@ jobs:
           mv source-pr.trunc.diff source-pr.diff
           echo "Diff size: $(wc -c < source-pr.diff) bytes"
 
+      # Run the Claude Code CLI directly (not the marketplace action) so this
+      # behaves the same as the smoke test. Claude is restricted to file tools
+      # only — no shell, no git, no network — and acceptEdits lets it write
+      # non-interactively. The draft PR is opened by a later deterministic step.
       - name: Draft doc updates with Claude
-        uses: anthropics/claude-code-action@v1
         env:
-          PR_NUMBER: ${{ github.event.client_payload.pr_number || github.event.inputs.pr_number }}
-          PR_TITLE: ${{ github.event.client_payload.pr_title || 'manual run' }}
-          SOURCE_REPO: ${{ github.event.client_payload.source_repo || github.event.inputs.source_repo }}
-        with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          prompt: |
-            A PR just merged in a source repo and the docs in THIS repo may
-            be out of date. The unified diff for that PR is saved at the repo
-            root in the file `source-pr.diff` — read it first.
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          claude -p "A PR just merged in a source repo and the docs in THIS repo may
+          be out of date. The unified diff for that PR is saved at the repo
+          root in the file \`source-pr.diff\` — read it first.
 
-            Source: ${{ env.SOURCE_REPO }} PR #${{ env.PR_NUMBER }} ("${{ env.PR_TITLE }}").
+          Source: ${SOURCE_REPO} PR #${PR_NUMBER} (\"${PR_TITLE}\").
 
-            Your task:
-            1. Read `source-pr.diff` and work out what user-facing behaviour,
-               API surface, props, config, or UI changed.
-            2. Explore this Docusaurus site to find the page(s) that describe
-               those things. Match the existing structure, frontmatter, MDX
-               components, `sidebars.js`/category config, and the writing tone
-               of neighbouring docs.
-            3. Update those pages so they reflect the new behaviour. If a brand
-               new page is genuinely warranted, create it AND wire it into the
-               sidebar/category config.
-            4. If the diff has NO documentation impact, make no edits at all.
+          Your task:
+          1. Read \`source-pr.diff\` and work out what user-facing behaviour,
+             API surface, props, config, or UI changed.
+          2. Explore this Docusaurus site to find the page(s) that describe
+             those things. Match the existing structure, frontmatter, MDX
+             components, \`sidebars.js\`/category config, and the writing tone
+             of neighbouring docs.
+          3. Update those pages so they reflect the new behaviour. If a brand
+             new page is genuinely warranted, create it AND wire it into the
+             sidebar/category config.
+          4. If the diff has NO documentation impact, make no edits at all.
 
-            Only edit documentation content. Do not touch `source-pr.diff`,
-            CI config, or anything outside the docs.
-          claude_args: |
-            --model claude-sonnet-4-6
-            --allowedTools Read,Edit,Write,Glob,Grep
+          Only edit documentation content. Do not touch \`source-pr.diff\`,
+          CI config, or anything outside the docs." \
+            --model claude-sonnet-4-6 \
+            --allowedTools Read,Edit,Write,Glob,Grep \
+            --permission-mode acceptEdits \
             --max-turns 30
 
       - name: Remove the scratch diff before opening the PR
@@ -104,12 +110,12 @@ jobs:
       - name: Open draft PR
         uses: peter-evans/create-pull-request@v6
         with:
-          branch: docs/sync-source-pr-${{ github.event.client_payload.source_repo || github.event.inputs.source_repo }}-${{ github.event.client_payload.pr_number || github.event.inputs.pr_number }}
+          branch: docs/sync-source-pr-${{ env.SOURCE_REPO }}-${{ env.PR_NUMBER }}
           draft: true
-          title: "docs: sync with ${{ github.event.client_payload.source_repo || github.event.inputs.source_repo }} PR #${{ github.event.client_payload.pr_number || github.event.inputs.pr_number }}"
-          commit-message: "docs: AI draft from ${{ github.event.client_payload.source_repo || github.event.inputs.source_repo }} PR #${{ github.event.client_payload.pr_number || github.event.inputs.pr_number }}"
+          title: "docs: sync with ${{ env.SOURCE_REPO }} PR #${{ env.PR_NUMBER }}"
+          commit-message: "docs: AI draft from ${{ env.SOURCE_REPO }} PR #${{ env.PR_NUMBER }}"
           body: |
-            🤖 **AI-drafted** from ${{ github.event.client_payload.source_repo || github.event.inputs.source_repo }} PR #${{ github.event.client_payload.pr_number || github.event.inputs.pr_number }}.
+            🤖 **AI-drafted** from ${{ env.SOURCE_REPO }} PR #${{ env.PR_NUMBER }}.
 
             Source PR: ${{ github.event.client_payload.pr_url }}
 
