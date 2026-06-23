@@ -115,19 +115,38 @@ jobs:
              new page is genuinely warranted, create it AND wire it into the
              sidebar/category config.
           4. If the diff has NO documentation impact, make no edits at all.
+          5. Finally, write a clear, short PR description (2-4 sentences, plain
+             English) to \`pr-summary.md\` at the repo root: what the source PR
+             changed and which docs you updated and why. If you made no doc
+             changes, write exactly: \`No documentation changes were needed.\`
 
-          Only edit documentation content in THIS repo. Do not modify
-          \`source-repo/\`, \`source-pr.diff\`, CI config, or anything outside
-          the docs." \
+          Only edit documentation content in THIS repo, plus the \`pr-summary.md\`
+          scratch file. Do not modify \`source-repo/\`, \`source-pr.diff\`, CI
+          config, or anything else outside the docs." \
             --model claude-sonnet-4-6 \
             --allowedTools Read,Edit,Write,Glob,Grep \
             --permission-mode acceptEdits \
             --max-turns 30
 
-      # Both are untracked in the docs repo; remove them so create-pull-request
-      # (which stages everything) doesn't commit the diff or the cloned source repo.
+      # Pull Claude's summary into a step output for the PR body. Multiline output
+      # needs the heredoc form. Falls back to a placeholder if Claude wrote nothing.
+      - name: Capture the AI PR summary
+        id: summary
+        run: |
+          if [ -s pr-summary.md ]; then
+            {
+              echo "text<<PR_SUMMARY_EOF"
+              cat pr-summary.md
+              echo "PR_SUMMARY_EOF"
+            } >> "$GITHUB_OUTPUT"
+          else
+            echo "text=_Claude did not produce a summary._" >> "$GITHUB_OUTPUT"
+          fi
+
+      # All scratch/untracked; remove them so create-pull-request (which stages
+      # everything) doesn't commit the diff, the cloned source repo, or the summary.
       - name: Remove scratch files before opening the PR
-        run: rm -rf source-pr.diff source-repo
+        run: rm -rf source-pr.diff source-repo pr-summary.md
 
       # Normalize the repo into a clean branch slug: drop the constant owner,
       # lowercase, and collapse anything that isn't [a-z0-9] into single dashes.
@@ -149,14 +168,13 @@ jobs:
           title: "docs: sync with ${{ env.SOURCE_REPO }} PR #${{ env.PR_NUMBER }}"
           commit-message: "docs: AI draft from ${{ env.SOURCE_REPO }} PR #${{ env.PR_NUMBER }}"
           body: |
-            🤖 **AI-drafted** from ${{ env.SOURCE_REPO }} PR #${{ env.PR_NUMBER }}.
+            🤖 **AI-drafted** from [${{ env.SOURCE_REPO }} PR #${{ env.PR_NUMBER }}](https://github.com/${{ env.SOURCE_REPO }}/pull/${{ env.PR_NUMBER }}).
 
-            Source PR: ${{ github.event.client_payload.pr_url }}
+            ${{ steps.summary.outputs.text }}
 
             > This is a first draft written by Claude from the code diff.
             > **Review it properly** before merging — treat it like a junior's PR,
             > not a finished edit.
           labels: |
             documentation
-            ai-draft
           delete-branch: true
