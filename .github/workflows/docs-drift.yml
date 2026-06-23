@@ -153,7 +153,7 @@ jobs:
           Only edit documentation content in THIS repo, plus the \`pr-summary.md\`
           scratch file. Do not modify \`source-repo/\`, \`source-pr-patches/\`, CI
           config, or anything else outside the docs." \
-            --model claude-opus-4-8 \
+            --model claude-sonnet-4-6 \
             --allowedTools Read,Edit,Write,Glob,Grep \
             --permission-mode acceptEdits \
             --max-turns 30
