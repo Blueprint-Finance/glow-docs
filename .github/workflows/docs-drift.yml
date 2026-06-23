@@ -79,6 +79,25 @@ jobs:
           nstmp=$(mktemp)
           git -C source-repo diff --no-renames --name-status "$BASE" "$PR_HEAD" > "$nstmp"
 
+          # Strategy-agnostic fallback. A "Create a merge commit" merge makes
+          # PR_HEAD an ancestor of the default branch, so merge-base == PR_HEAD
+          # and the diff above is empty even though the PR changed files. Recover
+          # by finding the merge commit that pulled PR_HEAD in and diffing its
+          # first parent (mainline just before the merge) against it. Squash and
+          # rebase merges never reach here: PR_HEAD isn't in history, so BASE is
+          # the real fork point and the diff above is already correct.
+          if [ ! -s "$nstmp" ] && [ "$BASE" = "$PR_HEAD" ]; then
+            MERGE_COMMIT=$(git -C source-repo rev-list --merges --parents HEAD \
+              | awk -v h="$PR_HEAD" '{for (i = 2; i <= NF; i++) if ($i == h) { print $1; exit }}')
+            if [ -n "$MERGE_COMMIT" ]; then
+              BASE="${MERGE_COMMIT}^1"
+              PR_HEAD="$MERGE_COMMIT"
+              echo "Empty PR-head diff (merge-commit merge); recovered via merge" \
+                   "commit ${MERGE_COMMIT} first-parent diff."
+              git -C source-repo diff --no-renames --name-status "$BASE" "$PR_HEAD" > "$nstmp"
+            fi
+          fi
+
           # index.md: a rendered table linking each changed file to its patch.
           {
             echo "# Files changed by ${SOURCE_REPO} PR #${PR_NUMBER}"
@@ -106,8 +125,9 @@ jobs:
           echo "Changed files: $(wc -l < "$nstmp")"
           if [ ! -s "$nstmp" ]; then
             echo "_No files changed._" >> source-pr-patches/index.md
-            echo "⚠️ No changed files — the PR's commits may already be in the" \
-                 "default branch (e.g. a merge-commit merge). Claude can still" \
+            echo "⚠️ No changed files. Merge-commit merges are recovered above," \
+                 "so this means the PR genuinely changed nothing relevant, or its" \
+                 "changes were already on the default branch. Claude can still" \
                  "investigate source-repo/ directly."
           fi
 
