@@ -30,8 +30,9 @@ permissions:
   pull-requests: write
 
 # Keyed by source repo + PR so two senders can't collide on one run.
+# @TODO: Revert hard-coded fallback values before merging.
 concurrency:
-  group: ai-docs-${{ github.event.client_payload.source_repo || github.event.inputs.source_repo || 'Blueprint-Finance/glow-v1' }}-${{ github.event.client_payload.pr_number || github.event.inputs.pr_number || '3670' }}
+  group: ai-docs-${{ github.event.client_payload.source_repo || github.event.inputs.source_repo || 'Blueprint-Finance/glow-v1' }}-${{ github.event.client_payload.pr_number || github.event.inputs.pr_number || '3676' }}
   cancel-in-progress: true
 
 jobs:
@@ -42,7 +43,7 @@ jobs:
     # @TODO: drop the hardcoded fallbacks (3670 / Blueprint-Finance/glow-v1) before
     # merging — they only exist so the push trigger has something to run against.
     env:
-      PR_NUMBER: ${{ github.event.client_payload.pr_number || github.event.inputs.pr_number || '3670' }}
+      PR_NUMBER: ${{ github.event.client_payload.pr_number || github.event.inputs.pr_number || '3676' }}
       SOURCE_REPO: ${{ github.event.client_payload.source_repo || github.event.inputs.source_repo || 'Blueprint-Finance/glow-v1' }}
       PR_TITLE: ${{ github.event.client_payload.pr_title || 'manual run' }}
     steps:
@@ -52,42 +53,58 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: "24.14.1"
 
       - name: Install Claude Code CLI
         run: npm install -g @anthropic-ai/claude-code@2.1.186
 
       # Source repos are internal/private, so the workflow's GITHUB_TOKEN (scoped
-      # to glow-docs only) can't read them. Authenticate gh with a PAT that has
-      # read access to the source repos instead. The PAT is passed via GH_TOKEN
-      # and never appears in the logs.
-      - name: Fetch the source PR diff
-        env:
-          GH_TOKEN: ${{ secrets.SOURCE_REPO_PAT }}
+      # to glow-docs only) can't read them. Clone the source repo with a PAT that
+      # has read access instead.
+      - name: Clone the source repo
+        uses: actions/checkout@v6
+        with:
+          repository: ${{ env.SOURCE_REPO }}
+          token: ${{ secrets.SOURCE_REPO_PAT }}
+          path: source-repo
+          fetch-depth: 0
+
+      # Reconstruct the diff from git: fetch the PR head ref and
+      # diff it against its merge base with the default branch.
+      - name: Build the source PR diff
         run: |
-          gh pr diff "$PR_NUMBER" --repo "$SOURCE_REPO" > source-pr.diff
+          git -C source-repo fetch --no-tags origin "pull/${PR_NUMBER}/head"
+          PR_HEAD=$(git -C source-repo rev-parse FETCH_HEAD)
+          BASE=$(git -C source-repo merge-base HEAD "$PR_HEAD")
+          git -C source-repo diff "$BASE" "$PR_HEAD" > source-pr.diff
           # Cap the size so the prompt stays sane on huge PRs.
           head -c 80000 source-pr.diff > source-pr.trunc.diff
           mv source-pr.trunc.diff source-pr.diff
+          echo "PR #${PR_NUMBER} head: $PR_HEAD"
           echo "Diff size: $(wc -c < source-pr.diff) bytes"
+          if [ ! -s source-pr.diff ]; then
+            echo "⚠️ Empty diff — the PR's commits may already be in the default" \
+                 "branch (e.g. a merge-commit merge). Claude can still investigate" \
+                 "source-repo/ directly."
+          fi
 
-      # Run the Claude Code CLI directly (not the marketplace action) so this
-      # behaves the same as the smoke test. Claude is restricted to file tools
-      # only — no shell, no git, no network — and acceptEdits lets it write
-      # non-interactively. The draft PR is opened by a later deterministic step.
+      # Run the Claude Code CLI directly
       - name: Draft doc updates with Claude
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           claude -p "A PR just merged in a source repo and the docs in THIS repo may
           be out of date. The unified diff for that PR is saved at the repo
-          root in the file \`source-pr.diff\` — read it first.
+          root in \`source-pr.diff\` — read it first. The full source repo is
+          also checked out at \`source-repo/\`, so you can investigate the code
+          around the change (callers, types, config, neighbouring files).
 
           Source: ${SOURCE_REPO} PR #${PR_NUMBER} (\"${PR_TITLE}\").
 
           Your task:
-          1. Read \`source-pr.diff\` and work out what user-facing behaviour,
-             API surface, props, config, or UI changed.
+          1. Read \`source-pr.diff\` and explore \`source-repo/\` as needed to
+             work out what user-facing behaviour, API surface, props, config, or
+             UI changed.
           2. Explore this Docusaurus site to find the page(s) that describe
              those things. Match the existing structure, frontmatter, MDX
              components, \`sidebars.js\`/category config, and the writing tone
@@ -97,15 +114,18 @@ jobs:
              sidebar/category config.
           4. If the diff has NO documentation impact, make no edits at all.
 
-          Only edit documentation content. Do not touch \`source-pr.diff\`,
-          CI config, or anything outside the docs." \
+          Only edit documentation content in THIS repo. Do not modify
+          \`source-repo/\`, \`source-pr.diff\`, CI config, or anything outside
+          the docs." \
             --model claude-sonnet-4-6 \
             --allowedTools Read,Edit,Write,Glob,Grep \
             --permission-mode acceptEdits \
             --max-turns 30
 
-      - name: Remove the scratch diff before opening the PR
-        run: rm -f source-pr.diff
+      # Both are untracked in the docs repo; remove them so create-pull-request
+      # (which stages everything) doesn't commit the diff or the cloned source repo.
+      - name: Remove scratch files before opening the PR
+        run: rm -rf source-pr.diff source-repo
 
       - name: Open draft PR
         uses: peter-evans/create-pull-request@v6
