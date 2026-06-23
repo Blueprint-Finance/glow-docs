@@ -8,6 +8,10 @@
 name: Docs drift detection
 
 on:
+  # @TEST MOCK — remove before merge. Lets a push to the feature branch run the
+  # whole flow end-to-end against the mocked source PR below, no dispatch needed.
+  push:
+    branches: [feat/docs-drift-ai]
   # The real trigger: each sender repo fires this on PR-merge with the payload
   # contract documented in the README (pr_number, source_repo).
   repository_dispatch:
@@ -38,8 +42,9 @@ jobs:
     # Resolve the source PR once for every step below. The repository_dispatch
     # payload wins, then the workflow_dispatch inputs.
     env:
-      PR_NUMBER: ${{ github.event.client_payload.pr_number || github.event.inputs.pr_number }}
-      SOURCE_REPO: ${{ github.event.client_payload.source_repo || github.event.inputs.source_repo }}
+      # @TODO: remove before merge.
+      PR_NUMBER: ${{ github.event.client_payload.pr_number || github.event.inputs.pr_number || '3674' }}
+      SOURCE_REPO: ${{ github.event.client_payload.source_repo || github.event.inputs.source_repo || 'Blueprint-Finance/glow-v1' }}
     steps:
       - name: Checkout docs repo
         uses: actions/checkout@v6
