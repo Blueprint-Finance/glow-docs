@@ -135,21 +135,37 @@ jobs:
           Your task:
           1. Read \`source-pr-patches/index.md\` to see what changed. For each
              file that looks documentation-relevant, read its
-             \`source-pr-patches/<path>.patch\` for the exact change, and open the
-             file in \`source-repo/\` for fuller context (callers, types, config,
-             neighbouring code) when you need it.
-          2. Explore this Docusaurus site to find the page(s) that describe
+             \`source-pr-patches/<path>.patch\` for the exact change.
+          2. Assess the real blast radius before deciding what to document. A
+             small diff can have a large documentation impact when the changed
+             code is reused widely. For each meaningful change, open the file in
+             \`source-repo/\` and trace its surroundings — callers, call sites,
+             types, config, exported APIs, and neighbouring code — to judge how
+             far the behaviour change actually reaches. Document the full
+             user-facing impact, not just the literal lines in the patch.
+          3. Explore this Docusaurus site to find the page(s) that describe
              those things. Match the existing structure, frontmatter, MDX
              components, \`sidebars.js\`/category config, and the writing tone
              of neighbouring docs.
-          3. Update those pages so they reflect the new behaviour. If a brand
+          4. Update those pages so they reflect the new behaviour. If a brand
              new page is genuinely warranted, create it AND wire it into the
              sidebar/category config.
-          4. If the change has NO documentation impact, make no edits at all.
-          5. Finally, write a clear, short PR description (2-4 sentences, plain
+          5. These docs are PUBLIC, but the source repo is internal/private.
+             Never copy private or sensitive information into the docs. This
+             includes internal/partner/customer/deal names, internal-only
+             URLs, hostnames, file paths, ticket IDs, employee names, secrets,
+             credentials, and concrete internal numbers (revenue, fees, limits,
+             counts, thresholds) that are not already public. Describe behaviour
+             generically (use placeholders or omit the value) instead of leaking
+             specifics. When in doubt, leave it out.
+          6. If the change has NO documentation impact, make no edits at all.
+          7. Finally, write a clear, short PR description (2-4 sentences, plain
              English) to \`pr-summary.md\` at the repo root: what the source PR
              changed and which docs you updated and why. If you made no doc
              changes, write exactly: \`No documentation changes were needed.\`
+             If you deliberately omitted or genericised anything for privacy,
+             add a short \`Redaction notes:\` line listing what you held back, so
+             the human reviewer knows.
 
           Only edit documentation content in THIS repo, plus the \`pr-summary.md\`
           scratch file. Do not modify \`source-repo/\`, \`source-pr-patches/\`, CI
