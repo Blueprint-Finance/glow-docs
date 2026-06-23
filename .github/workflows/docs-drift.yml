@@ -10,12 +10,8 @@ name: Docs drift detection
 on:
   # The real trigger: each sender repo fires this on PR-merge with the payload
   # contract documented in the README (pr_number, source_repo, pr_title, pr_url).
-  # DISABLED for now while we develop — re-enable before merging.
-  # repository_dispatch:
-  #   types: [source-merged]
-  # @TODO: remove this push trigger before merging — for testing on the dev branch only.
-  push:
-    branches: [feat/docs-drift-ai]
+  repository_dispatch:
+    types: [docs-drift]
   # Manual trigger for testing without a real merge.
   workflow_dispatch:
     inputs:
@@ -32,9 +28,8 @@ permissions:
   pull-requests: write
 
 # Keyed by source repo + PR so two senders can't collide on one run.
-# @TODO: Revert hard-coded fallback values before merging.
 concurrency:
-  group: ai-docs-${{ github.event.client_payload.source_repo || github.event.inputs.source_repo || 'Blueprint-Finance/glow-v1' }}-${{ github.event.client_payload.pr_number || github.event.inputs.pr_number || '3676' }}
+  group: ai-docs-${{ github.event.client_payload.source_repo || github.event.inputs.source_repo }}-${{ github.event.client_payload.pr_number || github.event.inputs.pr_number }}
   cancel-in-progress: true
 
 jobs:
@@ -42,11 +37,9 @@ jobs:
     runs-on: ubuntu-latest
     # Resolve the source PR once for every step below. The repository_dispatch
     # payload wins, then the workflow_dispatch inputs.
-    # @TODO: drop the hardcoded fallbacks (3676 / Blueprint-Finance/glow-v1) before
-    # merging — they only exist so the push trigger has something to run against.
     env:
-      PR_NUMBER: ${{ github.event.client_payload.pr_number || github.event.inputs.pr_number || '3676' }}
-      SOURCE_REPO: ${{ github.event.client_payload.source_repo || github.event.inputs.source_repo || 'Blueprint-Finance/glow-v1' }}
+      PR_NUMBER: ${{ github.event.client_payload.pr_number || github.event.inputs.pr_number }}
+      SOURCE_REPO: ${{ github.event.client_payload.source_repo || github.event.inputs.source_repo }}
     steps:
       - name: Checkout docs repo
         uses: actions/checkout@v6
