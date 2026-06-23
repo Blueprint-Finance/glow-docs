@@ -54,13 +54,33 @@ jobs:
       - name: Install Claude Code CLI
         run: npm install -g @anthropic-ai/claude-code@2.1.186
 
+      # A PR's diff is computed against its OWN base branch, which isn't
+      # necessarily the repo default. Resolve the real base ref so we clone the
+      # branch the PR actually merged into (it now contains the merged code) and
+      # diff against it — otherwise a PR into a non-default branch yields a tree
+      # without the merge and a bloated merge-base..head diff.
+      - name: Resolve the PR base branch
+        id: baseref
+        env:
+          GH_TOKEN: ${{ secrets.DOCS_AUTOMATION_PAT }}
+        run: |
+          ref=$(gh api "repos/${SOURCE_REPO}/pulls/${PR_NUMBER}" --jq '.base.ref')
+          if [ -z "$ref" ] || [ "$ref" = "null" ]; then
+            echo "Could not resolve the base branch for ${SOURCE_REPO} PR #${PR_NUMBER}." >&2
+            exit 1
+          fi
+          echo "ref=$ref" >> "$GITHUB_OUTPUT"
+          echo "PR #${PR_NUMBER} base branch: $ref"
+
       # Source repos are internal/private, so the workflow's GITHUB_TOKEN (scoped
       # to glow-docs only) can't read them. Clone the source repo with a PAT that
-      # has read access instead.
+      # has read access instead. Check out the PR's base branch (not the repo
+      # default) so source-repo/ reflects the state the PR merged into.
       - name: Clone the source repo
         uses: actions/checkout@v6
         with:
           repository: ${{ env.SOURCE_REPO }}
+          ref: ${{ steps.baseref.outputs.ref }}
           token: ${{ secrets.DOCS_AUTOMATION_PAT }}
           path: source-repo
           fetch-depth: 0
@@ -80,8 +100,9 @@ jobs:
           git -C source-repo diff --no-renames --name-status "$BASE" "$PR_HEAD" > "$nstmp"
 
           # Strategy-agnostic fallback. A "Create a merge commit" merge makes
-          # PR_HEAD an ancestor of the default branch, so merge-base == PR_HEAD
-          # and the diff above is empty even though the PR changed files. Recover
+          # PR_HEAD an ancestor of the base branch (HEAD here), so
+          # merge-base == PR_HEAD and the diff above is empty even though the PR
+          # changed files. Recover
           # by finding the merge commit that pulled PR_HEAD in and diffing its
           # first parent (mainline just before the merge) against it. Squash and
           # rebase merges never reach here: PR_HEAD isn't in history, so BASE is
