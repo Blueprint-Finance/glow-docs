@@ -1,6 +1,7 @@
-# TEMPORARY workflow to smoke-test the Claude Code action integration.
-# Runs a trivial prompt to confirm the ANTHROPIC_API_KEY secret resolves and
-# the action can execute against this repo. Delete before merging.
+# TEMPORARY workflow to smoke-test the Claude Code CLI integration.
+# Runs the Claude Code CLI directly (not the marketplace action, which doesn't
+# support `push` events) to confirm the ANTHROPIC_API_KEY secret resolves and
+# Claude can edit files in this repo. Delete before merging.
 
 name: Claude smoke test (TMP)
 
@@ -18,17 +19,22 @@ jobs:
       - name: Checkout docs repo
         uses: actions/checkout@v6
 
-      - name: Run a trivial Claude prompt
-        uses: anthropics/claude-code-action@v1
+      - name: Set up Node
+        uses: actions/setup-node@v4
         with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          prompt: |
-            Write a one-line file named `claude-smoke.txt` at the repo root
-            containing exactly: "Claude integration works."
-            Make no other changes.
-          claude_args: |
-            --model claude-sonnet-4-6
-            --allowedTools Write
+          node-version: 22
+
+      - name: Install Claude Code CLI
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Run a trivial Claude prompt
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          claude -p "Write a one-line file named claude-smoke.txt at the repo root containing exactly: Claude integration works. Make no other changes." \
+            --model claude-sonnet-4-6 \
+            --allowedTools Write \
+            --permission-mode acceptEdits \
             --max-turns 5
 
       - name: Show what Claude produced
