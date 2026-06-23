@@ -21,10 +21,11 @@ on:
     inputs:
       pr_number:
         description: "Source PR number"
-        required: false
+        required: true
       source_repo:
         description: "Source repo, e.g. Blueprint-Finance/glow-v1"
-        required: false
+        default: Blueprint-Finance/glow-v1
+        required: true
 
 permissions:
   contents: write
@@ -33,7 +34,7 @@ permissions:
 # Keyed by source repo + PR so two senders can't collide on one run.
 # @TODO: Revert hard-coded fallback values before merging.
 concurrency:
-  group: ai-docs-${{ github.event.client_payload.source_repo || github.event.inputs.source_repo || 'Blueprint-Finance/glow-v1' }}-${{ github.event.client_payload.pr_number || github.event.inputs.pr_number || '3652' }}
+  group: ai-docs-${{ github.event.client_payload.source_repo || github.event.inputs.source_repo || 'Blueprint-Finance/glow-v1' }}-${{ github.event.client_payload.pr_number || github.event.inputs.pr_number || '3676' }}
   cancel-in-progress: true
 
 jobs:
@@ -41,10 +42,10 @@ jobs:
     runs-on: ubuntu-latest
     # Resolve the source PR once for every step below. The repository_dispatch
     # payload wins, then the workflow_dispatch inputs.
-    # @TODO: drop the hardcoded fallbacks (3670 / Blueprint-Finance/glow-v1) before
+    # @TODO: drop the hardcoded fallbacks (3676 / Blueprint-Finance/glow-v1) before
     # merging — they only exist so the push trigger has something to run against.
     env:
-      PR_NUMBER: ${{ github.event.client_payload.pr_number || github.event.inputs.pr_number || '3652' }}
+      PR_NUMBER: ${{ github.event.client_payload.pr_number || github.event.inputs.pr_number || '3676' }}
       SOURCE_REPO: ${{ github.event.client_payload.source_repo || github.event.inputs.source_repo || 'Blueprint-Finance/glow-v1' }}
     steps:
       - name: Checkout docs repo
@@ -216,4 +217,4 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_URL: ${{ steps.cpr.outputs.pull-request-url }}
-        run: gh pr comment "$PR_URL" --body "bugbot run"
+        run: gh pr comment "$PR_URL" --body "@cursor review"
