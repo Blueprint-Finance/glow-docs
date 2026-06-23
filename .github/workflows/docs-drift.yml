@@ -1,8 +1,8 @@
-# Triggered by external repo. Fetches the merged PR's diff, lets Claude
-# update the relevant Docusaurus pages, then opens a DRAFT PR for a
-# human to review. Claude is intentionally restricted to editing files only
-# (no shell, no git, no network) — the draft PR is opened by a separate
-# deterministic step.
+# Triggered by external repo. Clones the source repo, lists the files the merged
+# PR changed, lets Claude read those files and update the relevant Docusaurus
+# pages, then opens a DRAFT PR for a human to review. Claude is intentionally
+# restricted to editing files only (no shell, no git, no network) — the draft PR
+# is opened by a separate deterministic step.
 
 name: Docs drift detection
 
@@ -71,23 +71,22 @@ jobs:
           path: source-repo
           fetch-depth: 0
 
-      # Reconstruct the diff from git: fetch the PR head ref and
-      # diff it against its merge base with the default branch.
-      - name: Build the source PR diff
+      # List the files the PR changed: fetch the PR head ref and diff --name-status
+      # against its merge base with the default branch. We hand Claude this list
+      # (bounded by file count, never truncated) rather than a patch, and let it
+      # read the actual files from the source-repo/ checkout for the details.
+      - name: List the files changed by the PR
         run: |
           git -C source-repo fetch --no-tags origin "pull/${PR_NUMBER}/head"
           PR_HEAD=$(git -C source-repo rev-parse FETCH_HEAD)
           BASE=$(git -C source-repo merge-base HEAD "$PR_HEAD")
-          git -C source-repo diff "$BASE" "$PR_HEAD" > source-pr.diff
-          # Cap the size so the prompt stays sane on huge PRs.
-          head -c 80000 source-pr.diff > source-pr.trunc.diff
-          mv source-pr.trunc.diff source-pr.diff
+          git -C source-repo diff --name-status "$BASE" "$PR_HEAD" > source-pr.files
           echo "PR #${PR_NUMBER} head: $PR_HEAD"
-          echo "Diff size: $(wc -c < source-pr.diff) bytes"
-          if [ ! -s source-pr.diff ]; then
-            echo "⚠️ Empty diff — the PR's commits may already be in the default" \
-                 "branch (e.g. a merge-commit merge). Claude can still investigate" \
-                 "source-repo/ directly."
+          echo "Changed files: $(wc -l < source-pr.files)"
+          if [ ! -s source-pr.files ]; then
+            echo "⚠️ No changed files — the PR's commits may already be in the" \
+                 "default branch (e.g. a merge-commit merge). Claude can still" \
+                 "investigate source-repo/ directly."
           fi
 
       # Run the Claude Code CLI directly
@@ -96,17 +95,19 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           claude -p "A PR just merged in a source repo and the docs in THIS repo may
-          be out of date. The unified diff for that PR is saved at the repo
-          root in \`source-pr.diff\` — read it first. The full source repo is
-          also checked out at \`source-repo/\`, so you can investigate the code
-          around the change (callers, types, config, neighbouring files).
+          be out of date. The list of files that PR changed is saved at the repo
+          root in \`source-pr.files\` (git --name-status format: M/A/D/R followed
+          by the path) — read it first. The full source repo, with those changes
+          already merged in, is checked out at \`source-repo/\`; open the changed
+          files there to see what they now contain and to investigate the
+          surrounding code (callers, types, config, neighbouring files).
 
           Source: ${SOURCE_REPO} PR #${PR_NUMBER} (\"${PR_TITLE}\").
 
           Your task:
-          1. Read \`source-pr.diff\` and explore \`source-repo/\` as needed to
-             work out what user-facing behaviour, API surface, props, config, or
-             UI changed.
+          1. Read \`source-pr.files\`, then open the relevant changed files in
+             \`source-repo/\` to work out what user-facing behaviour, API surface,
+             props, config, or UI changed.
           2. Explore this Docusaurus site to find the page(s) that describe
              those things. Match the existing structure, frontmatter, MDX
              components, \`sidebars.js\`/category config, and the writing tone
@@ -114,14 +115,14 @@ jobs:
           3. Update those pages so they reflect the new behaviour. If a brand
              new page is genuinely warranted, create it AND wire it into the
              sidebar/category config.
-          4. If the diff has NO documentation impact, make no edits at all.
+          4. If the change has NO documentation impact, make no edits at all.
           5. Finally, write a clear, short PR description (2-4 sentences, plain
              English) to \`pr-summary.md\` at the repo root: what the source PR
              changed and which docs you updated and why. If you made no doc
              changes, write exactly: \`No documentation changes were needed.\`
 
           Only edit documentation content in THIS repo, plus the \`pr-summary.md\`
-          scratch file. Do not modify \`source-repo/\`, \`source-pr.diff\`, CI
+          scratch file. Do not modify \`source-repo/\`, \`source-pr.files\`, CI
           config, or anything else outside the docs." \
             --model claude-opus-4-8 \
             --allowedTools Read,Edit,Write,Glob,Grep \
@@ -144,9 +145,9 @@ jobs:
           fi
 
       # All scratch/untracked; remove them so create-pull-request (which stages
-      # everything) doesn't commit the diff, the cloned source repo, or the summary.
+      # everything) doesn't commit the file list, the cloned source repo, or the summary.
       - name: Remove scratch files before opening the PR
-        run: rm -rf source-pr.diff source-repo pr-summary.md
+        run: rm -rf source-pr.files source-repo pr-summary.md
 
       # Normalize the repo into a clean branch slug: drop the constant owner,
       # lowercase, and collapse anything that isn't [a-z0-9] into single dashes.
