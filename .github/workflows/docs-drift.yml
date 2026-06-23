@@ -191,6 +191,7 @@ jobs:
           echo "Draft branch: docs/sync-source-pr-${slug}-${PR_NUMBER}"
 
       - name: Open draft PR
+        id: cpr
         uses: peter-evans/create-pull-request@v6
         with:
           author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
@@ -206,3 +207,13 @@ jobs:
           labels: |
             documentation
           delete-branch: true
+
+      # Ask Cursor's Bugbot for a second AI review by commenting its trigger phrase.
+      # Only runs when a PR was actually opened (create-pull-request is a no-op when
+      # Claude made no edits).
+      - name: Request a Bugbot review
+        if: steps.cpr.outputs.pull-request-number
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ steps.cpr.outputs.pull-request-url }}
+        run: gh pr comment "$PR_URL" --body "bugbot run"
