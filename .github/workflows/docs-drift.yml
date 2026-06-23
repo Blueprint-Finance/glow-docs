@@ -127,10 +127,22 @@ jobs:
       - name: Remove scratch files before opening the PR
         run: rm -rf source-pr.diff source-repo
 
+      # Normalize the repo into a clean branch slug: drop the constant owner,
+      # lowercase, and collapse anything that isn't [a-z0-9] into single dashes.
+      # "Blueprint-Finance/glow-v1" -> "glow-v1", so the branch can't turn into a
+      # nested ref (the slash) or hit casing inconsistencies.
+      - name: Compute the draft branch name
+        id: branch
+        run: |
+          repo="${SOURCE_REPO##*/}"
+          slug=$(printf '%s' "$repo" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+//; s/-+$//')
+          echo "name=docs/sync-source-pr-${slug}-${PR_NUMBER}" >> "$GITHUB_OUTPUT"
+          echo "Draft branch: docs/sync-source-pr-${slug}-${PR_NUMBER}"
+
       - name: Open draft PR
         uses: peter-evans/create-pull-request@v6
         with:
-          branch: docs/sync-source-pr-${{ env.SOURCE_REPO }}-${{ env.PR_NUMBER }}
+          branch: ${{ steps.branch.outputs.name }}
           draft: true
           title: "docs: sync with ${{ env.SOURCE_REPO }} PR #${{ env.PR_NUMBER }}"
           commit-message: "docs: AI draft from ${{ env.SOURCE_REPO }} PR #${{ env.PR_NUMBER }}"
