@@ -9,7 +9,7 @@ name: Docs drift detection
 
 on:
   # The real trigger: each sender repo fires this on PR-merge with the payload
-  # contract documented in the README (pr_number, source_repo, pr_title, pr_url).
+  # contract documented in the README (pr_number, source_repo).
   repository_dispatch:
     types: [docs-drift]
   # Manual trigger for testing without a real merge.
