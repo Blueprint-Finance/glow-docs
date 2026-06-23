@@ -30,12 +30,7 @@ Glow Finance is a Solana-native, non-custodial lending, margin, and liquid resta
 
 Glow Vaults is a smart contract that allows users to deposit into isolated vaults, where a designated fund operator then accesses the funds in the vault to deploy strategies.
 
-The vaults are integrated with the Glow margin system, allowing:
-
-- Vault “Strategy Operators” to access the funds via constrained margin accounts, and employ strategies via the rest of the Glow ecosystem, such as depositing into yield pools, looping funds to leverage yield, etc.
-- Vault “Depositors” to leverage their deposits by borrowing from Glow margin pools and looping by depositing into vaults.
-
-This offers LPs an opportunity to potentially leverage their positions, either indirectly through Strategy Operators deploying leverage, or directly through using margin accounts.
+Vault “Depositors” may leverage their deposits by borrowing from Glow margin pools and depositing into vaults, offering LPs an opportunity to amplify their exposure.
 
 Funds are still isolated per vault for depositors, and loss events in other parts of the overall Glow protocol do not affect vault deposits.
 
@@ -53,9 +48,7 @@ The following visualises the flow of funds for our vaults. It is broken down int
    Only the registered Strategy Operator may request a fund allocation.
    - The contract supports disabling operator actions if there are security issues.
 
-3. The Strategy Operator, or a designated Valuation Authority, updates the USD value of allocated funds.
-   - If funds are allocated to Operator Margin Accounts, their valuation is performed automatically and frequently without the need for external valuation or accounting.
-   - If funds are allocated to a multisig strategy, the smart contract includes a valuation instruction that only the Strategy Operator or Vault Authority can sign and execute.
+3. The Strategy Operator, or a designated Valuation Authority, updates the USD value of allocated funds. The smart contract includes a valuation instruction that only the Strategy Operator or Vault Authority can sign and execute.
 
 
 **Redemptions**
@@ -75,8 +68,7 @@ Each smart contract integrates **role-based access control** to restrict sensiti
 | --- | --- | --- |
 | **Protocol Authority** | Deploy and upgrade smart contracts, onboard vaults and tokens, and configure vault parameters (e.g., disable deposits/withdrawals, change fee parameters). | The authority is controlled by a Squads multisig, with 3 signers required to make a change.<br /><br />This configuration ensures proper coverage by requiring two signers with technical oversight and one signer providing organizational and governance oversight. |
 | **Strategy Operator** | Manages the funds in the vault, having the ability to transfer funds to strategies. | Strategy operations are conducted through a leading, secure digital asset management platform that provides granular permissions, role-based controls, and robust policy configuration to ensure multiple layers of protection. |
-| **Valuation Authority** | A separate and automated account or process that has permission to update valuation of multisig strategies. The authority periodically sends updates to the network on the USD value of funds held in a strategy if that strategy is not a margin account. | The authority operates as a service account with a private key or wallet that is only owned by the service and is not exposed to the team.<br /><br />The protocol authority can change this valuation authority through a multisig vote. |
-| **Operator Margin Account** | A Glow margin account constrained and designated to a Strategy Operator. | The Glow Vault program communicates with the Glow Margin program to constrain the permissions of a margin account.<br /><br />This prevents Strategy Operators from:<br />- Withdrawing funds from the margin account<br />- Transferring between margin accounts<br /><br />This action is enforced via cross-program invocation between the two smart contracts. |
+| **Valuation Authority** | A separate and automated account or process that has permission to update valuation of multisig strategies. The authority periodically sends updates to the network on the USD value of funds held in a strategy. | The authority operates as a service account with a private key or wallet that is only owned by the service and is not exposed to the team.<br /><br />The protocol authority can change this valuation authority through a multisig vote. |
 
 
 ## Control & Security Model

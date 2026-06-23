@@ -30,7 +30,7 @@ Glow Vaults make on-chain yield **passive**, **transparent**, and **institutiona
 
 Glow Vaults introduce several architectural and operational features that distinguish them from traditional vault systems and align with institutional best practices:
 
-- **Constrained Operator Accounts** — Strategy execution occurs through margin accounts with enforced permissions, preventing unauthorized withdrawals or transfers.
+- **Constrained Operator Accounts** — Strategy execution occurs through operator-controlled wallets with enforced permissions, preventing unauthorized withdrawals or transfers.
 - **Deterministic Redemption Queues** — Withdrawals follow a predictable waiting-period model which results in a higher yield, enabling safe strategy unwinding and controlled liquidity.
 - **Strict Role Separation** — Operational responsibilities are split across Protocol Authority, Strategy Owner, Strategy Operator, and Valuation Authority.
 - **Adaptive Strategy Framework** — Vaults support both margin-based and multisig strategies without exposing user funds to external protocol risks.
@@ -44,7 +44,6 @@ Glow Vaults may support different operational designs, including:
 
 - Vaults running a single strategy
 - Vaults running multiple strategies with automated rebalancing
-- Vaults running leverage-enabled strategies within isolated margin accounts
 - Vaults with liquidity buffers to support faster withdrawals (planned)
 - Vaults with restricted deposits or migration-only modes for operational transitions
 
@@ -66,8 +65,7 @@ Responsible for:
 
 Strategies run through controlled execution environments:
 
-- **Operator Margin Accounts** — constrained Glow Margin accounts preventing unauthorized withdrawals or transfers. These accounts are automatically valued by the margin system at high frequency.
-- **Multisig Strategies** — secured multisig-managed wallets for strategies not executed via margin accounts.
+- **Multisig Strategies** — secured multisig-managed wallets for operator strategy execution.
 
 ### Valuation Updates
 
@@ -126,9 +124,7 @@ Glow Vaults follow an auditable lifecycle consistent with the official vault flo
 1. User deposits assets into the vault.
 2. Vault credits the user’s claim account.
 3. Strategy Operator submits a signed request for allocation.
-4. Vault transfers capital to either:
-    - a constrained Operator Margin Account, or
-    - a designated multisig strategy account.
+4. Vault transfers capital to a designated multisig strategy account.
 
 **Note:** Deposits may be temporarily disabled during abnormal or high-risk conditions.
 
@@ -150,7 +146,7 @@ A valuation update is submitted prior to any redemption-related transfers.
 Glow Vaults incorporate layered safeguards:
 
 - Multisig-gated upgrades
-- Constrained Operator Margin Accounts preventing unauthorized transfers
+- Constrained operator wallets preventing unauthorized transfers
 - Valuation deviation checks rejecting abnormal updates
 - Pause switches to disable deposits or operator actions
 - Cross-program invocation guarantees ensuring correct interactions between Vault and Margin Programs
