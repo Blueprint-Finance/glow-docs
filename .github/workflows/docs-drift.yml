@@ -46,7 +46,6 @@ jobs:
     env:
       PR_NUMBER: ${{ github.event.client_payload.pr_number || github.event.inputs.pr_number || '3676' }}
       SOURCE_REPO: ${{ github.event.client_payload.source_repo || github.event.inputs.source_repo || 'Blueprint-Finance/glow-v1' }}
-      PR_TITLE: ${{ github.event.client_payload.pr_title || 'manual run' }}
     steps:
       - name: Checkout docs repo
         uses: actions/checkout@v6
@@ -130,7 +129,7 @@ jobs:
           \`source-pr-patches/<path>.patch\`. The full source repo, with those
           changes already merged in, is also checked out at \`source-repo/\`.
 
-          Source: ${SOURCE_REPO} PR #${PR_NUMBER} (\"${PR_TITLE}\").
+          Source: ${SOURCE_REPO} PR #${PR_NUMBER}.
 
           Your task:
           1. Read \`source-pr-patches/index.md\` to see what changed. For each
