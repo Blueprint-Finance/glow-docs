@@ -56,7 +56,8 @@ Enjoy the benefits of liquid restaking with **no hidden charges** or deductions.
 ## Vault Fees
 
 - **Management fee:** **1% per year** (charged at the vault level over time).
-- **Performance fee:** **15%** on performance **above your entry basis** (tracked per user).
+- **Performance fee:** **up to 20%** on performance **above your entry basis** (tracked per user).
+- Exact fee rates are configured **per vault** and may differ between vaults. The rates that apply to a given vault are shown in the Glow app.
 - Fees accrue automatically during user transactions, while performance fees are periodically settled on vault positions that remain inactive (no deposits or withdrawals) for a given period.
 
 <Footnotes />
