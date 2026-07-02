@@ -23,7 +23,7 @@ Glow even supports creating multiple margin accounts under a single wallet, thus
 ## Prerequisites
 
 1. **Wallet Connection**: Ensure your wallet (Phantom, Backpack, Solflare, WalletConnect, or Coinbase Wallet) is connected to the Glow platform. Glow supports multiple wallets for seamless integration.
-2. **SOL Balance Requirement**: You must have at least **0.072 SOL** in your wallet to cover the one-time, refundable rent fee required by Solana for on-chain storage. You can close a margin account from the Portfolio page and receive the full rent fee back to your wallet.
+2. **SOL Balance Requirement**: You must have at least **~0.06 SOL** in your wallet to create a margin account. Most of this is a **refundable rent deposit of ~0.0534 SOL** required by Solana for on-chain storage — you receive it back in full when you close the account from the Portfolio page. The small remainder covers one-time lookup-table setup and network fees, which are not refundable.
 3. **Multiple Accounts = Additional Rent Fees**: Each additional margin account requires an additional rent fee.
 
 :::tip
@@ -33,7 +33,7 @@ The rent fee does not cover SOL needed for transaction processing. Transaction f
 ## Key Visual Indicators
 
 - **Tooltips**: If no margin account exists, tooltips on actions like Deposit, Withdraw, Borrow, or Repay buttons will display "Create a margin account first."
-- **Disabled Buttons**: If the wallet is not connected or has insufficient SOL, action buttons will be disabled. For instance, if your wallet balance is less than 0.072 SOL, the modal for creating a margin account will indicate that the required balance is insufficient, and you will need to top up your wallet to continue.
+- **Disabled Buttons**: If the wallet is not connected or has insufficient SOL, action buttons will be disabled. For instance, if your wallet balance is less than ~0.06 SOL, the modal for creating a margin account will indicate that the required balance is insufficient, and you will need to top up your wallet to continue.
 
 ## Step 1: Connect Your Wallet
 
@@ -67,8 +67,8 @@ Once your wallet is connected:
 
 In the **New Margin Account** modal:
 
-- You'll see the account name (e.g. "Account #1") and a **one-time rent** of **0.072 SOL**.
-- The modal explains that this rent fee is required by Solana and is fully refundable when you close the account.
+- You'll see the account name (e.g. "Account #1") and the **refundable rent fee** of **~0.0534 SOL**.
+- The modal explains that this rent fee is required by Solana and is fully refundable when you close the account. Creating the account costs slightly more overall (~0.06 SOL) because of one-time lookup-table setup and network fees, which are not refundable.
 - Click **Create Margin Account** to proceed. Glow will handle the full setup automatically — you'll need to approve two quick wallet transactions in sequence.
 
 <img
@@ -77,7 +77,7 @@ style={{ maxWidth: "400px", width: "100%", height: "auto", display: "block", mar
 />
 
 :::tip Handle Insufficient SOL Balance
-If you don't have enough SOL, the **Create Margin Account** button will be disabled and an error message will prompt you to add more SOL. You'll need at least **0.072 SOL** plus a small amount for transaction fees.
+If you don't have enough SOL, the **Create Margin Account** button will be disabled and an error message will prompt you to add more SOL. You'll need at least **~0.06 SOL** — the refundable rent deposit (~0.0534 SOL) plus a small amount for lookup-table setup and transaction fees.
 :::
 
 ## Step 4: Confirmation
