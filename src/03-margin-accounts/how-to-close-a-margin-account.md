@@ -67,7 +67,7 @@ If you dismiss the modal or don't sign the second transaction, you can resume wh
 
 ## Step 4: Confirmation
 
-Once the closure transaction is confirmed, a **"Margin account closed successfully"** snackbar will appear at the top of the screen. Your refundable rent deposit (**~0.0534 SOL** for the margin account, plus any lookup-table rent reclaimed during the first transaction) will be returned to your wallet, and the account will be removed from your Portfolio. Note that network fees paid while using the account are not refundable.
+Once the closure transaction is confirmed, a **"Margin account closed successfully"** snackbar will appear at the top of the screen. Your SOL rent deposit (0.0534 SOL) will be refunded to your wallet, and the account will be removed from your Portfolio.
 
 <img
 src="/img/close-success.png"
