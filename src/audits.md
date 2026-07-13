@@ -14,7 +14,7 @@ Below, you can find the latest Glow Audit Reports from industry-leading Web3 sec
 ## Redstone Oracle Integration Audit
 
 - **Auditor:** Halborn
-- **Date:** July 10, 2026
+- **Date:** July 13, 2026
 - [View Full Audit Report](/files/Redstone-Oracle-Integration-Audit-SSC.pdf)
 
 ## Glow Vault: Transferrable Tokens & Epoch Withdrawal
