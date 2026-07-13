@@ -17,7 +17,7 @@ Below, you can find the latest Glow Audit Reports from industry-leading Web3 sec
 - **Date:** July 13, 2026
 - [View Full Audit Report](/files/Redstone-Oracle-Integration-Audit-SSC.pdf)
 
-## Glow Vault Program (Full Re-Audit)
+## Glow Vault
 
 - **Auditor:** Halborn
 - **Date:** July 10, 2026
