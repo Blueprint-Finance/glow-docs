@@ -11,6 +11,12 @@ Glow Finance values **security and transparency**. To protect users and ensure t
 
 Below, you can find the latest Glow Audit Reports from industry-leading Web3 security firms (Zellic, Certora and Halborn), which details our security assessment.
 
+## Redstone Oracle Integration Audit
+
+- **Auditor:** Halborn
+- **Date:** July 10, 2026
+- [View Full Audit Report](/files/Redstone-Oracle-Integration-Audit-SSC.pdf)
+
 ## Glow Vault: Transferrable Tokens & Epoch Withdrawal
 
 - **Auditor:** Halborn
@@ -25,23 +31,21 @@ Below, you can find the latest Glow Audit Reports from industry-leading Web3 sec
 
 ## Glow Margin
 
-- **Auditor:** Halborn  
+- **Auditor:** Halborn
 - **Date:** February 11, 2026
 - [View Full Audit Report](/files/Glow-Margin-Diff-Audit.pdf)
 
 ## LRT Migration Review & Fee Calculation
 
-- **Auditor:** Halborn  
+- **Auditor:** Halborn
 - **Date:** February 11, 2026
 - [View Full Audit Report](/files/LRT-Migration-Review-Fee-Calculation.pdf)
 
-
 ## Glow Chainlink Oracle Support
 
-- **Auditor:** Halborn  
+- **Auditor:** Halborn
 - **Date:** December 08, 2025
 - [View Full Audit Report](/files/Glow-Chainlink-Oracle-Support.pdf)
-
 
 ## Glow Margin Vaults
 
@@ -55,12 +59,11 @@ Below, you can find the latest Glow Audit Reports from industry-leading Web3 sec
 - **Date:** October 17, 2025
 - [View Full Audit Report](/files/GlowSOL-Liquid-Restaking-Margin-Recipe.pdf)
 
-
 ## Zellic Audit
 
-* **Auditor:** Zellic
-* **Date:** June 27 – July 21, 2025
-* [View Full Audit Report](/files/Glow-Zellic-Audit-Report.pdf)
+- **Auditor:** Zellic
+- **Date:** June 27 – July 21, 2025
+- [View Full Audit Report](/files/Glow-Zellic-Audit-Report.pdf)
 
 ## Halborn Audit
 
@@ -73,8 +76,6 @@ Below, you can find the latest Glow Audit Reports from industry-leading Web3 sec
 - **Auditor:** Certora
 - **Date:** November 2024
 - [View Full Audit Report](/files/Glow-report.pdf)
-
-
 
 📢 Glow Finance remains dedicated to **continuous security improvements** and will continue to review and enhance our protocol’s safety.
 
